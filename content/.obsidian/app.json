@@ -1,0 +1,7 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "static_files",
+  "useMarkdownLinks": true,
+  "showUnsupportedFiles": true,
+  "trashOption": "local"
+}

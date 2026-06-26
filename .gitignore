@@ -4,10 +4,40 @@ node_modules
 public
 prof
 tsconfig.tsbuildinfo
-.obsidian
 .quartz-cache
 private/
 .replit
 replit.nix
 .quartz/
 quartz/cli/tui/dist/
+
+
+# Godot 4+ specific ignores
+.godot/
+.nomedia
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_credentials.cfg
+
+# translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# obsidian stuff
+content/.obsidian/workspace.json
+.obsidian/cache/
+.obsidian/workspace.json
+.obsidian/updates.json
+
+
+#my mods
+docs/
+.stversions
+.stfolder
+#.trash
