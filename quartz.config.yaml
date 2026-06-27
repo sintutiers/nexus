@@ -119,7 +119,7 @@ plugins:
     options: {}
     order: 45
   - source: github:quartz-community/encrypted-pages
-    enabled: true
+    enabled: false
     options:
       iterations: 600000
       passwordField: password
@@ -201,12 +201,6 @@ plugins:
       position: left
       priority: 30
       group: toolbar
-  - source: github:quartz-community/reader-mode
-    enabled: true
-    layout:
-      position: left
-      priority: 35
-      group: toolbar
   - source: github:quartz-community/breadcrumbs
     enabled: true
     layout:
@@ -222,7 +216,7 @@ plugins:
       position: afterBody
       priority: 10
   - source: github:quartz-community/footer
-    enabled: true
+    enabled: false
     options:
       links:
         GitHub: https://github.com/jackyzha0/quartz

@@ -210,12 +210,6 @@
       "subdir": "plugin",
       "installedAt": "2026-06-26T22:46:56.879Z"
     },
-    "reader-mode": {
-      "source": "github:quartz-community/reader-mode",
-      "resolved": "https://github.com/quartz-community/reader-mode.git",
-      "commit": "73c8bce66df8835510ffac47e53b1ca0f7efd51e",
-      "installedAt": "2026-06-26T22:45:48.732Z"
-    },
     "recent-notes": {
       "source": "github:quartz-community/recent-notes",
       "resolved": "https://github.com/quartz-community/recent-notes.git",

@@ -1,4 +1,3 @@
-# usefull links
 
 - https://ynfg.yume.wiki/Yume_Nikki_Fangames_Wiki
 - https://yume.wiki/Main_Page
