@@ -29,6 +29,9 @@
       },
       "smart-rename": {
         "startupType": "instant"
+      },
+      "advanced-canvas": {
+        "startupType": "disabled"
       }
     }
   }

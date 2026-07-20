@@ -6,6 +6,5 @@
   "external-rename-handler",
   "lazy-plugins",
   "obsidian-linter",
-  "obsidian-excalidraw-plugin",
-  "advanced-canvas"
+  "obsidian-excalidraw-plugin"
 ]

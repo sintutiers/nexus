@@ -1,16 +1,18 @@
 {
 	"nodes":[
 		{"id":"2c86f4f402786778","type":"group","x":-1520,"y":-280,"width":1720,"height":1620,"label":"component group"},
-		{"id":"977aed7842e52e8a","type":"group","x":40,"y":-880,"width":900,"height":350,"label":"reasons group"},
-		{"id":"b21d6f077c80d8c0","type":"text","text":"we chose a esp32 because its a budget sniffing attacking slayer\n","x":490,"y":-274,"width":250,"height":102},
-		{"id":"c9c825bad3d7b80e","type":"text","text":"after debating what software we thought it is a safe bet with *[marauder](https://github.com/justcallmekoko/ESP32Marauder)*","x":960,"y":-274,"width":250,"height":102},
+		{"id":"977aed7842e52e8a","type":"group","x":40,"y":-880,"width":900,"height":540,"label":"reasons group"},
 		{"id":"8b4dca1f15651c4f","type":"text","text":"the EU is being a prick","x":655,"y":-610,"width":250,"height":60},
 		{"id":"3f9a05d6bc16df73","type":"text","text":"Chiel was also inspired by watchdogs","x":365,"y":-610,"width":250,"height":60},
 		{"id":"06cb499c42f6ac53","type":"text","text":"Chiel thought it was a fun activity and idea","x":80,"y":-610,"width":250,"height":60},
 		{"id":"2d2e0d78d83d8dec","type":"text","text":"why are we doing this?","x":365,"y":-840,"width":250,"height":60},
-		{"id":"382831db7ab8afff","type":"text","text":"ESP32-WROOM-32U","x":-831,"y":-260,"width":250,"height":60},
 		{"id":"189f4d05fd9c9388","type":"text","text":"5v transformer","x":-1100,"y":-160,"width":250,"height":60},
 		{"id":"198756dd94f4adbd","type":"text","text":"1100mAh LiPo battery","x":-1160,"y":-60,"width":250,"height":60},
+		{"id":"e691d49cc7a596f2","type":"text","text":"2.8 \"240x320 SPI Ili9341 TFT LCD screen","x":-1100,"y":160,"width":250,"height":60},
+		{"id":"fcc68f46e697410b","type":"text","text":"    [ TP4056 Charger ] --(Switch)-- [ MT3608 Boost ] \n\n          |                               |\n     (LiPo Batt)                     (Adjust to 5V)\n                                          |\n   +--------------------------------------+-----------------------------------+\n\n   |                                      |                                   |\n   v                                      v                                   v\n[ DISPLAY (ILI9341) ]                [ ESP32 BOARD ]                  [ SD CARD MODULE ]\n  VCC <--------------------------------- 3.3V --------------------------------> VCC\n  GND <--------------------------------- GND ---------------------------------> GND\n  CLK (SCK) <--------------------------- GPIO 18 -----------------------------> CLK (SCK)\n  MISO (SDO) <-------------------------- GPIO 19 -----------------------------> MISO\n  MOSI (SDI) <-------------------------- GPIO 23 -----------------------------> MOSI\n  CS <---------------------------------- GPIO 5\n  D/C <--------------------------------- GPIO 2\n  RESET <------------------------------- GPIO 15\n\n                                     [ JOYSTICK ]\n                                      GPIO 12 <---- Up\n                                      GPIO 13 <---- Down\n                                      GPIO 14 <---- Left\n                                      GPIO 25 <---- Right\n                                      GPIO 26 <---- Click\n","x":-1449,"y":520,"width":618,"height":763},
+		{"id":"b21d6f077c80d8c0","type":"text","text":"we chose a esp32 because its a budget sniffing attacking slayer\n","x":490,"y":-274,"width":250,"height":102},
+		{"id":"c9c825bad3d7b80e","type":"text","text":"after debating what software we thought it is a safe bet with *[marauder](https://github.com/justcallmekoko/ESP32Marauder)*","x":960,"y":-274,"width":250,"height":102},
+		{"id":"382831db7ab8afff","type":"text","text":"ESP32-WROOM-32U","x":-831,"y":-260,"width":250,"height":60},
 		{"id":"9b880a2495f560d4","type":"text","text":"how it should look connected to the screen","x":-602,"y":380,"width":250,"height":60},
 		{"id":"31251fe4909bc77d","type":"text","text":"usb-c charging module","x":-831,"y":250,"width":250,"height":60},
 		{
@@ -25,13 +27,12 @@
 		},
 		{"id":"6948c40b6ba43f96","type":"text","text":"joystick control","x":-1160,"y":60,"width":250,"height":60},
 		{"id":"13c526aacfdd5916","type":"text","text":"the full schematic","x":-1100,"y":386,"width":250,"height":60},
-		{"id":"e691d49cc7a596f2","type":"text","text":"2.8 \"240x320 SPI Ili9341 TFT LCD screen","x":-1100,"y":160,"width":250,"height":60},
-		{"id":"fcc68f46e697410b","type":"text","text":"    [ TP4056 Charger ] --(Switch)-- [ MT3608 Boost ] \n\n          |                               |\n     (LiPo Batt)                     (Adjust to 5V)\n                                          |\n   +--------------------------------------+-----------------------------------+\n\n   |                                      |                                   |\n   v                                      v                                   v\n[ DISPLAY (ILI9341) ]                [ ESP32 BOARD ]                  [ SD CARD MODULE ]\n  VCC <--------------------------------- 3.3V --------------------------------> VCC\n  GND <--------------------------------- GND ---------------------------------> GND\n  CLK (SCK) <--------------------------- GPIO 18 -----------------------------> CLK (SCK)\n  MISO (SDO) <-------------------------- GPIO 19 -----------------------------> MISO\n  MOSI (SDI) <-------------------------- GPIO 23 -----------------------------> MOSI\n  CS <---------------------------------- GPIO 5\n  D/C <--------------------------------- GPIO 2\n  RESET <------------------------------- GPIO 15\n\n                                     [ JOYSTICK ]\n                                      GPIO 12 <---- Up\n                                      GPIO 13 <---- Down\n                                      GPIO 14 <---- Left\n                                      GPIO 25 <---- Right\n                                      GPIO 26 <---- Click\n","x":-1449,"y":520,"width":618,"height":763},
 		{"id":"695b223ef1581dd4","type":"text","text":"on/off switch","x":-560,"y":-160,"width":250,"height":60},
+		{"id":"1b21e9ee7bfd5c6f","type":"file","file":"static_files/Pasted image 20260720223432.png","x":-637,"y":660,"width":774,"height":393},
 		{"id":"5bd9b8fce0bc27de","type":"text","text":"breakout board","x":-560,"y":160,"width":250,"height":60},
 		{"id":"cb85b1b18c214820","type":"text","text":"jumpercables","x":-500,"y":-60,"width":250,"height":60},
 		{"id":"90f94be0e7ca70fa","type":"text","text":"high gain antenna","x":-500,"y":60,"width":250,"height":60},
-		{"id":"1b21e9ee7bfd5c6f","type":"file","file":"static_files/Pasted image 20260720223432.png","x":-637,"y":660,"width":774,"height":393}
+		{"id":"7af7cf0111382c1e","x":365,"y":-500,"width":250,"height":120,"type":"text","text":"chiel cant focus on more then 1 project at a time, we also have a gamedev project todo"}
 	],
 	"edges":[
 		{"id":"aefc1436b5dcaea7","fromNode":"2d2e0d78d83d8dec","fromSide":"bottom","toNode":"8b4dca1f15651c4f","toSide":"top"},
@@ -50,7 +51,8 @@
 		{"id":"47793e5e222ae664","fromNode":"4b44f5982790a486","fromSide":"bottom","toNode":"e691d49cc7a596f2","toSide":"right"},
 		{"id":"7391f23de5d86af9","fromNode":"4b44f5982790a486","fromSide":"bottom","toNode":"31251fe4909bc77d","toSide":"top"},
 		{"id":"9e9b26bbe0641fae","fromNode":"9b880a2495f560d4","fromSide":"bottom","toNode":"1b21e9ee7bfd5c6f","toSide":"top"},
-		{"id":"a469bc7caefee947","fromNode":"13c526aacfdd5916","fromSide":"bottom","toNode":"fcc68f46e697410b","toSide":"top"}
+		{"id":"a469bc7caefee947","fromNode":"13c526aacfdd5916","fromSide":"bottom","toNode":"fcc68f46e697410b","toSide":"top"},
+		{"id":"204cd42456f312c0","fromNode":"2d2e0d78d83d8dec","fromSide":"bottom","toNode":"7af7cf0111382c1e","toSide":"top"}
 	],
 	"metadata":{
 		"version":"1.0-1.0",
