@@ -16,7 +16,7 @@
         "startupType": "instant"
       },
       "obsidian-excalidraw-plugin": {
-        "startupType": "disabled"
+        "startupType": "instant"
       },
       "external-rename-handler": {
         "startupType": "instant"
