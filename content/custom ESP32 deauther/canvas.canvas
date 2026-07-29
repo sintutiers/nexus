@@ -28,7 +28,7 @@
 		},
 		{"id":"13c526aacfdd5916","type":"text","text":"the full schematic","x":-1100,"y":386,"width":250,"height":60},
 		{"id":"1b21e9ee7bfd5c6f","type":"file","file":"static_files/Pasted image 20260720223432.png","x":-637,"y":660,"width":774,"height":393},
-		{"id":"7af7cf0111382c1e","type":"text","text":"chiel cant focus on more then 1 project at a time, we also have a gamedev project todo","x":365,"y":-500,"width":250,"height":120},
+		{"id":"7af7cf0111382c1e","type":"text","text":"chiel cant focus on more then 1 project at a time, we also have a gamedev project to do","x":365,"y":-500,"width":250,"height":120},
 		{"id":"695b223ef1581dd4","type":"text","text":"on/off switch","x":-560,"y":-160,"width":250,"height":60},
 		{"id":"5bd9b8fce0bc27de","type":"text","text":"breakout board","x":-560,"y":160,"width":250,"height":60},
 		{"id":"cb85b1b18c214820","type":"text","text":"jumpercables","x":-500,"y":-60,"width":250,"height":60},
