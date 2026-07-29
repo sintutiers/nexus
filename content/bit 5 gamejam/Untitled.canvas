@@ -1,10 +1,15 @@
 {
 	"nodes":[
 		{"id":"641bcfa05f25a205","type":"text","text":"skibidean","x":-234,"y":-174,"width":250,"height":60},
-		{"id":"fc63d8712dc5d784","x":-140,"y":-560,"width":250,"height":60,"type":"text","text":"we are going to use orchestrator"},
-		{"id":"af8ef0865f08b076","x":-109,"y":-440,"width":250,"height":98,"type":"text","text":"link:\n[https://github.com/CraterCrash/godot-orchestrator](https://github.com/CraterCrash/godot-orchestrator \"https://github.com/CraterCrash/godot-orchestrator\")"}
+		{"id":"fc63d8712dc5d784","type":"text","text":"we are going to use orchestrator","x":-140,"y":-560,"width":250,"height":60},
+		{"id":"af8ef0865f08b076","type":"text","text":"link:\n[https://github.com/CraterCrash/godot-orchestrator](https://github.com/CraterCrash/godot-orchestrator \"https://github.com/CraterCrash/godot-orchestrator\")","x":-109,"y":-440,"width":250,"height":98},
+		{"id":"16f868cef2f7c816","x":865,"y":-355,"width":250,"height":60,"type":"text","text":"Themes and out ideas"},
+		{"id":"817888fee0127a79","x":1055,"y":-160,"width":250,"height":60,"type":"text","text":"Chiel's idea:\n"},
+		{"id":"9feede6444c31ab5","x":673,"y":-160,"width":250,"height":60,"type":"text","text":"Deans idea:"}
 	],
 	"edges":[
-		{"id":"066df1c64fbccb21","fromNode":"fc63d8712dc5d784","fromSide":"bottom","toNode":"af8ef0865f08b076","toSide":"top"}
+		{"id":"066df1c64fbccb21","fromNode":"fc63d8712dc5d784","fromSide":"bottom","toNode":"af8ef0865f08b076","toSide":"top"},
+		{"id":"243018a8d7a5a83a","fromNode":"16f868cef2f7c816","fromSide":"bottom","toNode":"9feede6444c31ab5","toSide":"top"},
+		{"id":"d00b0df6da37f9c7","fromNode":"16f868cef2f7c816","fromSide":"bottom","toNode":"817888fee0127a79","toSide":"top"}
 	]
 }
