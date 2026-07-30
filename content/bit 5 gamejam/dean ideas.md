@@ -23,9 +23,9 @@ a game where platforms are 3 states,
 - either they are invicible, visible, or need a certain activation to trigger them. this activation could either be triggering it twice
 something like this: 
 
-![Drawing 2026-07-30 17.29.58.excalidraw](<Drawing 2026-07-30 17.29.58.excalidraw.md>)
+![[Drawing 2026-07-30 17.29.58.excalidraw]]
 or this : (could be both)
-![Drawing 2026-07-30 17.29.58.excalidraw 1](<Drawing 2026-07-30 17.29.58.excalidraw 1.md>)
+![[Drawing 2026-07-30 17.29.58.excalidraw 1]]
 
 and when we have that, we can add collectables in the game.
 - make it a colectable game
