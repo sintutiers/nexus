@@ -26,13 +26,16 @@
 1. https://godotneers.github.io/G.U.I.D.E/
 2. https://github.com/bitbrain/beehave
 3. https://github.com/cashew-olddew/Universal-Transition-Sh
-4. https://github.com/Oen44/yggdrasil
-5. https://github.com/SirRamEsq/SmartShape2D
-6. https://github.com/codevogel/godot_doctor
-7. https://github.com/appsinacup/godot-softbody2d
-8. https://github.com/jitspoe/godot-console
-9. https://github.com/Oen44/Godot-Inventory
-
+4. https://github.com/SirRamEsq/SmartShape2D
+5. https://github.com/jitspoe/godot-console
+6. https://github.com/Oen44/Godot-Inventory
+7. https://github.com/cluttered-code/godot-health-hitbox-hurtbox
+8. https://github.com/TaloDev/godot
+9. https://github.com/glass-brick/Scene-Manager
+10. https://github.com/foxssake/netfox 
+11. https://github.com/Nokorpo/gato-godot-accessibility-toolkit
+12. https://github.com/Koisuji02/GodotShaderWarmup
+13. https://github.com/NodotProject/godot-torrent
 
 
 ---

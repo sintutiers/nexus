@@ -19,8 +19,6 @@ unlisted: "true"
 
 ## Awesome Godot
 
-[![Godot Engine logo](https://github.com/godotengine/awesome-godot/raw/master/godot-logo.svg)](https://godotengine.org/)
-
 A curated list of [free/libre](https://www.gnu.org/philosophy/free-sw.html) games, plugins, add-ons and scripts for Godot.
 
 Looking for third-party programming language support in Godot? See [Vivraan/godot-lang-support](https://github.com/Vivraan/godot-lang-support).
