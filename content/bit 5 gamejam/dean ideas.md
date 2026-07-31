@@ -25,23 +25,15 @@ and when we have that, we can add collectables in the game.
 - make it a colectable game
 - make it a roughlite, where you can upgrade shit
 - make it a puzzle game
+top down 2d
 
-# technical:
+crunched together idea:
 
-- built with godt 4.7.1, when blazium support for 4.7 comes out we will switch to that.
-- for pixel art we wil use pixelorama 1.2
-- for music i will use strudel 1.13.4
-- for documentation we will use obsidian 
-- for version control we will use git 2.55.0, lazygit 0.63.1, and github desktop 
+a light source that reveals hidden/darked paths and reveals hidden collectables/items that let you progress further.
+items can also upgrade you light source to be bigger.(roughlite element)
 
-# godot specific/ GDD
+goal of the game is the progress further XOR
 
-- use [maacks Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.5.0) as template
-- use debug menu 1.2 for in game debugging
-- use phantom camara for better camara
-- script - IDE for better UX
-- godot resrouce cleaner for a cleanup
-- dialogue manager for dialogue
-- godot doctor for in-editor checks
-- turn all static type warnings on
-- use rapier for better 2d physics, and jolt for better 3d physics
+
+
+![Drawing 2026-07-31 13.41.09.excalidraw](<Drawing 2026-07-31 13.41.09.excalidraw.md>)
