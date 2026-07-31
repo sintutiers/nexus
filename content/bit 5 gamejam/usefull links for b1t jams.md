@@ -3,6 +3,9 @@ https://itch.io/jam/b1t-jam-2/results
 https://itch.io/jam/b1t-jam-3/results
 https://itch.io/jam/b1t-jam-4/results
 
+https://github.com/godotengine/awesome-godot
+[godotengineawesome-godot A curated list of freelibre plugins, scripts and add-ons for Godot](<godotengineawesome-godot A curated list of freelibre plugins, scripts and add-ons for Godot.md>)
+
 ---
 
 look into for exaples
@@ -10,3 +13,4 @@ look into for exaples
 - https://github.com/KoBeWi/Metroidvania-System
 - https://github.com/C76GN/gf-framework
 - https://godotengine.github.io/godot-demo-projects/
+- 

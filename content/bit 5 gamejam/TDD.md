@@ -10,13 +10,32 @@
 
 ## godot specific:
 
-- use [maacks Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.5.0) as template
-- use debug menu 1.2 for in game debugging https://github.com/antzGames/Antz-Debug-Menu
-- use phantom camara for better camara
-- script - IDE for better UX
-- godot resrouce cleaner for a cleanup
-- dialogue manager for dialogue
-- godot doctor for in-editor checks
-- turn all static type warnings on
-- use rapier for better 2d physics
-- https://github.com/GDQuest/GDScript-formatter
+1. use [maacks Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.5.0) as template
+2. use debug menu 1.2 for in game debugging https://github.com/antzGames/Antz-Debug-Menu
+3. use phantom camara for better camara
+4. script - IDE for better UX
+5. godot resrouce cleaner for a cleanup
+6. dialogue manager for dialogue
+7. turn all static type warnings on
+8. use rapier for better 2d physics(cross platform sync)
+9. https://github.com/GDQuest/GDScript-formatter
+10. Kanban Tasks
+11. https://github.com/Fifut/project-time-tracker
+
+### maybe for future
+1. https://godotneers.github.io/G.U.I.D.E/
+2. https://github.com/bitbrain/beehave
+3. https://github.com/cashew-olddew/Universal-Transition-Sh
+4. https://github.com/Oen44/yggdrasil
+5. https://github.com/SirRamEsq/SmartShape2D
+6. https://github.com/codevogel/godot_doctor
+7. https://github.com/appsinacup/godot-softbody2d
+8. https://github.com/jitspoe/godot-console
+9. https://github.com/Oen44/Godot-Inventory
+
+
+
+---
+
+
+![usefull links for b1t jams](<usefull links for b1t jams.md>)
