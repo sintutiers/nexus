@@ -3,12 +3,14 @@
 		{"id":"16f868cef2f7c816","type":"text","text":"Themes and our ideas","x":865,"y":-355,"width":250,"height":60},
 		{"id":"817888fee0127a79","type":"text","text":"Chiel's idea:\nopen world with if if we find a composer or if we are not capable of it ambient noises (no music, only sound effects). because i think the theme will be night i want to do it in white and a\nblue-ish black. my aim is to a zelda type game, otherwise a non combat open world (yume nikki(again), animal crossing, stardew valley, etc.).","x":865,"y":-248,"width":250,"height":380},
 		{"id":"643c2954c8cd41c5","type":"text","text":"i want to make the game based on the echo flower area in undertale","x":560,"y":88,"width":250,"height":88},
-		{"id":"2b0871d69a4c06e3","x":1250,"y":322,"width":400,"height":298,"type":"file","file":"static_files/Pasted image 20260731133401.png"},
-		{"id":"b40b4b5de5a86e87","x":1360,"y":69,"width":250,"height":126,"type":"text","text":"the hotlands were also a cool thing to talk about to make a little platforming section in the game"},
+		{"id":"2b0871d69a4c06e3","type":"file","file":"static_files/Pasted image 20260731133401.png","x":1250,"y":322,"width":400,"height":298},
+		{"id":"b40b4b5de5a86e87","type":"text","text":"the hotlands were also a cool thing to talk about to make a little platforming section in the game","x":1360,"y":69,"width":250,"height":126},
 		{"id":"641bcfa05f25a205","type":"text","text":"skibidean","x":-109,"y":-58,"width":250,"height":60},
 		{"id":"fc63d8712dc5d784","type":"text","text":"we are going to use orchestrator","x":260,"y":-580,"width":250,"height":60},
 		{"id":"af8ef0865f08b076","type":"text","text":"link:\n[https://github.com/CraterCrash/godot-orchestrator](https://github.com/CraterCrash/godot-orchestrator \"https://github.com/CraterCrash/godot-orchestrator\")","x":310,"y":-393,"width":250,"height":98},
-		{"id":"02a700e68081311c","type":"file","file":"static_files/Pasted image 20260731132750.png","x":780,"y":320,"width":400,"height":300}
+		{"id":"d4cf44b596f383c3","type":"file","file":"static_files/Pasted image 20260731140006.png","x":240,"y":357,"width":400,"height":225},
+		{"id":"391a4ff715006a37","type":"text","text":"damaging system could be like undyne's chase where you only have environmental damage","x":240,"y":88,"width":250,"height":130},
+		{"id":"02a700e68081311c","type":"file","file":"static_files/Pasted image 20260731132750.png","x":760,"y":322,"width":400,"height":300}
 	],
 	"edges":[
 		{"id":"066df1c64fbccb21","fromNode":"fc63d8712dc5d784","fromSide":"bottom","toNode":"af8ef0865f08b076","toSide":"top"},
@@ -16,6 +18,8 @@
 		{"id":"8e29301560b27fc4","fromNode":"817888fee0127a79","fromSide":"bottom","toNode":"02a700e68081311c","toSide":"top"},
 		{"id":"d23ae6c0cbc1dbd0","fromNode":"643c2954c8cd41c5","fromSide":"bottom","toNode":"02a700e68081311c","toSide":"top"},
 		{"id":"4230ace5c33d710a","fromNode":"817888fee0127a79","fromSide":"bottom","toNode":"2b0871d69a4c06e3","toSide":"top"},
-		{"id":"2ee014bd2dbe3905","fromNode":"b40b4b5de5a86e87","fromSide":"bottom","toNode":"2b0871d69a4c06e3","toSide":"top"}
+		{"id":"2ee014bd2dbe3905","fromNode":"b40b4b5de5a86e87","fromSide":"bottom","toNode":"2b0871d69a4c06e3","toSide":"top"},
+		{"id":"4f96d890ca33e6f4","fromNode":"817888fee0127a79","fromSide":"bottom","toNode":"d4cf44b596f383c3","toSide":"top"},
+		{"id":"1c250c50059b9faa","fromNode":"391a4ff715006a37","fromSide":"bottom","toNode":"d4cf44b596f383c3","toSide":"top"}
 	]
 }
