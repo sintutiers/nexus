@@ -18,7 +18,7 @@ a game where platforms are 3 states,
 something like this: 
 
 ![Drawing 2026-07-30 17.29.58.excalidraw](<Drawing 2026-07-30 17.29.58.excalidraw.md>)
-or this : (could be both)
+[XOR](<Exclusive or.md>)
 ![Drawing 2026-07-30 17.29.58.excalidraw 1](<Drawing 2026-07-30 17.29.58.excalidraw 1.md>)
 
 and when we have that, we can add collectables in the game.
@@ -27,12 +27,17 @@ and when we have that, we can add collectables in the game.
 - make it a puzzle game
 top down 2d
 
-crunched together idea:
+### crunched together idea:
 
-a light source that reveals hidden/darked paths and reveals hidden collectables/items that let you progress further.
+a light source that reveals hidden/darked paths,
+light source also reveals hidden collectables/items that let you progress further.
+
 items can also upgrade you light source to be bigger.(roughlite element)
 
-goal of the game is the progress further XOR
+damage system for player, with environment damage.(squid game glass walk?)
+
+goal of the game:
+- is the progress further with collecting objects [XOR](<Exclusive or.md>) obtaining objects that unlock further areas
 
 
 
