@@ -1,12 +1,10 @@
 ---
 title: "godotengine/awesome-godot: A curated list of free/libre plugins, scripts and add-ons for Godot"
-source: "https://github.com/godotengine/awesome-godot"
-author:
-published:
+source: https://github.com/godotengine/awesome-godot
 created: 2026-07-31
-description: "A curated list of free/libre plugins, scripts and add-ons for Godot - godotengine/awesome-godot"
+description: A curated list of free/libre plugins, scripts and add-ons for Godot - godotengine/awesome-godot
 tags:
-  - "clippings"
+  - clippings
 publish: "true"
 unlisted: "true"
 ---

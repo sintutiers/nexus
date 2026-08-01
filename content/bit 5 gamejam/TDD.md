@@ -37,4 +37,14 @@
 ---
 
 
-![usefull links for b1t jams](<usefull links for b1t jams.md>)
+![[usefull links for b1t jams]]
+
+
+---
+# code
+
+code must be:
+[OOP](https://en.wikipedia.org/wiki/Object-oriented_programming)
+[loose coupling](https://en.wikipedia.org/wiki/Loose_coupling)
+[gdscript style guide](https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html)
+readable by regular mortals
