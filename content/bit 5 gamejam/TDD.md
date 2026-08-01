@@ -8,20 +8,17 @@
 - for code we use the [GPL2+](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 - for assets we use [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-## godot specific:
-
-1. use [maacks Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.5.0) as template
-2. use debug menu 1.2 for in game debugging https://github.com/antzGames/Antz-Debug-Menu
-3. use phantom camara for better camara
-4. script - IDE for better UX
-5. godot resrouce cleaner for a cleanup
-6. dialogue manager for dialogue
-7. turn all static type warnings on
-8. use rapier for better 2d physics(cross platform sync)
-9. https://github.com/GDQuest/GDScript-formatter
-10. Kanban Tasks
-11. https://github.com/Fifut/project-time-tracker
-
+### plugins
+1. use [Maaack's Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.5.0) v1.5 as template
+2. use [Debug Menu](https://github.com/antzGames/Antz-Debug-Menu) v1.2 for in-game debugging
+3. use [Phantom Camera](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.3) v0.11.0.3 for better camera
+4. use [Script IDE](https://github.com/Maran23/script-ide/releases/tag/2.2.3) v2.2.3 for better UX 
+5. use [Godot Resource Cleaner](https://github.com/ijoschek/GodotResourceCleaner/releases/tag/v0.7.1-beta) v0.7.1 for cleanup
+6. use [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v3.10.5) v3.10.5 for dialogue 
+7. use [Godot Rapier Physics](https://github.com/appsinacup/godot-rapier-physics/releases/tag/v0.8.40) v0.8.40 for better 2D physics (cross-platform sync) 
+8. use [GDScript Formatter](https://github.com/GDQuest/GDScript-formatter/releases/tag/0.24.0) v0.24.0 for code styling 
+9. use [Project Time Tracker](https://github.com/Fifut/project-time-tracker/releases/tag/v2.0.8) v2.0.8 for work time 
+10. use [Godot Health / Hitbox / Hurtbox](https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4) v5.0.4 for template hitbox 
 ### maybe for future
 1. https://godotneers.github.io/G.U.I.D.E/
 2. https://github.com/bitbrain/beehave
@@ -29,13 +26,12 @@
 4. https://github.com/SirRamEsq/SmartShape2D
 5. https://github.com/jitspoe/godot-console
 6. https://github.com/Oen44/Godot-Inventory
-7. https://github.com/cluttered-code/godot-health-hitbox-hurtbox
-8. https://github.com/TaloDev/godot
-9. https://github.com/glass-brick/Scene-Manager
-10. https://github.com/foxssake/netfox 
-11. https://github.com/Nokorpo/gato-godot-accessibility-toolkit
-12. https://github.com/Koisuji02/GodotShaderWarmup
-13. https://github.com/NodotProject/godot-torrent
+7. https://github.com/TaloDev/godot
+8. https://github.com/glass-brick/Scene-Manager
+9. https://github.com/foxssake/netfox 
+10. https://github.com/Nokorpo/gato-godot-accessibility-toolkit
+11. https://github.com/Koisuji02/GodotShaderWarmup
+12. https://github.com/NodotProject/godot-torrent
 
 
 ---
