@@ -1,8 +1,8 @@
 {
 	"nodes":[
+		{"id":"db12b9b24517288c","type":"group","x":-1640,"y":-1480,"width":2720,"height":1060,"label":"dev tools"},
 		{"id":"8af7298328fd6e00","type":"group","x":-3840,"y":-480,"width":2540,"height":1120,"label":"systems and gimmicks"},
 		{"id":"784f34dba844953b","type":"group","x":-200,"y":-320,"width":1920,"height":1080,"label":"main idea and themes"},
-		{"id":"db12b9b24517288c","type":"group","x":-1640,"y":-1480,"width":1140,"height":920,"label":"dev tools"},
 		{"id":"dacef85ebac02475","type":"group","x":-3120,"y":-1100,"width":1380,"height":500,"label":"licenses and assets"},
 		{"id":"643c2954c8cd41c5","type":"text","text":"i want to make the game based on the echo flower area in undertale","x":420,"y":163,"width":250,"height":88},
 		{"id":"02a700e68081311c","type":"file","file":"static_files/Pasted image 20260731132750.png","x":620,"y":397,"width":400,"height":300},
@@ -61,11 +61,23 @@
 		{"id":"acd78196a17e9868","x":-1140,"y":-1100,"width":260,"height":60,"type":"text","text":"folder orginization `res://`"},
 		{"id":"4ef1f29dbe87d26a","x":-820,"y":-1000,"width":250,"height":60,"type":"text","text":"addon folder"},
 		{"id":"1db6f28acf15eb49","x":-820,"y":-900,"width":250,"height":60,"type":"text","text":"assets folder"},
-		{"id":"0bcab3d6bd20f3e4","x":-820,"y":-820,"width":250,"height":60,"type":"text","text":"resources folder"},
-		{"id":"5da764ad59a28841","x":-820,"y":-740,"width":250,"height":60,"type":"text","text":"scenes folder"},
-		{"id":"156d90b196955ede","x":-820,"y":-660,"width":250,"height":60,"type":"text","text":"scripts folder"},
 		{"id":"6092256589e6817a","x":-1520,"y":-1180,"width":250,"height":60,"type":"text","text":"[scene orginization](https://docs.godotengine.org/en/latest/tutorials/best_practices/scene_organization.html)"},
-		{"id":"3fa7b4a2c05456f4","x":-1480,"y":-1020,"width":250,"height":60,"type":"text","text":"level (node2d)"}
+		{"id":"3fa7b4a2c05456f4","x":-1480,"y":-1020,"width":250,"height":60,"type":"text","text":"level (node2d)"},
+		{"id":"156d90b196955ede","x":-840,"y":-780,"width":250,"height":60,"type":"text","text":"scripts folder"},
+		{"id":"a7be9d8114cb011e","x":-440,"y":-1180,"width":250,"height":60,"type":"text","text":"art folder"},
+		{"id":"50fe46179bfab25f","x":-440,"y":-1080,"width":250,"height":60,"type":"text","text":"atribution folder"},
+		{"id":"54c64951e01569ec","x":-440,"y":-1000,"width":250,"height":60,"type":"text","text":"audio folder"},
+		{"id":"2a3775a62b19e5df","x":-440,"y":-920,"width":250,"height":60,"type":"text","text":"dialogue folder"},
+		{"id":"5da764ad59a28841","x":-440,"y":-840,"width":250,"height":60,"type":"text","text":"scenes folder"},
+		{"id":"a8777040ed231342","x":-100,"y":-1060,"width":250,"height":60,"type":"text","text":"entities folder"},
+		{"id":"2cb18df1d99e4aec","x":-100,"y":-960,"width":250,"height":60,"type":"text","text":"game folder"},
+		{"id":"fa0b79bc2377f777","x":240,"y":-1120,"width":250,"height":60,"type":"text","text":"levels"},
+		{"id":"04b07033ac711f2d","x":240,"y":-1000,"width":250,"height":60,"type":"text","text":"scripts"},
+		{"id":"73f0deb9602e55e5","x":260,"y":-900,"width":250,"height":60,"type":"text","text":"overlays"},
+		{"id":"f20c6e4233c52184","x":220,"y":-760,"width":250,"height":60,"type":"text","text":"menu"},
+		{"id":"9340e9663002da0b","x":-100,"y":-800,"width":250,"height":60,"type":"text","text":"ui"},
+		{"id":"216c1d697c3f86dc","x":620,"y":-820,"width":250,"height":60,"type":"text","text":"options"},
+		{"id":"48b319189f9d4d2f","x":640,"y":-680,"width":250,"height":60,"type":"text","text":"main menu"}
 	],
 	"edges":[
 		{"id":"d00b0df6da37f9c7","fromNode":"16f868cef2f7c816","fromSide":"bottom","toNode":"817888fee0127a79","toSide":"top"},
@@ -140,8 +152,20 @@
 		{"id":"8cb9b10bcfac6292","fromNode":"b96019040a9af65a","fromSide":"bottom","toNode":"acd78196a17e9868","toSide":"top"},
 		{"id":"dcd3f9aa4ed36798","fromNode":"acd78196a17e9868","fromSide":"bottom","toNode":"4ef1f29dbe87d26a","toSide":"left"},
 		{"id":"09fa8045c3a1e390","fromNode":"acd78196a17e9868","fromSide":"bottom","toNode":"1db6f28acf15eb49","toSide":"left"},
-		{"id":"fd991b00a3bb4387","fromNode":"acd78196a17e9868","fromSide":"bottom","toNode":"0bcab3d6bd20f3e4","toSide":"left"},
-		{"id":"bbf17912c70a48d0","fromNode":"acd78196a17e9868","fromSide":"bottom","toNode":"5da764ad59a28841","toSide":"left"},
-		{"id":"3ea04b0c4198fe01","fromNode":"acd78196a17e9868","fromSide":"bottom","toNode":"156d90b196955ede","toSide":"left"}
+		{"id":"3ea04b0c4198fe01","fromNode":"acd78196a17e9868","fromSide":"bottom","toNode":"156d90b196955ede","toSide":"left"},
+		{"id":"d52792f32555f2ea","fromNode":"1db6f28acf15eb49","fromSide":"right","toNode":"a7be9d8114cb011e","toSide":"left"},
+		{"id":"2f76337a494651af","fromNode":"1db6f28acf15eb49","fromSide":"right","toNode":"50fe46179bfab25f","toSide":"left"},
+		{"id":"126a0f35313003cb","fromNode":"1db6f28acf15eb49","fromSide":"right","toNode":"54c64951e01569ec","toSide":"left"},
+		{"id":"5551a8c59f4f42c0","fromNode":"1db6f28acf15eb49","fromSide":"right","toNode":"2a3775a62b19e5df","toSide":"left"},
+		{"id":"294a2f778ebe9b34","fromNode":"1db6f28acf15eb49","fromSide":"right","toNode":"5da764ad59a28841","toSide":"left"},
+		{"id":"605bad74aa9a34b8","fromNode":"5da764ad59a28841","fromSide":"right","toNode":"a8777040ed231342","toSide":"left"},
+		{"id":"c33e1537a585f0e1","fromNode":"5da764ad59a28841","fromSide":"right","toNode":"2cb18df1d99e4aec","toSide":"left"},
+		{"id":"1b366181b7728bb8","fromNode":"2cb18df1d99e4aec","fromSide":"right","toNode":"fa0b79bc2377f777","toSide":"left"},
+		{"id":"9dc9da326013c273","fromNode":"2cb18df1d99e4aec","fromSide":"right","toNode":"04b07033ac711f2d","toSide":"left"},
+		{"id":"eb2acfdfd1ed873b","fromNode":"2cb18df1d99e4aec","fromSide":"right","toNode":"73f0deb9602e55e5","toSide":"left"},
+		{"id":"e803de15607b00c1","fromNode":"5da764ad59a28841","fromSide":"right","toNode":"9340e9663002da0b","toSide":"left"},
+		{"id":"c3f5bfe38fd33193","fromNode":"9340e9663002da0b","fromSide":"right","toNode":"f20c6e4233c52184","toSide":"left"},
+		{"id":"29e1d100ac130ace","fromNode":"f20c6e4233c52184","fromSide":"right","toNode":"48b319189f9d4d2f","toSide":"left"},
+		{"id":"73bf26f6cefa9b8b","fromNode":"f20c6e4233c52184","fromSide":"right","toNode":"216c1d697c3f86dc","toSide":"left"}
 	]
 }
