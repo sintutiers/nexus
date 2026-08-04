@@ -48,3 +48,15 @@ code must be:
 [loose coupling](https://en.wikipedia.org/wiki/Loose_coupling)
 [gdscript style guide](https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html)
 readable by regular mortals
+
+---
+
+code must be:
+[OOP](https://en.wikipedia.org/wiki/Object-oriented_programming)
+[loose coupling](https://en.wikipedia.org/wiki/Loose_coupling)
+readable by regular mortals
+
+i want a system for managing, collectables, and battary system, and inventory, and healthbar, progestion system, safe system
+- i dont need a one size fit all, i need a one size fit some, can i use database? sqlite?
+- make everything a different component?
+- autoload for every system/script?
