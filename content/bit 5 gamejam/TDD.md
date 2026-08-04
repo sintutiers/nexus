@@ -33,11 +33,11 @@
 11. https://github.com/Koisuji02/GodotShaderWarmup
 12. https://github.com/NodotProject/godot-torrent
 
-
+https://github.com/Modern-Arts-Research-Stories-Next/setup-gdscript-formatter
 ---
 
 
-![[usefull links for b1t jams]]
+![usefull links for b1t jams](<usefull links for b1t jams.md>)
 
 
 ---
@@ -48,3 +48,9 @@ code must be:
 [loose coupling](https://en.wikipedia.org/wiki/Loose_coupling)
 [gdscript style guide](https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html)
 readable by regular mortals
+
+---
+how to make certain area2d be invisible until they come in my specified area2d, so that i can see them.
+1. could do canvas layer on top of eacht other, then assignt a group with visible(?) and add it to that.( but it need to only reveal what is in the players area2d circel, i only know how to hide whole objects)
+2. have a fullscreen sprite with a hole the size of the player, and just hide everything behind that(masive performance issues, buts its a gamejam, so it matters less)
+3. have a area2d circel for player, and objects i want to hide are also area2d with a "hidden" group atached to them, and make it so that the player can only see that when closeby

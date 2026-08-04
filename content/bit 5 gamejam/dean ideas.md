@@ -42,3 +42,7 @@ goal of the game:
 
 
 ![Drawing 2026-07-31 13.41.09.excalidraw](<Drawing 2026-07-31 13.41.09.excalidraw.md>)
+
+
+
+
