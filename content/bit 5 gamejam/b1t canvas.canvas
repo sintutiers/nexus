@@ -71,7 +71,7 @@
 		{"id":"7924452c830f72a2","x":-880,"y":4111,"width":250,"height":100,"type":"text","text":"try to find the right preset on my drum kit. probably brushes"},
 		{"id":"43b99b8951af09b9","x":500,"y":3520,"width":250,"height":60,"type":"text","text":"maybe try something microtonal???"},
 		{"id":"fcde412b94789dc4","x":470,"y":3880,"width":300,"height":400,"type":"file","file":"static_files/Pasted image 20260805151346.png"},
-		{"id":"97e3436549f70649","x":375,"y":3300,"width":250,"height":60,"type":"text","text":"maybe multiple songs"},
+		{"id":"97e3436549f70649","x":375,"y":3300,"width":250,"height":60,"type":"text","text":"maybe multiple songs?"},
 		{"id":"cabd81438e50e47a","x":-920,"y":3150,"width":250,"height":220,"type":"text","text":"my focusrite fucking shocked me when i plugged in my peavey so vox it is. although i do want to try out my trace elliot head....\n\ngotta be careful with plugging shit in though"},
 		{"id":"23846e5603d34031","x":-475,"y":3402,"width":250,"height":60,"type":"text","text":"find out how to connect my drums to the focusrite"},
 		{"id":"95bc3f7749046db8","x":-1045,"y":3500,"width":250,"height":60,"type":"text","text":"hurt me like a motherfucker"},
@@ -260,6 +260,7 @@
 		{"id":"2b196104106eee93","fromNode":"68cfaf22509eea21","fromSide":"right","toNode":"6fc6a104a24cfb2d","toSide":"left"},
 		{"id":"71fe548e0ae00bee","fromNode":"641bcfa05f25a205","fromSide":"right","toNode":"68cfaf22509eea21","toSide":"left"},
 		{"id":"607c857eeba229ea","fromNode":"d25387e44715dba5","fromSide":"right","toNode":"641bcfa05f25a205","toSide":"left"},
-		{"id":"204a2635e833dd7b","fromNode":"a49cce45626410de","fromSide":"right","toNode":"6fc6a104a24cfb2d","toSide":"left"}
+		{"id":"204a2635e833dd7b","fromNode":"a49cce45626410de","fromSide":"right","toNode":"6fc6a104a24cfb2d","toSide":"left"},
+		{"id":"073be1656557c011","fromNode":"97e3436549f70649","fromSide":"bottom","toNode":"43b99b8951af09b9","toSide":"top"}
 	]
 }
