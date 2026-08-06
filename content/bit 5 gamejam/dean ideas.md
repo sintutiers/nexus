@@ -42,3 +42,7 @@ goal of the game:
 
 
 ![Drawing 2026-07-31 13.41.09.excalidraw](<Drawing 2026-07-31 13.41.09.excalidraw.md>)
+---
+
+for next gamejam, change: signals out, no method calls in
+Movement and Dialogue call into other components and change their state directly. Instead they should just emit a signal about what happened, and let the other component listen and react on its own.
