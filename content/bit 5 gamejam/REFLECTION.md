@@ -1,0 +1,12 @@
+- work out how git (version control works)/work with branches.
+- talk more in the group chat, instead of DM
+- implement kanban(in github)
+- more and better communication
+	- prioritization
+	- dialogue
+- implement and do game design sooner
+- if doing 3d, implement it as .gltf
+- backlog for later: git jj commandline
+- mirror the repositories to codeberg and radicle
+- Dean: publish the game on itch, instead of ci github pages
+- dean: fix CI/CD
