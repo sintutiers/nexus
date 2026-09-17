@@ -4,16 +4,12 @@
     "/.+\\.tldraw\\.md$/"
   ],
   "includePaths": [],
-  "isAdvancedRenameAndDeleteHandlerSuggestionDeclined": false,
   "linkConversionMode": "OnSaveCommand",
-  "linkStyleMode": "ObsidianSettingsDefault",
-  "proposedShouldHandleRenames": null,
   "shouldAllowEmptyEmbedAlias": true,
-  "shouldAppendFileNameWhenDemotingEmbeds": false,
-  "shouldCreateMissingNotes": false,
+  "shouldAutomaticallyUpdateLinksOnRenameOrMove": true,
   "shouldIncludeAttachmentExtensionToEmbedAlias": true,
   "shouldNormalizeFileLinks": true,
-  "shouldResolveLinksViaAliases": false,
+  "shouldPreserveExistingLinkStyle": false,
   "shouldUseAngleBrackets": true,
   "shouldUseLeadingDotForRelativePaths": true,
   "shouldUseLeadingSlashForAbsolutePaths": true

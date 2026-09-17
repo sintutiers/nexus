@@ -1,27 +1,21 @@
 {
-  "attachmentUnitFolderPaths": [],
   "collectAttachmentUsedByMultipleNotesMode": "Skip",
   "consistencyReportFile": "consistency-report.md",
+  "emptyFolderBehavior": "DeleteWithEmptyParents",
   "excludePaths": [
     "static_files/Excalidraw"
   ],
   "excludePathsFromAttachmentCollecting": [],
   "includePaths": [],
-  "isAdvancedRenameAndDeleteHandlerSuggestionDeclined": false,
-  "maxVaultRootPathLength": 0,
   "moveAttachmentToProperFolderUsedByMultipleNotesMode": "CopyAll",
-  "proposedRenameDeleteSettings": null,
   "shouldAddCommandsToFileMenu": true,
+  "shouldChangeNoteBacklinksDisplayText": true,
   "shouldCollectAttachmentsAutomatically": true,
-  "shouldCreateNoteToPreserveOriginalName": false,
-  "shouldEnsurePathCompatibilityOnAndroid": false,
-  "shouldEnsurePathCompatibilityOnEveryPlatform": false,
-  "shouldEnsurePathCompatibilityOnIos": false,
-  "shouldEnsurePathCompatibilityOnLinux": true,
-  "shouldEnsurePathCompatibilityOnMacOs": false,
-  "shouldEnsurePathCompatibilityOnWindows": false,
+  "shouldDeleteAttachmentsWithNote": false,
+  "shouldDeleteExistingFilesWhenMovingNote": false,
+  "shouldMoveAttachmentsWithNote": false,
   "shouldShowBackupWarning": false,
-  "sidecarNoteNamePattern": "{{fileName}}.md",
+  "shouldUpdateLinks": true,
   "treatAsAttachmentExtensions": [
     ".excalidraw.md"
   ]
