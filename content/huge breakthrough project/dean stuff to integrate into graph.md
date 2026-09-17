@@ -1,0 +1,5 @@
+- switch code liscene from GPLv2+ to EUPLv1.2+
+- transform this site into a public site
+- update github orginization page
+- money page: donation page with crypto link en librapay, en patraon?
+- create image for our game dev group
