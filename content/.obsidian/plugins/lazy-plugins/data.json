@@ -32,6 +32,18 @@
       },
       "advanced-canvas": {
         "startupType": "disabled"
+      },
+      "advanced-rename-and-delete-handler": {
+        "startupType": "instant"
+      },
+      "obsidian-auto-link-title": {
+        "startupType": "disabled"
+      },
+      "backlink-cache": {
+        "startupType": "instant"
+      },
+      "obsidian-style-settings": {
+        "startupType": "instant"
       }
     }
   }

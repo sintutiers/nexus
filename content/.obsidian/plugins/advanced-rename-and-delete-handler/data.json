@@ -1,8 +1,7 @@
 {
   "emptyFolderBehavior": "DeleteWithEmptyParents",
   "excludePaths": [
-    "/.+\\.excalidraw\\.md$/",
-    "/.+\\.tldraw\\.md$/"
+    "static_files/Excalidraw"
   ],
   "includePaths": [],
   "notePriorities": [],
