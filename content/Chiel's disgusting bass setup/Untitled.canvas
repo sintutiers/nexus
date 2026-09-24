@@ -42,7 +42,8 @@
 		{"id":"f2751d1b4b13a5b4","type":"text","text":"only one problem...\nI am a huge gear snob and i want to make everything as unique as possible. so I will replace the pickup and the electronics so that i could make it as wild and as close to peter steele's bass as possible.","x":1600,"y":660,"width":250,"height":257},
 		{"id":"ac2699951b2255a0","type":"text","text":"so for the pickup I will choose an EMG MMHZ pickup (yes, I know Peter Steele used a Seymour Duncan SMB4D, f#$k you) and I will HEAVILY use the solderless system by EMG so that i only have a volume and a killswitch (like Peter Steele had).","x":1420,"y":1060,"width":250,"height":280},
 		{"id":"87ac337c8fcd5874","x":1760,"y":1580,"width":250,"height":360,"type":"text","text":"taking a nights thinking I have decided to not do a kill switch for expenses, so I will just run everything with a volume and tone. for the aesthetics I chose to get all the chrome hardware in black (tuners, bridge tailpiece, knobs, etc.) and put an black adonized aluminum pickguard on the bass so it has a more rough look."},
-		{"id":"c95662f63cf60ad3","x":2160,"y":1740,"width":250,"height":60,"type":"text","text":"beefy slinky's it is!"}
+		{"id":"c95662f63cf60ad3","x":2160,"y":1740,"width":250,"height":60,"type":"text","text":"beefy slinky's it is!"},
+		{"id":"98acb759fb852357","x":-560,"y":940,"width":250,"height":60,"type":"text","text":"f#%ck 'em, I'm going to do it"}
 	],
 	"edges":[
 		{"id":"5ca55ae4f23d3cf7","fromNode":"8d5b0183513fb359","fromSide":"bottom","toNode":"e354b515c8f9b984","toSide":"top"},
@@ -84,6 +85,7 @@
 		{"id":"0709f8e6697c5a5e","fromNode":"292baca7cb8d7609","fromSide":"bottom","toNode":"f73db9c671bcafc7","toSide":"top"},
 		{"id":"f7d99b69268837ba","fromNode":"ac2699951b2255a0","fromSide":"bottom","toNode":"87ac337c8fcd5874","toSide":"top"},
 		{"id":"5efcd6508e12a257","fromNode":"f73db9c671bcafc7","fromSide":"bottom","toNode":"87ac337c8fcd5874","toSide":"top"},
-		{"id":"bd0a91e3a0d846c5","fromNode":"f4eb3153a7b5fcb7","fromSide":"bottom","toNode":"c95662f63cf60ad3","toSide":"top"}
+		{"id":"bd0a91e3a0d846c5","fromNode":"f4eb3153a7b5fcb7","fromSide":"bottom","toNode":"c95662f63cf60ad3","toSide":"top"},
+		{"id":"aa120ca43c1ce71e","fromNode":"842d70682910105f","fromSide":"left","toNode":"98acb759fb852357","toSide":"top"}
 	]
 }
