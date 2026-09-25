@@ -10,15 +10,7 @@
   "isAdvancedRenameAndDeleteHandlerSuggestionDeclined": false,
   "maxVaultRootPathLength": 0,
   "moveAttachmentToProperFolderUsedByMultipleNotesMode": "CopyAll",
-  "proposedRenameDeleteSettings": {
-    "excludePaths": [
-      "static_files/Excalidraw"
-    ],
-    "includePaths": [],
-    "treatAsAttachmentExtensions": [
-      ".excalidraw.md"
-    ]
-  },
+  "proposedRenameDeleteSettings": null,
   "shouldAddCommandsToFileMenu": true,
   "shouldCollectAttachmentsAutomatically": true,
   "shouldCreateNoteToPreserveOriginalName": false,
