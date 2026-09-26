@@ -1,8 +1,6 @@
 {
   "emptyFolderBehavior": "DeleteWithEmptyParents",
-  "excludePaths": [
-    "static_files/Excalidraw"
-  ],
+  "excludePaths": [],
   "includePaths": [],
   "notePriorities": [],
   "rescueAttachmentUsedByMultipleNotesMode": "prompt",
