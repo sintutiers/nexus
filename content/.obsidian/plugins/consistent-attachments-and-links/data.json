@@ -1,18 +1,13 @@
 {
-  "attachmentUnitFolderPaths": [],
-  "collectAttachmentUsedByMultipleNotesMode": "Skip",
   "consistencyReportFile": "consistency-report.md",
   "excludePaths": [
     "static_files/Excalidraw"
   ],
-  "excludePathsFromAttachmentCollecting": [],
   "includePaths": [],
-  "isAdvancedRenameAndDeleteHandlerSuggestionDeclined": false,
+  "isCustomAttachmentLocationSuggestionDeclined": false,
   "maxVaultRootPathLength": 0,
-  "moveAttachmentToProperFolderUsedByMultipleNotesMode": "CopyAll",
+  "proposedCollectSettings": null,
   "proposedRenameDeleteSettings": null,
-  "shouldAddCommandsToFileMenu": true,
-  "shouldCollectAttachmentsAutomatically": true,
   "shouldCreateNoteToPreserveOriginalName": false,
   "shouldEnsurePathCompatibilityOnAndroid": false,
   "shouldEnsurePathCompatibilityOnEveryPlatform": false,

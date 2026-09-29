@@ -1,10 +1,9 @@
 ---
-unlisted: false
+uid: 2hf1v0dzkcf3g88vmxapw
 title: Game/General Design Document
-publish: true
-modified: 2026-05-25
+modified: Tuesday, September 29th 2026, 7:28 pm
 id: 01KQX7QGYDTFACK8WNQW02D506
-created: 2026-05-05
+created: Sunday, September 20th 2026, 8:57 pm
 ---
 
 # Game/General Design Document

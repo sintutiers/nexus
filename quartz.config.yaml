@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Sintutiers
+  pageTitle: Sintutiers Group Site!
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -12,6 +12,7 @@ configuration:
     - private
     - templates
     - .obsidian
+    - .trash
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
@@ -76,13 +77,13 @@ plugins:
   - source: "@quartz-community/crawl-links"
     enabled: true
     options:
-      markdownLinkResolution: shortest
+      markdownLinkResolution: relative
     order: 60
   - source: "@quartz-community/description"
     enabled: true
     order: 70
   - source: "@quartz-community/latex"
-    enabled: true
+    enabled: false
     options:
       renderEngine: katex
     order: 80
@@ -90,7 +91,7 @@ plugins:
     enabled: false
     order: 85
   - source: "@quartz-community/hard-line-breaks"
-    enabled: false
+    enabled: true
     order: 90
   - source: "@quartz-community/ox-hugo"
     enabled: false
@@ -106,7 +107,7 @@ plugins:
       theme: tokyo-night
       mode: both
   - source: "@quartz-community/remove-draft"
-    enabled: true
+    enabled: false
   - source: "@quartz-community/explicit-publish"
     enabled: false
   - source: "@quartz-community/alias-redirects"
@@ -116,10 +117,11 @@ plugins:
     options:
       enableSiteMap: true
       enableRSS: true
+      includeEmptyFiles: false
   - source: "@quartz-community/favicon"
     enabled: true
   - source: "@quartz-community/og-image"
-    enabled: true
+    enabled: false
   - source: "@quartz-community/cname"
     enabled: true
   - source: "@quartz-community/canvas-page"
@@ -154,12 +156,12 @@ plugins:
       position: right
       priority: 50
   - source: "@quartz-community/article-title"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 10
   - source: "@quartz-community/content-meta"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 20
@@ -203,13 +205,13 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        GitHub: https://github.com/sintutiers
+        Site Repo: https://github.com/sintutiers/nexus
     layout:
       position: footer
       priority: 50
   - source: "@quartz-community/recent-notes"
-    enabled: true
+    enabled: false
   - source: "@quartz-community/spacer"
     enabled: true
     options: {}
@@ -219,7 +221,7 @@ plugins:
       priority: 25
       display: mobile-only
   - source: "@quartz-community/bases-page"
-    enabled: false
+    enabled: true
     options: {}
     order: 50
   - source: "@quartz-community/note-properties"
@@ -229,7 +231,8 @@ plugins:
       includedProperties:
         - description
         - tags
-        - aliases
+        - modified
+        - created
       excludedProperties: []
       hidePropertiesView: false
       delimiters: ---
@@ -244,7 +247,7 @@ plugins:
     options: {}
     order: 45
   - source: "@quartz-community/encrypted-pages"
-    enabled: true
+    enabled: false
     options:
       iterations: 600000
       passwordField: password

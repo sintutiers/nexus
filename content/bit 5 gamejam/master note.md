@@ -1,4 +1,12 @@
-ok we finshed the [b1t canvas](<b1t canvas.canvas>) gamejam. this note will forcus on improving the current system and components and general game (code) architecture.
+---
+uid: xijsfcszduhazkhlqgdru
+title: Master Note
+modified: Tuesday, September 29th 2026, 7:30 pm
+created: Sunday, September 20th 2026, 8:57 pm
+---
+
+# Master Note
+ok we finshed the [b1t canvas](<./b1t canvas.canvas>) gamejam. this note will forcus on improving the current system and components and general game (code) architecture.
 
 so problems with my current code is that its doing too much things at once.
 for example my [animation.gd](https://github.com/sintutiers/b1t-5-gamejam/blob/5eb3e85cf38fc0f7b6a496014561df5fd95b1b59/scripts/components/animation_component.gd) handles:

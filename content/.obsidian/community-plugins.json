@@ -1,12 +1,15 @@
 [
   "smart-rename",
-  "better-markdown-links",
   "consistent-attachments-and-links",
-  "external-rename-handler",
   "lazy-plugins",
   "obsidian-linter",
   "obsidian-excalidraw-plugin",
-  "advanced-rename-and-delete-handler",
   "obsidian-style-settings",
-  "backlink-cache"
+  "backlink-cache",
+  "better-markdown-links",
+  "advanced-rename-and-delete-handler",
+  "external-rename-handler",
+  "note_uid_generator",
+  "k-plex",
+  "obsidian-custom-attachment-location"
 ]

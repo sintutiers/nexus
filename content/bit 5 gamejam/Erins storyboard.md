@@ -1,3 +1,11 @@
+---
+uid: p4y2vayjulsvf9fglay8w
+title: Erins Storyboard
+modified: Tuesday, September 29th 2026, 7:30 pm
+created: Sunday, September 20th 2026, 8:57 pm
+---
+
+# Erins Storyboard
 i draw a little for these guys
 
 Intro: The main character (player) "awakes" in a void of night, soon to realize they are in a dream state. However, they are stuck in this state.
@@ -8,7 +16,7 @@ After the player receives direction, they will continue on the path that will th
 
 Once they explore and find all the items, the floating npc appears to repeatedly saying "sleep, sleep, go to sleep" (or something like that). The player will see jump tiles that lead to a path where they finally find their own bed. They interact with it and fade into light, indicating that they have escaped the dream state and are waking up. 
 
-![](<Untitled_Artwork 19.png>)
+![](<../static_files/Untitled_Artwork 19.png>)
 
 
 

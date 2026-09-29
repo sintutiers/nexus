@@ -1,0 +1,18 @@
+{
+  "uidKey": "uid",
+  "autoGenerateUid": true,
+  "uidGenerator": "nanoid",
+  "nanoidLength": 21,
+  "nanoidAlphabet": "0123456789abcdefghijklmnopqrstuvwxyz",
+  "nanoidSeparators": [],
+  "snowflakeNodeId": 0,
+  "snowflakeNodeIdOverride": null,
+  "autoGenerationScope": "vault",
+  "autoGenerationFolder": "",
+  "autoGenerationFolders": [],
+  "autoGenerationExclusions": [],
+  "duplicateUidCheck": "notify",
+  "folderToClear": "",
+  "copyFormatString": "{title} - {uidKey}: {uid}",
+  "copyFormatStringMissingUid": "{title} - No {uidKey}"
+}

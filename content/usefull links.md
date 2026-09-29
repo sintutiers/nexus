@@ -1,7 +1,15 @@
+---
+uid: lei6vghex30q86ddrll0n
+title: Usefull Links
+modified: Tuesday, September 29th 2026, 7:28 pm
+created: Sunday, September 20th 2026, 8:57 pm
+---
 
-- https://ynfg.yume.wiki/Yume_Nikki_Fangames_Wiki
-- https://yume.wiki/Main_Page
-- https://ynoproject.net/
+# Usefull Links
+
+- <https://ynfg.yume.wiki/Yume_Nikki_Fangames_Wiki>
+- <https://yume.wiki/Main_Page>
+- <https://ynoproject.net/>
 - [https://itch.io/jam/gbjam-14](https://itch.io/jam/gbjam-14 "https://itch.io/jam/gbjam-14")
 - [https://itch.io/jam/b1t-jam-5](https://itch.io/jam/b1t-jam-5 "https://itch.io/jam/b1t-jam-5")
 - [https://en.wikipedia.org/wiki/Composition_over_inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance "https://en.wikipedia.org/wiki/Composition_over_inheritance")

@@ -1,19 +1,23 @@
 ---
-title: "godotengine/awesome-godot: A curated list of free/libre plugins, scripts and add-ons for Godot"
-source: https://github.com/godotengine/awesome-godot
-created: 2026-07-31
-description: A curated list of free/libre plugins, scripts and add-ons for Godot - godotengine/awesome-godot
+unlisted: "true"
+uid: 315tb9q7s44a1fw3rflwt
+title: "godotengine/awesome-godot: A Curated List of free/libre Plugins, Scripts and Add-ons for Godot"
 tags:
   - clippings
+source: https://github.com/godotengine/awesome-godot
 publish: "true"
-unlisted: "true"
+modified: Tuesday, September 29th 2026, 7:12 pm
+description: A curated list of free/libre plugins, scripts and add-ons for Godot - godotengine/awesome-godot
+created: Sunday, September 20th 2026, 8:57 pm
+aliases: "godotengine/awesome-godot: A Curated List of free/libre Plugins, Scripts and Add-ons for Godot"
 ---
+
 > [!danger] NOT MINE  
 > This is just a reference/bookmarked article from the internet i found interesting!
 
 ---
 
-# godotengine/awesome-godot: A curated list of free/libre plugins, scripts and add-ons for Godot
+# godotengine/awesome-godot: A Curated List of free/libre Plugins, Scripts and Add-ons for Godot
 
 ## Awesome Godot
 
@@ -109,7 +113,7 @@ Looking for third-party programming language support in Godot? See [Vivraan/godo
 > 
 > The [list of tutorials](https://docs.godotengine.org/en/latest/community/tutorials.html) has moved to the Godot documentation.
 
-## Plugins and scripts
+## Plugins and Scripts
 
 *Scripts that let you do new stuff, or enhance Godot functionality.*
 
@@ -211,7 +215,7 @@ Looking for third-party programming language support in Godot? See [Vivraan/godo
 - [YATI (Yet Another Tiled Importer](https://github.com/Kiamo2/YATI) - This is an addon for importing files (.tmx,.tmj) created by the [Tiled Map Editor](https://github.com/mapeditor/tiled).
 - [Your Buil](https://codeberg.org/svetogam/yourbuil) - A plugin that makes it as easy as possible to use build data like git commit hashes in your build.
 
-#### Godot version unknown
+#### Godot Version Unknown
 
 - [Camera2D Screen Shake](https://godotengine.org/qa/438/camera2d-screen-shake-extension) - Screen shake effect for Camera2D.
 - [Easing Script](https://github.com/impmja/godot-easing) - A port of the Robert Penner's equations for easing.
@@ -245,7 +249,7 @@ Looking for third-party programming language support in Godot? See [Vivraan/godo
 - [Tree3D](https://github.com/JekSun97/gdTree3D) - A plugin for procedural generation of 3D trees in real time for gaming projects.
 - [Voxelman](https://github.com/Relintai/voxelman) - A voxel engine with more focus on editor integration, gameplay-related features, and extendability. *(Godot 3 and 4)*
 
-#### Godot version unknown
+#### Godot Version Unknown
 
 - [godot-anl](https://github.com/Xrayez/godot-anl) - A wrapper for [Accidental Noise Library](https://github.com/JTippetts/accidental-noise-library) with a visual noise editing support.
 - [godot-enet-better](https://github.com/Faless/godot-enet-better) - A better ENet module for high-performance multiplayer games with Godot.
@@ -256,7 +260,7 @@ Looking for third-party programming language support in Godot? See [Vivraan/godo
 - [spine](https://github.com/GodotExplorer/spine) - [Spine](http://esotericsoftware.com/) animation support module.
 - [WaterSplash 2D node](https://github.com/laverneth/water)
 
-## GDScript/C# editor support
+## GDScript/C# Editor Support
 
 *Add-ons for text editors that implement GDScript or C# support.*
 
@@ -279,14 +283,14 @@ Looking for third-party programming language support in Godot? See [Vivraan/godo
 
 ## Themes
 
-### Engine themes
+### Engine Themes
 
 *Alternative themes for the entire Godot engine editor.*
 
 - [Catppuccin Theme](https://github.com/catppuccin/godot) - A soothing pastel theme offered in four different flavors.
 - [Godot Minimal Theme](https://github.com/passivestar/godot-minimal-theme) - A theme that aims to correct odd spacing and formatting in the default Godot theme without changing the overall look and feel.
 
-### Syntax themes
+### Syntax Themes
 
 *Alternative themes for the built-in script editor.*
 
@@ -294,7 +298,7 @@ Looking for third-party programming language support in Godot? See [Vivraan/godo
 - [Godot syntax themes](https://github.com/godotengine/godot-syntax-themes) - 13 syntax themes including Ayu Mirage, Darcula, Gruvbox Dark, Monokai, One Dark, Solarized, and more.
 - [Syntax themes by Geequlim](https://github.com/Geequlim/godot-themes/tree/master/syntax) - Chester, Google Code Light and Monokai.
 
-### External editor themes
+### External Editor Themes
 
 *Alternative themes with the trusted Godot editor's colors for external tools.*
 
@@ -303,14 +307,14 @@ Looking for third-party programming language support in Godot? See [Vivraan/godo
 - [Visual Studio Code](https://github.com/ryanabx/godot-vscode-theme)
 - [Zed](https://github.com/D4r3NPo/zed-godot-theme)
 
-## Unofficial Godot builds
+## Unofficial Godot Builds
 
 *Those builds will let you use recent versions of Godot Git, but they may be less stable than official ones – use at your own risk.*
 
 - [bend-n's 2D builds](https://github.com/bend-n/godot-builds) - Godot builds [optimized for size](https://docs.godotengine.org/en/stable/engine_details/development/compiling/optimizing_for_size.html) with [these modules disabled](https://github.com/bend-n/godot-builds/blob/main/.github/2d-build-modules.py). Also includes misc non breaking patches.
 - [Godot RISC-V](https://gitee.com/openkylin/godot-riscv) - Godot built for the RISC‑V architecture.
 
-## Bash scripts
+## Bash Scripts
 
 *Bash scripts can be placed in `~/.local/bin`.*
 

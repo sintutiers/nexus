@@ -1,4 +1,11 @@
-## technical design document
+---
+uid: 2cksgktidosnp6pwjq6gs
+title: Code
+modified: Tuesday, September 29th 2026, 7:30 pm
+created: Sunday, September 20th 2026, 8:57 pm
+---
+
+## Technical Design Document
 
 - built with godt 4.7.1, when blazium support for 4.7 comes out we will switch to that.
 - for pixel art we wil use pixelorama 1.2
@@ -8,7 +15,7 @@
 - for code we use the [GPL2+](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 - for assets we use [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-### plugins
+### Plugins
 1. use [Maaack's Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.5.0) v1.5 as template
 2. use [Debug Menu](https://github.com/antzGames/Antz-Debug-Menu) v1.2 for in-game debugging
 3. use [Phantom Camera](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.3) v0.11.0.3 for better camera
@@ -19,29 +26,29 @@
 8. use [GDScript Formatter](https://github.com/GDQuest/GDScript-formatter/releases/tag/0.24.0) v0.24.0 for code styling 
 9. use [Project Time Tracker](https://github.com/Fifut/project-time-tracker/releases/tag/v2.0.8) v2.0.8 for work time 
 10. use [Godot Health / Hitbox / Hurtbox](https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4) v5.0.4 for template hitbox 
-### maybe for future
-1. https://godotneers.github.io/G.U.I.D.E/
-2. https://github.com/bitbrain/beehave
-3. https://github.com/cashew-olddew/Universal-Transition-Sh
-4. https://github.com/SirRamEsq/SmartShape2D
-5. https://github.com/jitspoe/godot-console
-6. https://github.com/Oen44/Godot-Inventory
-7. https://github.com/TaloDev/godot
-8. https://github.com/glass-brick/Scene-Manager
-9. https://github.com/foxssake/netfox 
-10. https://github.com/Nokorpo/gato-godot-accessibility-toolkit
-11. https://github.com/Koisuji02/GodotShaderWarmup
-12. https://github.com/NodotProject/godot-torrent
+### Maybe for Future
+1. <https://godotneers.github.io/G.U.I.D.E/>
+2. <https://github.com/bitbrain/beehave>
+3. <https://github.com/cashew-olddew/Universal-Transition-Sh>
+4. <https://github.com/SirRamEsq/SmartShape2D>
+5. <https://github.com/jitspoe/godot-console>
+6. <https://github.com/Oen44/Godot-Inventory>
+7. <https://github.com/TaloDev/godot>
+8. <https://github.com/glass-brick/Scene-Manager>
+9. <https://github.com/foxssake/netfox> 
+10. <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
+11. <https://github.com/Koisuji02/GodotShaderWarmup>
+12. <https://github.com/NodotProject/godot-torrent>
 
 
 ---
 
 
-![[usefull links for b1t jams]]
+![usefull links for b1t jams](<./usefull links for b1t jams.md>)
 
 
 ---
-# code
+# Code
 
 code must be:
 [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming)

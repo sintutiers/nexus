@@ -1,7 +1,7 @@
 {
   "ruleConfigs": {
     "add-blank-line-after-yaml": {
-      "enabled": false
+      "enabled": true
     },
     "dedupe-yaml-array-values": {
       "enabled": false,
@@ -52,25 +52,25 @@
       "sort-order": "Ascending Alphabetical"
     },
     "yaml-key-sort": {
-      "enabled": false,
+      "enabled": true,
       "yaml-key-priority-sort-order": "",
       "priority-keys-at-start-of-yaml": true,
-      "yaml-sort-order-for-other-keys": "None"
+      "yaml-sort-order-for-other-keys": "Descending Alphabetical"
     },
     "yaml-timestamp": {
-      "enabled": false,
+      "enabled": true,
       "date-created": true,
-      "date-created-key": "date created",
+      "date-created-key": "created",
       "date-created-source-of-truth": "file system",
       "date-modified": true,
-      "date-modified-key": "date modified",
+      "date-modified-key": "modified",
       "date-modified-source-of-truth": "file system",
-      "format": "dddd, MMMM Do YYYY, h:mm:ss a",
-      "convert-to-utc": false,
-      "update-on-file-contents-updated": "never"
+      "format": "dddd, MMMM Do YYYY, h:mm a",
+      "convert-to-utc": true,
+      "update-on-file-contents-updated": "after 15 seconds"
     },
     "yaml-title": {
-      "enabled": false,
+      "enabled": true,
       "title-key": "title",
       "mode": "first-h1-or-filename-if-h1-missing"
     },
@@ -79,10 +79,10 @@
       "preserve-existing-alias-section-style": true,
       "keep-alias-that-matches-the-filename": false,
       "use-yaml-key-to-keep-track-of-old-filename-or-heading": true,
-      "alias-helper-key": "linter-yaml-title-alias"
+      "alias-helper-key": "aliases"
     },
     "capitalize-headings": {
-      "enabled": false,
+      "enabled": true,
       "style": "Title Case",
       "ignore-case-words": true,
       "ignore-words": "macOS, iOS, iPhone, iPad, JavaScript, TypeScript, AppleScript, I",
@@ -91,7 +91,7 @@
       "ending-word-ignore-characters": ".?!,:;'\")”’0123456789-"
     },
     "file-name-heading": {
-      "enabled": false
+      "enabled": true
     },
     "header-increment": {
       "enabled": false,
@@ -121,23 +121,23 @@
       "extra-auto-correct-files": []
     },
     "blockquote-style": {
-      "enabled": false,
+      "enabled": true,
       "style": "space"
     },
     "convert-bullet-list-markers": {
-      "enabled": false
+      "enabled": true
     },
     "default-language-for-code-fences": {
       "enabled": false,
       "default-language": ""
     },
     "emphasis-style": {
-      "enabled": false,
+      "enabled": true,
       "style": "consistent"
     },
     "no-bare-urls": {
-      "enabled": false,
-      "no-bare-uris": false
+      "enabled": true,
+      "no-bare-uris": true
     },
     "ordered-list-style": {
       "enabled": false,
@@ -167,7 +167,7 @@
       "enabled": false
     },
     "strong-style": {
-      "enabled": false,
+      "enabled": true,
       "style": "consistent"
     },
     "two-spaces-between-lines-with-content": {
@@ -179,18 +179,18 @@
       "list-style": "consistent"
     },
     "compact-yaml": {
-      "enabled": false,
+      "enabled": true,
       "inner-new-lines": false
     },
     "consecutive-blank-lines": {
       "enabled": false
     },
     "convert-spaces-to-tabs": {
-      "enabled": false,
+      "enabled": true,
       "tabsize": 4
     },
     "empty-line-around-blockquotes": {
-      "enabled": false
+      "enabled": true
     },
     "empty-line-around-code-fences": {
       "enabled": false
@@ -278,7 +278,7 @@
   "displayChanged": true,
   "suppressMessageWhenNoChange": false,
   "enableDiffPreviewView": true,
-  "suppressLintAllFilesConfirmationModal": false,
+  "suppressLintAllFilesConfirmationModal": true,
   "suppressLintAllFilesInFolderConfirmationModal": false,
   "lintOnFileChange": false,
   "displayLintOnFileChangeNotice": false,

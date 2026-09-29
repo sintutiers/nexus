@@ -1,16 +1,20 @@
 ---
-title: "Exclusive or"
-source: "https://en.wikipedia.org/wiki/Exclusive_or"
-author:
-  - "Wikipedia"
-published: 2002-10-16
-created: 2026-07-31
-description:
-tags:
-  - "clippings"
-publish: "true"
 unlisted: "true"
+uid: e4j4q7jpfdy2a3deyoy1k
+title: Exclusive or
+tags:
+  - clippings
+source: https://en.wikipedia.org/wiki/Exclusive_or
+published: 2002-10-16
+publish: "true"
+modified: Tuesday, September 29th 2026, 7:12 pm
+description:
+created: Sunday, September 20th 2026, 8:57 pm
+author:
+  - Wikipedia
+aliases: Exclusive or
 ---
+
 > [!danger] NOT MINE  
 > This is just a reference/bookmarked article from the internet i found interesting!
 
@@ -43,7 +47,7 @@ The [truth table](https://en.wikipedia.org/wiki/Truth_table "Truth table") of ${
 | T | F | T |
 | T | T | F |
 
-## Equivalences, elimination, and introduction
+## Equivalences, Elimination, and Introduction
 
 Exclusive disjunction essentially means 'either one, but not both nor none'. In other words, the statement is true [if and only if](https://en.wikipedia.org/wiki/If_and_only_if "If and only if") one is true and the other is false. For example, if two horses are racing, then one of the two will win the race, but not both of them. The exclusive disjunction ${\displaystyle p\nleftrightarrow q}$, also denoted by ${\displaystyle p\operatorname {?} q}$ or ${\displaystyle Jpq}$, can be expressed in terms of the [logical conjunction](https://en.wikipedia.org/wiki/Logical_conjunction "Logical conjunction") ("logical and", ${\displaystyle \land }$), the [disjunction](https://en.wikipedia.org/wiki/Disjunction "Disjunction") ("logical or", ${\displaystyle \vee }$), and the [negation](https://en.wikipedia.org/wiki/Negation "Negation") (${\displaystyle \neg }$) as follows:
 
@@ -73,14 +77,14 @@ In summary, we have, in mathematical and in engineering notation:
 
 ${\displaystyle {\begin{matrix}p\nleftrightarrow q&=&(p\land \lnot q)&\lor &(\lnot p\land q)&=&p{\overline {q}}+{\overline {p}}q\\[3pt]&=&(p\lor q)&\land &(\lnot p\lor \lnot q)&=&(p+q)({\overline {p}}+{\overline {q}})\\[3pt]&=&(p\lor q)&\land &\lnot (p\land q)&=&(p+q)({\overline {pq}})\end{matrix}}}$
 
-## Negation of the operator
+## Negation of the Operator
 
 By applying the spirit of [De Morgan's laws](https://en.wikipedia.org/wiki/De_Morgan's_laws "De Morgan's laws"), we get: 
 $$
 {\displaystyle \neg (p\nleftrightarrow q)\equiv \neg p\nleftrightarrow q\equiv p\nleftrightarrow \neg q.}
 $$
 
-## Relation to modern algebra
+## Relation to Modern Algebra
 
 Although the [operators](https://en.wikipedia.org/wiki/Operation_\(mathematics\) "Operation (mathematics)") ${\displaystyle \wedge }$ ([conjunction](https://en.wikipedia.org/wiki/Logical_conjunction "Logical conjunction")) and ${\displaystyle \lor }$ ([disjunction](https://en.wikipedia.org/wiki/Logical_disjunction "Logical disjunction")) are very useful in logic systems, they fail a more generalizable structure in the following way:
 
@@ -94,7 +98,7 @@ ${\displaystyle {\begin{matrix}r=p\land q&\Leftrightarrow &r=p\cdot q{\pmod {2}}
 
 The description of a [Boolean function](https://en.wikipedia.org/wiki/Boolean_function "Boolean function") as a [polynomial](https://en.wikipedia.org/wiki/Polynomial "Polynomial") in ${\displaystyle \mathbb {F} _{2}}$, using this basis, is called the function's [algebraic normal form](https://en.wikipedia.org/wiki/Algebraic_normal_form "Algebraic normal form").[^3]
 
-## Exclusive or in natural language
+## Exclusive or in Natural Language
 
 Disjunction is often understood exclusively in [natural languages](https://en.wikipedia.org/wiki/Natural_language "Natural language"). In English, the disjunctive word "or" is often understood exclusively, particularly when used with the particle "either". The English example below would normally be understood in conversation as implying that Mary is not both a singer and a poet.[^4] [^5]
 
@@ -110,7 +114,7 @@ Examples such as the above have motivated analyses of the exclusivity inference 
 
 This behavior of English "or" is also found in other languages. However, many languages have disjunctive constructions which are robustly exclusive such as French *soit... soit*.[^4]
 
-## Alternative symbols
+## Alternative Symbols
 
 The symbol used for exclusive disjunction varies from one field of application to the next, and even depends on the properties being emphasized in a given context of discussion. In addition to the abbreviation "XOR", any of the following symbols may also be seen:
 
@@ -187,13 +191,13 @@ Exclusive or with one specified input, as a function of the other input, is an [
 
 If using [binary](https://en.wikipedia.org/wiki/Binary_numeral_system "Binary numeral system") values for true (1) and false (0), then *exclusive or* works exactly like [addition](https://en.wikipedia.org/wiki/Addition "Addition") [modulo](https://en.wikipedia.org/wiki/Modular_arithmetic "Modular arithmetic") 2.
 
-## Computer science
+## Computer Science
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/XOR_ANSI_Labelled.svg/120px-XOR_ANSI_Labelled.svg.png)
 
 Traditional symbolic representation of an XOR logic gate
 
-### Bitwise operation
+### Bitwise Operation
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Z2%5E4%3B_Cayley_table%3B_binary.svg/250px-Z2%5E4%3B_Cayley_table%3B_binary.svg.png)
 

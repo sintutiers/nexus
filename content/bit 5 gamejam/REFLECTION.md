@@ -1,3 +1,11 @@
+---
+uid: xgi44d0qhmqtxwmoq1bpq
+title: REFLECTION
+modified: Tuesday, September 29th 2026, 7:30 pm
+created: Sunday, September 20th 2026, 8:57 pm
+---
+
+# REFLECTION
 - work out how git (version control works)/work with branches.
 - talk more in the group chat, instead of DM
 - implement kanban(in github)
