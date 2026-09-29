@@ -107,7 +107,7 @@ plugins:
       theme: tokyo-night
       mode: both
   - source: "@quartz-community/remove-draft"
-    enabled: false
+    enabled: true
   - source: "@quartz-community/explicit-publish"
     enabled: false
   - source: "@quartz-community/alias-redirects"
@@ -243,7 +243,7 @@ plugins:
       priority: 15
       display: all
   - source: "@quartz-community/unlisted-pages"
-    enabled: false
+    enabled: true
     options: {}
     order: 45
   - source: "@quartz-community/encrypted-pages"
