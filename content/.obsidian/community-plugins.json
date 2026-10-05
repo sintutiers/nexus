@@ -5,11 +5,11 @@
   "obsidian-linter",
   "obsidian-excalidraw-plugin",
   "obsidian-style-settings",
-  "backlink-cache",
   "better-markdown-links",
   "advanced-rename-and-delete-handler",
   "external-rename-handler",
   "note_uid_generator",
   "k-plex",
-  "obsidian-custom-attachment-location"
+  "obsidian-custom-attachment-location",
+  "advanced-metadata-cache"
 ]
