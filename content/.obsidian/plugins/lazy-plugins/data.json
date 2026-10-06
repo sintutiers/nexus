@@ -44,6 +44,15 @@
       },
       "obsidian-style-settings": {
         "startupType": "instant"
+      },
+      "obsidian-custom-attachment-location": {
+        "startupType": "instant"
+      },
+      "k-plex": {
+        "startupType": "instant"
+      },
+      "note_uid_generator": {
+        "startupType": "instant"
       }
     }
   }
