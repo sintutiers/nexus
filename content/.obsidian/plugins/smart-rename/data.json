@@ -1,0 +1,11 @@
+{
+  "invalidCharacterAction": "Error",
+  "replacementCharacter": "_",
+  "shouldAddOldTitleAsAlias": true,
+  "shouldPreservePreviousDisplayTextInFrontmatterLinks": true,
+  "shouldPreservePreviousDisplayTextInNoteLinks": true,
+  "shouldStoreInvalidTitle": true,
+  "shouldSupportNonMarkdownFiles": true,
+  "shouldUpdateFirstHeader": false,
+  "shouldUpdateTitleKey": false
+}
