@@ -53,6 +53,9 @@
       },
       "note_uid_generator": {
         "startupType": "instant"
+      },
+      "advanced-metadata-cache": {
+        "startupType": "instant"
       }
     }
   }
