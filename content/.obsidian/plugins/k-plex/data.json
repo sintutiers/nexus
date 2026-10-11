@@ -1,4 +1,216 @@
 {
+  "internalHotkeys": {
+    "moveUp": {
+      "key": "ArrowUp",
+      "modifiers": []
+    },
+    "moveDown": {
+      "key": "ArrowDown",
+      "modifiers": []
+    },
+    "moveLeft": {
+      "key": "ArrowLeft",
+      "modifiers": []
+    },
+    "moveRight": {
+      "key": "ArrowRight",
+      "modifiers": []
+    },
+    "sectionUp": {
+      "key": "ArrowUp",
+      "modifiers": [
+        "alt"
+      ]
+    },
+    "sectionDown": {
+      "key": "ArrowDown",
+      "modifiers": [
+        "alt"
+      ]
+    },
+    "sectionLeft": {
+      "key": "ArrowLeft",
+      "modifiers": [
+        "alt"
+      ]
+    },
+    "sectionRight": {
+      "key": "ArrowRight",
+      "modifiers": [
+        "alt"
+      ]
+    },
+    "activate": {
+      "key": "Enter",
+      "modifiers": []
+    },
+    "focusSearch": {
+      "key": "F4",
+      "modifiers": []
+    },
+    "focusFind": {
+      "key": "f",
+      "modifiers": [
+        "mod"
+      ]
+    },
+    "addParent": {
+      "key": "ArrowUp",
+      "modifiers": [
+        "mod"
+      ]
+    },
+    "addChild": {
+      "key": "ArrowDown",
+      "modifiers": [
+        "mod"
+      ]
+    },
+    "addFriend": {
+      "key": "ArrowLeft",
+      "modifiers": [
+        "mod"
+      ]
+    },
+    "addChallenger": {
+      "key": "ArrowRight",
+      "modifiers": [
+        "mod"
+      ]
+    }
+  },
+  "actionPreferences": {
+    "version": 1,
+    "defaultBindingsVersion": 1,
+    "localBindings": {
+      "selection.move.up": [
+        {
+          "match": "key",
+          "value": "ArrowUp",
+          "modifiers": []
+        }
+      ],
+      "selection.move.down": [
+        {
+          "match": "key",
+          "value": "ArrowDown",
+          "modifiers": []
+        }
+      ],
+      "selection.move.left": [
+        {
+          "match": "key",
+          "value": "ArrowLeft",
+          "modifiers": []
+        }
+      ],
+      "selection.move.right": [
+        {
+          "match": "key",
+          "value": "ArrowRight",
+          "modifiers": []
+        }
+      ],
+      "selection.section.up": [
+        {
+          "match": "key",
+          "value": "ArrowUp",
+          "modifiers": [
+            "alt"
+          ]
+        }
+      ],
+      "selection.section.down": [
+        {
+          "match": "key",
+          "value": "ArrowDown",
+          "modifiers": [
+            "alt"
+          ]
+        }
+      ],
+      "selection.section.left": [
+        {
+          "match": "key",
+          "value": "ArrowLeft",
+          "modifiers": [
+            "alt"
+          ]
+        }
+      ],
+      "selection.section.right": [
+        {
+          "match": "key",
+          "value": "ArrowRight",
+          "modifiers": [
+            "alt"
+          ]
+        }
+      ],
+      "node.activate": [
+        {
+          "match": "key",
+          "value": "Enter",
+          "modifiers": []
+        }
+      ],
+      "search.focus": [
+        {
+          "match": "key",
+          "value": "F4",
+          "modifiers": []
+        }
+      ],
+      "find.focus": [
+        {
+          "match": "code",
+          "value": "KeyF",
+          "modifiers": [
+            "mod"
+          ]
+        }
+      ],
+      "relationship.create-center.parent": [
+        {
+          "match": "key",
+          "value": "ArrowUp",
+          "modifiers": [
+            "mod"
+          ]
+        }
+      ],
+      "relationship.create-center.child": [
+        {
+          "match": "key",
+          "value": "ArrowDown",
+          "modifiers": [
+            "mod"
+          ]
+        }
+      ],
+      "relationship.create-center.left": [
+        {
+          "match": "key",
+          "value": "ArrowLeft",
+          "modifiers": [
+            "mod"
+          ]
+        }
+      ],
+      "relationship.create-center.right": [
+        {
+          "match": "key",
+          "value": "ArrowRight",
+          "modifiers": [
+            "mod"
+          ]
+        }
+      ]
+    },
+    "publishedCommands": {},
+    "characterShortcutsEnabled": true,
+    "crossSectionAtBoundary": false
+  },
   "compactView": false,
   "compactingFactor": 2,
   "horizontalCompactingFactor": 2,
@@ -86,6 +298,7 @@
   },
   "inferAllLinksAsFriends": false,
   "inverseInfer": false,
+  "datePropertyRelations": "parent",
   "inverseArrowDirection": true,
   "renderAlias": true,
   "nameFields": "aliases",
@@ -103,10 +316,12 @@
   "showPageNodes": true,
   "showNeighborCount": true,
   "wrapNodeLabels": false,
+  "typographyProfiles": {},
   "baseFontSize": 12.4,
   "showFullTagName": false,
   "maxItemCount": 100,
   "renderSiblings": false,
+  "showCrossLinks": false,
   "siblingRelativeSize": 85,
   "crossLinkOpacity": 85,
   "applyPowerFilter": false,
@@ -209,7 +424,9 @@
   "allowAutofocuOnSearch": true,
   "defaultAlwaysOnTop": false,
   "embedCentralNode": false,
+  "excalidrawFitOnNodeOpen": true,
   "centralNodeMarkdownMode": "source",
+  "centralNodeMarkdownZoomModes": {},
   "centerEmbedWidth": 550,
   "centerEmbedHeight": 700,
   "showContentPane": false,
@@ -228,7 +445,7 @@
   "noteTypeStyles": {},
   "kplexInitialized": true,
   "startInPopout": false,
-  "lastActivePath": "huge breakthrough project/cool canvas.canvas",
+  "lastActivePath": "huge breakthrough project/deans moodboard for huge breakthough project.canvas",
   "pinnedNodes": [],
   "layoutProfiles": {
     "desktop:leaf": {

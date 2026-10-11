@@ -1,7 +1,7 @@
 ---
 uid: 7bo7n6sw27pzu5rl4yebp
 title: Huge Breakthrough Project
-modified: Tuesday, September 29th 2026, 8:43 pm
+modified: Sunday, October 11th 2026, 8:19 pm
 created: Tuesday, September 29th 2026, 6:56 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -13,5 +13,6 @@ aliases:
 
 # Huge Breakthrough Project
 
-![cool canvas](<./cool canvas.canvas>)
-[cool canvas](<./cool canvas.canvas>)
+- [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>)
+
+- [cool canvas](<./cool canvas.canvas>)
