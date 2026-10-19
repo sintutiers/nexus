@@ -5,6 +5,7 @@
   "notePriorities": [],
   "rescueAttachmentUsedByMultipleNotesMode": "prompt",
   "shouldDeleteConflictingAttachments": false,
+  "shouldDeleteEmptyNoteFolders": false,
   "shouldHandleDeletions": false,
   "shouldHandleRenames": false,
   "shouldRenameAttachmentFiles": false,
