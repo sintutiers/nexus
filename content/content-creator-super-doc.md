@@ -1,13 +1,16 @@
 ---
 uid: fncezytfnpkp3n5xtfg4f
 title: Hoe successful(?) Content Creator?
-modified: Tuesday, October 20th 2026, 2:43 pm
+modified: Tuesday, October 20th 2026, 5:58 pm
 created: Tuesday, October 20th 2026, 2:25 pm
+author:
+  - "[Dean](https://deanlemans.github.io/)"
+  - Cidra
+  - Mink
 ---
 
 # Hoe successful(?) Content Creator?
 
-*Dean, Cidra, Mink*
 
 #### Rough draft/brainstorm/research/knowledge Base
 
@@ -162,18 +165,18 @@ Relevant: [KevisStrats](https://m.youtube.com/@KevisStrats), viewhunt.app ?
 
 Specifically where we upload conent, nier waar we info vandaan halen.
 
-| Platform | Streaming | Text | Shorts | Account | Link |
-| --- | --- | --- | --- | --- | --- |
-| YouTube | | | | ✅ | [channel](https://www.youtube.com/channel/UCKFQYdkMTfQ7VQTnVrrvygQ) |
-| Instagram | | | | ✅ | [gigajobless](https://www.instagram.com/gigajobless/?hl=en) |
-| TikTok | | | | ✅ | [profile](https://www.tiktok.com/@user3494376167231) |
-| Twitch | | | | ✅ | [gigajobless](https://www.twitch.tv/gigajobless) |
-| Kick | | | | ✅ | [gigajobless](https://kick.com/gigajobless) |
-| Odysee | | | | ✅ | |
-| PeerTube | | | | ✅ | |
-| Snapchat | | | | | |
-| Steam | | | | | |
-| Facebook | | | | | |
+| Platform  | Streaming | Text | Shorts | Account | Link                                                                |
+| --------- | --------- | ---- | ------ | ------- | ------------------------------------------------------------------- |
+| YouTube   |           |      |        | ✅       | [channel](https://www.youtube.com/channel/UCKFQYdkMTfQ7VQTnVrrvygQ) |
+| Instagram |           |      |        | ✅       | [gigajobless](https://www.instagram.com/gigajobless/?hl=en)         |
+| TikTok    |           |      |        | ✅       | [profile](https://www.tiktok.com/@user3494376167231)                |
+| Twitch    |           |      |        | ✅       | [gigajobless](https://www.twitch.tv/gigajobless)                    |
+| Kick      |           |      |        | ✅       | [gigajobless](https://kick.com/gigajobless)                         |
+| Odysee    |           |      |        | ✅       |                                                                     |
+| PeerTube  |           |      |        | ✅       |                                                                     |
+| Snapchat  |           |      |        |         |                                                                     |
+| Steam     |           |      |        |         |                                                                     |
+| Facebook  |           |      |        |         |                                                                     |
 
 All(?) links: <https://linksta.cc/@giga-jobless>
 
