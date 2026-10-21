@@ -1,7 +1,7 @@
 ---
 uid: fncezytfnpkp3n5xtfg4f
 title: Hoe successful(?) Content Creator?
-modified: Tuesday, October 20th 2026, 5:58 pm
+modified: Wednesday, October 21st 2026, 6:27 pm
 created: Tuesday, October 20th 2026, 2:25 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -10,7 +10,6 @@ author:
 ---
 
 # Hoe successful(?) Content Creator?
-
 
 #### Rough draft/brainstorm/research/knowledge Base
 
