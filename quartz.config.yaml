@@ -233,6 +233,9 @@ plugins:
         - tags
         - modified
         - created
+        - author
+        - aliases
+        - uid
       excludedProperties: []
       hidePropertiesView: false
       delimiters: ---
