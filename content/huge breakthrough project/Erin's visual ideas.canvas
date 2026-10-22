@@ -1,8 +1,9 @@
 {
 	"nodes":[
-		{"id":"e35d18711446cd0c","x":-220,"y":-220,"width":353,"height":400,"type":"file","file":"static_files/file-20261021094624951.png"},
-		{"id":"dcf48ba68752bb3d","x":-220,"y":-320,"width":250,"height":60,"type":"text","text":"thumbnails and idea sketching"},
-		{"id":"4771b2cf187cc810","x":-220,"y":240,"width":400,"height":223,"type":"file","file":"static_files/file-20261021094721032.png"}
+		{"id":"dcf48ba68752bb3d","type":"text","text":"thumbnails and idea sketching","x":-220,"y":-320,"width":250,"height":60},
+		{"id":"e35d18711446cd0c","type":"file","file":"static_files/file-20261021094624951.png","x":-260,"y":-240,"width":353,"height":400},
+		{"id":"4771b2cf187cc810","type":"file","file":"static_files/file-20261021094721032.png","x":400,"y":-20,"width":400,"height":223},
+		{"id":"ca63e256d6f013f6","x":419,"y":125,"width":250,"height":60,"type":"text","text":"x"}
 	],
 	"edges":[]
 }
