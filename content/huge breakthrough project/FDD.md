@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Thursday, October 22nd 2026, 6:39 pm
+modified: Friday, October 23rd 2026, 12:55 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -11,7 +11,7 @@ author:
 
 # Functional Design Document
 
-see also: [TDD](<./TDD.md>)
+> see also: [TDD](<./TDD.md>)
 
 Legend:
 - bullet: decided
@@ -54,7 +54,7 @@ see inspirations in: [deans moodboard for huge breakthough project](<./deans moo
 
 ## Perspective and Visuals
 
-- 2.5D, like Octopath Traveler or Illusion Carnival
+- 2.5D, like Octopath Traveler or Illusion Carnival(and others, need to create link specific moodboards)
 - Player is 2D, third person camera and viewpoint
 - Sprites always face the camera (also the player), so sides never need to be drawn
 - [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
@@ -190,5 +190,5 @@ flowchart TD
 
 Refine each requirement and include drawings below.
 
----
-![FDD Example Game to Kinda Base it on](<./FDD Example Game to Kinda Base it on.md>)
+
+

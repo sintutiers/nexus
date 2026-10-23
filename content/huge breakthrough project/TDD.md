@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Thursday, October 22nd 2026, 6:35 pm
+modified: Friday, October 23rd 2026, 12:54 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -10,7 +10,7 @@ author:
 
 # Technical Design Document
 
-see also: [FDD](<./FDD.md>)
+> see also: [FDD](<./FDD.md>)
 
 - Godot 4.7.2 (possible that there will be version differences between the version currently used and this document)
 	- GDScript Formatter 0.27.0
@@ -23,7 +23,7 @@ see also: [FDD](<./FDD.md>)
 
 ## Performance
 
-- The game should not lag or drop below 60 frames per second.
+- The game should not lag or drop below 60 FPS.
 
 ## Platform
 
@@ -33,7 +33,8 @@ see also: [FDD](<./FDD.md>)
 
 We use a component-based architecture.
 
-Game can be divided into these main components that will need to be programmed:
+Game (for now) is divided into these main components that will need to be programmed:
+
 - Components (all extend `Component`, found via `get_component()`)
 	- Input (`InputComponent`, `PlayerInputComponent`, `InputFrame`)
 	- Facing (`FacingComponent`)
@@ -43,7 +44,7 @@ Game can be divided into these main components that will need to be programmed:
 		- `MovementProfile` resource holding all tunable values (speed, jump, dash, etc.)
 		- 2D sprites move on a 3D plane (`Movement3DComponent`)
 	- Abilities, Launch and Interact (optional, found at runtime)
-- Dialogue and choices
+- Dialogue
 	- Talk to NPCs with Dialogue Manager
 - Animations
 	- `Animations` and `Motions` name constants, driven by movement signals
@@ -62,7 +63,7 @@ This will be a Godot 4.7.2 game, written in GDScript. We use the addons listed a
 
 ## Deployment
 
-The game will be exported from Godot as a build for the target platform. Exact platform and distribution method are not yet clear.
+The game will be exported from Godot as a build for as much platforms as reasonably possible
 
 ## Technical Specifications
 
