@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Friday, October 23rd 2026, 12:55 pm
+modified: Sunday, October 25th 2026, 8:19 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -32,6 +32,20 @@ Legend:
 > - idk maybe he can like play shitty guitar
 
 ---
+
+# Raw Stuff to Filter
+
+- combat/interaction FDD:
+	- you have like a branch and when your fighting, your almost always moving
+	- when you low sanity, there will be a lot of enemies, but some are like fake and you dont know which are fake
+instead of hub world, multiple small safe points.
+- OR when progressing, hub/safeword will become smaller and you have to do more yourself
+	- (like BOTW/TOTK great deku tree forst mist, and you can unlock more of the mist, but your safe zone also shrinks and such. also like a favor system? idk tho)
+	- both?
+
+the vibe of like progessing is that its hopeless, and you get like shit equipment
+
+- sanity point needs to be concrete, like in how it works and what you get from it.
 
 ## General Description
 
