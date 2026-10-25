@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, October 25th 2026, 8:19 pm
+modified: Sunday, October 25th 2026, 9:06 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -43,7 +43,29 @@ instead of hub world, multiple small safe points.
 	- (like BOTW/TOTK great deku tree forst mist, and you can unlock more of the mist, but your safe zone also shrinks and such. also like a favor system? idk tho)
 	- both?
 
-the vibe of like progessing is that its hopeless, and you get like shit equipment
+the vibe of like progressing is that its hopeless, and you get like shit equipment
+
+
+- There will be random and set encounters where you can gain or lose sanity depending on the choices you make during that encounter.
+- You can regain sanity by using certain items (books, food etc)
+- You regain some sanity when you enter a safe space for the first time
+- You can gain some sanity when completing objectives
+
+- You lose sanity by interacting with enemies (running, fighting back etc)
+- You lose sanity by making wrong dialogue choices or witnessing certain story events
+- You lose sanity 
+
+- no upgrade system
+- no level system (no player levels)
+- no combat
+- upgrade your hub world????
+- 
+
+# Cool Beginning Start of Game
+- You spawn in a forest with a large dying tree in the middle
+- You must interact with the tree to progress, he will tell you he is dying and he will explain a little bit about the world you're in and how to survive.
+- The area around the tree is a temporary safe hub
+- You help the tree complete a few tasks and then he dies, the place he is in is no longer safe and you have to move on and survive with what youve learned
 
 - sanity point needs to be concrete, like in how it works and what you get from it.
 
