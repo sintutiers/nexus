@@ -1,6 +1,7 @@
 {
 	"nodes":[
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{"id":"2f5f2e551c1320ea","x":240,"y":-340,"width":1420,"height":920,"type":"group","label":"Erin's Character Ideas + visuals"},
 		{"id":"6b3922a58c7f8107","x":-261,"y":-327,"width":461,"height":1127,"type":"group","label":"Beginning sketch/thumbnails for overall visuals"},
 		{"id":"e35d18711446cd0c","type":"file","file":"static_files/file-20261021094624951.png","x":-220,"y":-220,"width":260,"height":295},
@@ -25,6 +26,11 @@
 		{"id":"4333bf2bf8769521","type":"file","file":"static_files/file-20261022201338272.png","x":1580,"y":-280,"width":400,"height":225},
 		{"id":"48deabf5e0d210cb","type":"file","file":"static_files/file-20261022201324455.png","x":1120,"y":-280,"width":400,"height":225}
 >>>>>>> origin/v5
+=======
+		{"id":"e35d18711446cd0c","x":-220,"y":-220,"width":353,"height":400,"type":"file","file":"static_files/file-20261021094624951.png"},
+		{"id":"dcf48ba68752bb3d","x":-220,"y":-320,"width":250,"height":60,"type":"text","text":"thumbnails and idea sketching"},
+		{"id":"4771b2cf187cc810","x":-220,"y":240,"width":400,"height":223,"type":"file","file":"static_files/file-20261021094721032.png"}
+>>>>>>> parent of 53b7734 (character brainstorming)
 	],
 	"edges":[
 		{"id":"84b38dbf8f66c202","fromNode":"ad9e4aa2ba7d234d","fromSide":"bottom","toNode":"fcbdd99f298af0cb","toSide":"top"},
