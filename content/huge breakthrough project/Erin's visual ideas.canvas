@@ -1,11 +1,40 @@
 {
 	"nodes":[
+<<<<<<< HEAD
 		{"id":"2f5f2e551c1320ea","x":240,"y":-340,"width":1420,"height":920,"type":"group","label":"Erin's Character Ideas + visuals"},
 		{"id":"6b3922a58c7f8107","x":-261,"y":-327,"width":461,"height":1127,"type":"group","label":"Beginning sketch/thumbnails for overall visuals"},
 		{"id":"e35d18711446cd0c","type":"file","file":"static_files/file-20261021094624951.png","x":-220,"y":-220,"width":260,"height":295},
 		{"id":"dcf48ba68752bb3d","type":"text","text":"thumbnails and idea sketching","x":-220,"y":-320,"width":250,"height":60},
 		{"id":"9d210a6c0050b44a","type":"text","text":"Character Ideas\n- Character name and backstory could be a parallel to celtic mythology: \n\t- Name: could recite to mythology, some name ideas: \n\t\t- Setante (from the story of cu chulainn who uses a heavy iron weapon to kill evil things like fairies and such, iron needs to be a big part of the story to \"defeat\" enemies)\n\t\t- Nechtan (follows a story of a guy who carried a sword of light? didnt read too much into it but could make this into a parallel somehow)\n\t\t- Or basic story of a teenager or young guy struggling in college/school going through mental health with some name like luke or something\n\t\t\t- Could also twist up a celtic name to sound more modern but have an origin to the mythology\n- Overall personality ideas: \n\t- Introverted/nerdy and into fiction related to celtic mythology? \n\t- Dealing with depression, could be psychotic? \n\t- Internally lost, dealing with family matters/school/whatever else in life making him wanting to escape in his fiction through books/games/etc (maybe thats how he gets transported into the realm?)","x":292,"y":-275,"width":648,"height":555},
 		{"id":"4771b2cf187cc810","type":"file","file":"static_files/file-20261021094721032.png","x":-220,"y":160,"width":400,"height":223}
+=======
+		{"id":"458798a44bb5e098","type":"group","x":220,"y":-560,"width":1900,"height":1300,"label":"artstle reference"},
+		{"id":"dcf48ba68752bb3d","type":"text","text":"thumbnails and idea sketching","x":-220,"y":-320,"width":250,"height":60},
+		{"id":"e35d18711446cd0c","type":"file","file":"static_files/file-20261021094624951.png","x":-260,"y":-240,"width":353,"height":400},
+		{"id":"4771b2cf187cc810","type":"file","file":"static_files/file-20261021094721032.png","x":-300,"y":200,"width":400,"height":223},
+		{"id":"ad9e4aa2ba7d234d","type":"text","text":"https://store.steampowered.com/app/256290/Child_of_Light/","x":560,"y":-540,"width":250,"height":140},
+		{"id":"0ec8093f64eb65fb","type":"file","file":"static_files/file-20261022201401126.png","x":240,"y":-280,"width":400,"height":225},
+		{"id":"eecb3a53f82472c2","type":"file","file":"static_files/file-20261022201512201.png","x":680,"y":0,"width":400,"height":225},
+		{"id":"fcbdd99f298af0cb","type":"file","file":"static_files/file-20261022201135864.png","x":240,"y":-20,"width":400,"height":225},
+		{"id":"abf4c6c8abc55a85","type":"text","text":"https://store.steampowered.com/app/3214610/Cinderia/","x":620,"y":300,"width":250,"height":105},
+		{"id":"af0f299714957807","type":"file","file":"static_files/file-20261022201457691.png","x":1100,"y":320,"width":400,"height":225},
+		{"id":"26193d951a7bdfaa","type":"file","file":"static_files/file-20261022201317513.png","x":1600,"y":20,"width":400,"height":225},
+		{"id":"ba8563859b690096","type":"file","file":"static_files/file-20261022201150575.png","x":700,"y":-280,"width":400,"height":250},
+		{"id":"b681ade9457e1768","type":"text","text":"https://store.steampowered.com/app/2893570/DRAGON_QUEST_I_II_HD2D_Remake/","x":1420,"y":-540,"width":250,"height":140},
+		{"id":"9ee11a83021886e3","type":"file","file":"static_files/file-20261022201519888.png","x":1100,"y":20,"width":400,"height":225},
+		{"id":"4333bf2bf8769521","type":"file","file":"static_files/file-20261022201338272.png","x":1580,"y":-280,"width":400,"height":225},
+		{"id":"48deabf5e0d210cb","type":"file","file":"static_files/file-20261022201324455.png","x":1120,"y":-280,"width":400,"height":225}
+>>>>>>> origin/v5
 	],
-	"edges":[]
+	"edges":[
+		{"id":"84b38dbf8f66c202","fromNode":"ad9e4aa2ba7d234d","fromSide":"bottom","toNode":"fcbdd99f298af0cb","toSide":"top"},
+		{"id":"78898eaf8e7c163f","fromNode":"ad9e4aa2ba7d234d","fromSide":"bottom","toNode":"ba8563859b690096","toSide":"top"},
+		{"id":"cfa3bea58ebf8f7c","fromNode":"b681ade9457e1768","fromSide":"bottom","toNode":"26193d951a7bdfaa","toSide":"top"},
+		{"id":"2f78105c0f802788","fromNode":"b681ade9457e1768","fromSide":"bottom","toNode":"48deabf5e0d210cb","toSide":"top"},
+		{"id":"1c8dc58717869620","fromNode":"b681ade9457e1768","fromSide":"bottom","toNode":"4333bf2bf8769521","toSide":"top"},
+		{"id":"eb5f404b11873f12","fromNode":"ad9e4aa2ba7d234d","fromSide":"bottom","toNode":"0ec8093f64eb65fb","toSide":"top"},
+		{"id":"36a6bd9b3ddbffd5","fromNode":"abf4c6c8abc55a85","fromSide":"bottom","toNode":"af0f299714957807","toSide":"left"},
+		{"id":"fdadae3aabe7c7ff","fromNode":"abf4c6c8abc55a85","fromSide":"top","toNode":"eecb3a53f82472c2","toSide":"bottom"},
+		{"id":"fa0c46cab4186894","fromNode":"abf4c6c8abc55a85","fromSide":"top","toNode":"9ee11a83021886e3","toSide":"bottom"}
+	]
 }
