@@ -1,8 +1,11 @@
 {
 	"nodes":[
-		{"id":"e35d18711446cd0c","x":-220,"y":-220,"width":353,"height":400,"type":"file","file":"static_files/file-20261021094624951.png"},
-		{"id":"dcf48ba68752bb3d","x":-220,"y":-320,"width":250,"height":60,"type":"text","text":"thumbnails and idea sketching"},
-		{"id":"4771b2cf187cc810","x":-220,"y":240,"width":400,"height":223,"type":"file","file":"static_files/file-20261021094721032.png"}
+		{"id":"2f5f2e551c1320ea","x":240,"y":-340,"width":1420,"height":920,"type":"group","label":"Erin's Character Ideas + visuals"},
+		{"id":"6b3922a58c7f8107","x":-261,"y":-327,"width":461,"height":1127,"type":"group","label":"Beginning sketch/thumbnails for overall visuals"},
+		{"id":"e35d18711446cd0c","type":"file","file":"static_files/file-20261021094624951.png","x":-220,"y":-220,"width":260,"height":295},
+		{"id":"dcf48ba68752bb3d","type":"text","text":"thumbnails and idea sketching","x":-220,"y":-320,"width":250,"height":60},
+		{"id":"9d210a6c0050b44a","type":"text","text":"Character Ideas\n- Character name and backstory could be a parallel to celtic mythology: \n\t- Name: could recite to mythology, some name ideas: \n\t\t- Setante (from the story of cu chulainn who uses a heavy iron weapon to kill evil things like fairies and such, iron needs to be a big part of the story to \"defeat\" enemies)\n\t\t- Nechtan (follows a story of a guy who carried a sword of light? didnt read too much into it but could make this into a parallel somehow)\n\t\t- Or basic story of a teenager or young guy struggling in college/school going through mental health with some name like luke or something\n\t\t\t- Could also twist up a celtic name to sound more modern but have an origin to the mythology\n- Overall personality ideas: \n\t- Introverted/nerdy and into fiction related to celtic mythology? \n\t- Dealing with depression, could be psychotic? \n\t- Internally lost, dealing with family matters/school/whatever else in life making him wanting to escape in his fiction through books/games/etc (maybe thats how he gets transported into the realm?)","x":292,"y":-275,"width":648,"height":555},
+		{"id":"4771b2cf187cc810","type":"file","file":"static_files/file-20261021094721032.png","x":-220,"y":160,"width":400,"height":223}
 	],
 	"edges":[]
 }
