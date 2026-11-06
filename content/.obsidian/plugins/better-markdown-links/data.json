@@ -12,6 +12,7 @@
   "proposedShouldHandleRenames": null,
   "shouldAllowEmptyEmbedAlias": true,
   "shouldAppendFileNameWhenDemotingEmbeds": false,
+  "shouldCommitBulkOperations": false,
   "shouldConvertFrontmatterWikilinksToMarkdown": false,
   "shouldCreateMissingNotes": false,
   "shouldIncludeAttachmentExtensionToEmbedAlias": false,

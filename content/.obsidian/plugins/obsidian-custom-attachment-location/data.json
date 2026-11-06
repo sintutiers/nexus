@@ -15,6 +15,7 @@
   "excludePathsFromAttachmentCollecting": [],
   "excludePathsFromMultipleNotesCheck": [],
   "generatedAttachmentFileName": "file-{{date:{momentJsFormat:'YYYYMMDDHHmmssSSS'}}}",
+  "insertedLinkText": "",
   "jpegQuality": 0.8,
   "markdownUrlFormat": "",
   "moveAttachmentToProperFolderUsedByMultipleNotesMode": "CopyAll",
@@ -34,6 +35,7 @@
     "/^\\/var\\/folders\\//"
   ],
   "shouldCollectAttachmentsAutomatically": true,
+  "shouldCommitBulkOperations": false,
   "shouldDeduplicateIdenticalAttachments": false,
   "shouldFollowObsidianAttachmentLocation": true,
   "shouldKeepNamesOfPastedNonScreenshotFiles": false,
@@ -42,8 +44,15 @@
   "shouldSetLinkDisplayTextToAttachmentFileName": false,
   "shouldSkipCollectingAttachmentsReferencedByRawPath": false,
   "shouldWarnWhenOriginalAttachmentNameIsUnknown": true,
+  "sidecarExtensions": [
+    "p7s",
+    "sig",
+    "asc",
+    "srt",
+    "vtt"
+  ],
   "specialCharacters": "#^[]|*\\<>:?/",
   "specialCharactersReplacement": "-",
   "timeoutInSeconds": 5,
-  "version": "17.0.0"
+  "version": "17.1.0"
 }

@@ -91,7 +91,7 @@
   },
   "actionPreferences": {
     "version": 1,
-    "defaultBindingsVersion": 1,
+    "defaultBindingsVersion": 3,
     "localBindings": {
       "selection.move.up": [
         {
@@ -313,6 +313,7 @@
     ]
   },
   "ontologyPairingVersion": 1,
+  "ontologyDescriptions": {},
   "inferAllLinksAsFriends": false,
   "inverseInfer": false,
   "datePropertyRelations": "parent",
@@ -403,7 +404,10 @@
   "folderLinkStyle": {},
   "tagLinkStyle": {},
   "hierarchyLinkStyles": {},
-  "navigationHistory": [],
+  "navigationHistory": [
+    "huge breakthrough project/Big things for dean to do.md",
+    "huge breakthrough project/Gameplay moodboard thingie.canvas"
+  ],
   "allowOntologySuggester": true,
   "ontologySuggesterParentTrigger": "::p",
   "ontologySuggesterChildTrigger": "::c",
@@ -415,6 +419,7 @@
   "ontologySuggesterMidSentenceTrigger": "(",
   "boldFields": false,
   "allowAutozoom": false,
+  "trackpadNavigation": false,
   "allowAutofocuOnSearch": true,
   "defaultAlwaysOnTop": false,
   "embedCentralNode": false,
@@ -440,7 +445,7 @@
   "noteTypeStyles": {},
   "kplexInitialized": true,
   "startInPopout": false,
-  "lastActivePath": "huge breakthrough project/deans moodboard for huge breakthough project.canvas",
+  "lastActivePath": "huge breakthrough project/Gameplay moodboard thingie.canvas",
   "pinnedNodes": [],
   "layoutProfiles": {
     "desktop:leaf": {
@@ -498,6 +503,7 @@
       "childColumns": 2
     }
   },
+  "canvasViewSettings": {},
   "mouseInteractionMode": "smart",
   "hoverHighlightRequiresAlt": true,
   "areaOutlineRequiresAlt": true,
@@ -525,7 +531,9 @@
   "attachmentImageDisplay": "thumbnail-label",
   "allowRemoteNodeImages": false,
   "editNewNodeAfterCreate": false,
+  "newNodeAfterSaving": "return",
   "newNodeDefaultType": "markdown",
+  "lastDrawingTemplatePath": null,
   "startupIndexInfoBubbleSeen": true,
   "deletePromptInitialized": false,
   "confirmFileDelete": true,

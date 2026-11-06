@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Friday, October 23rd 2026, 12:54 pm
+modified: Friday, November 6th 2026, 6:34 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -12,14 +12,20 @@ author:
 
 > see also: [FDD](<./FDD.md>)
 
-- Godot 4.7.2 (possible that there will be version differences between the version currently used and this document)
+Godot 4.7.2
 	- GDScript Formatter 0.27.0
 	- Antz's Debug Menu 1.3.0
-	- Dialogue Manager 4.1.0
-	- Godot State Charts 0.22.5
-	- Maaack's Game Template Addon 1.7.0
-	- Project Time Tracker 3.0.1
+	- Dialogue Manager 4.2.0 (<https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v4.2.0>)
+	- health, hitboxes and hitscans 5.0.4 (<https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4>)
+	- Godot State Charts 0.22.5 (<https://github.com/derkork/godot-statecharts/releases/tag/v0.22.5>)
+	- Maaack's Game Template Addon 1.7.1 (<https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.7.1>)
+		- <https://github.com/Maaack/Godot-UI-Sound-Controller/releases/tag/v1.7.1>
+		- <https://github.com/Maaack/Godot-Scene-Loader/releases/tag/v1.7.1>
+		- <https://github.com/Maaack/Godot-Music-Controller/releases/tag/v1.7.1>
 	- Script-IDE 2.2.5
+	- sound manager 2.6.2 (<https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2>)
+	- phantom camera 11.0.4 (<https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4>)
+
 
 ## Performance
 
