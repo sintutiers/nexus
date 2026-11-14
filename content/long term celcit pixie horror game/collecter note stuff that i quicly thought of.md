@@ -1,7 +1,7 @@
 ---
 uid: mv4g4i14kxswmyhzj238o
 title: Collecter Note Stuff that I Quicly Thought of
-modified: Saturday, November 14th 2026, 4:23 pm
+modified: Saturday, November 14th 2026, 5:34 pm
 created: Monday, November 2nd 2026, 7:08 pm
 ---
 
@@ -40,9 +40,7 @@ created: Monday, November 2nd 2026, 7:08 pm
 5. <https://github.com/MindustryGame>
 6. <https://gitlab.com/xonotic/xonotic>
 7. <https://supertuxkart.net/Community>
-8. <https://github.com/endless-sky/endless-sky/wiki/Endless-Sky's-Vision>
-9. <https://itch.io/t/5718729/release-strain-a-complete-reverse-horror-game-design-document-free-open-source>
+8. <https://itch.io/t/5718729/release-strain-a-complete-reverse-horror-game-design-document-free-open-source>
+9. <https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/design-balance-lore/technology.md>
 10. <https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/design-balance-lore/design-doc.md>
-11. <https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/design-balance-lore/technology.md>
-12. <https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/design-balance-lore/design-doc.md>
-13. <https://github.com/endless-sky/endless-sky/wiki/Endless-Sky's-Vision>
+11. <https://github.com/endless-sky/endless-sky/wiki/Endless-Sky's-Vision>
