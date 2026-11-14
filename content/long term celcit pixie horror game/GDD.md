@@ -1,7 +1,8 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Saturday, November 14th 2026, 4:50 pm
+modified: Saturday, November 14th 2026, 5:27 pm
+description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -10,8 +11,6 @@ author:
 ---
 
 # Game Design Document
-
-> this doc is game/vision oriented
 
 > see also: [FDD](<./FDD.md>) for functional, [TDD](<./TDD.md>) for technical
 
@@ -37,11 +36,10 @@ Legend:
 # Cool Beginning Start of Game
 
 #### First Tutorial Level
-- You spawn in a forest with a large dying tree in the middle
+- You spawn in a forest with a large dying tree in the middle.(yggdrasil? deku tree? last of the great trees)
 - You must interact with tree to progress, he will tell you he is dying and he will explain a little bit about the world you're in and how to survive.
 - The area around the tree is a temporary safe hub
 - You help the tree complete a few tasks and then he dies, the place he is in is no longer safe and you have to move on and survive with what youve learned
-
 - sanity point needs to be concrete, like in how it works and what you get from it.
 
 ## General Description
