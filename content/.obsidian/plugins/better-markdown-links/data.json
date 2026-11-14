@@ -17,8 +17,11 @@
   "shouldCreateMissingNotes": false,
   "shouldIncludeAttachmentExtensionToEmbedAlias": false,
   "shouldNormalizeFileLinks": true,
+  "shouldResolveGitHubHeadingAnchors": true,
+  "shouldResolveLinksStrictly": false,
   "shouldResolveLinksViaAliases": false,
   "shouldUseAngleBrackets": true,
+  "shouldUseGitHubHeadingAnchors": false,
   "shouldUseLeadingDotForRelativePaths": true,
   "shouldUseLeadingSlashForAbsolutePaths": true
 }

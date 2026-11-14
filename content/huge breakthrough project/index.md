@@ -1,7 +1,7 @@
 ---
 uid: 7bo7n6sw27pzu5rl4yebp
 title: Huge Breakthrough Project
-modified: Wednesday, October 21st 2026, 6:29 pm
+modified: Saturday, November 14th 2026, 2:20 pm
 created: Tuesday, September 29th 2026, 6:56 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -13,7 +13,13 @@ aliases:
 
 # Huge Breakthrough Project
 
-- [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>)
-- [cool canvas](<./cool canvas.canvas>)
-- [[TDD](<./TDD.md>)]
-- [Erin's visual ideas](<./Erin's visual ideas.canvas>)
+- [Big things for dean to do](<./Big things for dean to do.md>)
+- [collecter note stuff that i quicly thought of](<./collecter note stuff that i quicly thought of.md>)
+- [<./cool canvas.canvas>]
+- [(<./deans moodboard for huge breakthough project.canvas>]
+- [(<./Erin's visual ideas.canvas>]
+- [FDD](<./FDD.md>)
+- [TDD](<./TDD.md>)
+- [<./Gameplay moodboard thingie.canvas>]
+- [<./inventory ideas.canvas>]
+- [mink Example TDD and FDD](<./mink Example TDD and FDD.md>)

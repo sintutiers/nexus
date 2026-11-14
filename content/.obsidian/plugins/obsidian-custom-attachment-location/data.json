@@ -10,6 +10,8 @@
   "defaultImageSize": "",
   "defaultImageSizeDimension": "width",
   "downloadNetworkImages": false,
+  "droppedFileAttachmentFileName": "",
+  "droppedFileAttachmentFolderPath": "",
   "duplicateNameSeparator": " ",
   "excludeExtensionsFromMultipleNotesCheck": [],
   "excludePathsFromAttachmentCollecting": [],
@@ -17,12 +19,20 @@
   "generatedAttachmentFileName": "file-{{date:{momentJsFormat:'YYYYMMDDHHmmssSSS'}}}",
   "insertedLinkText": "",
   "jpegQuality": 0.8,
+  "manuallyRenamedAttachmentFileName": "",
   "markdownUrlFormat": "",
   "moveAttachmentToProperFolderUsedByMultipleNotesMode": "CopyAll",
   "networkImageDownloadTimeoutInSeconds": 30,
   "orphanAttachmentScanMode": "None",
   "orphanAttachmentScanPaths": [],
+  "otherNewAttachmentFileName": "",
+  "otherNewAttachmentFolderPath": "",
   "otherPluginIdsForAttachmentRename": [],
+  "pastedFileAttachmentFileName": "",
+  "pastedFileAttachmentFolderPath": "",
+  "pastedImageAttachmentFileName": "",
+  "pastedImageAttachmentFolderPath": "",
+  "pluginDataFolder": "@Plugin sync data (DO NOT REMOVE)",
   "proposedRenameDeleteSettings": null,
   "renameAttachmentsCreatedByOtherPluginsMode": "None",
   "renamedAttachmentFileName": "",
@@ -34,6 +44,7 @@
     "/^\\/tmp\\//",
     "/^\\/var\\/folders\\//"
   ],
+  "shouldAllowHiddenPluginDataFolder": false,
   "shouldCollectAttachmentsAutomatically": true,
   "shouldCommitBulkOperations": false,
   "shouldDeduplicateIdenticalAttachments": false,
@@ -41,7 +52,6 @@
   "shouldKeepNamesOfPastedNonScreenshotFiles": false,
   "shouldPreserveImageMetadata": false,
   "shouldRenameCollectedAttachments": false,
-  "shouldSetLinkDisplayTextToAttachmentFileName": false,
   "shouldSkipCollectingAttachmentsReferencedByRawPath": false,
   "shouldWarnWhenOriginalAttachmentNameIsUnknown": true,
   "sidecarExtensions": [
@@ -54,5 +64,5 @@
   "specialCharacters": "#^[]|*\\<>:?/",
   "specialCharactersReplacement": "-",
   "timeoutInSeconds": 5,
-  "version": "17.1.0"
+  "version": "17.4.1"
 }

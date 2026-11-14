@@ -6,5 +6,9 @@
   "trashOption": "local",
   "promptDelete": false,
   "newLinkFormat": "relative",
-  "strictLineBreaks": true
+  "strictLineBreaks": true,
+  "userIgnoreFilters": [
+    "Plugin data/",
+    "@Plugin sync data (DO NOT REMOVE)/"
+  ]
 }

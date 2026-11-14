@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, October 25th 2026, 9:06 pm
+modified: Saturday, November 14th 2026, 2:06 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -35,31 +35,7 @@ Legend:
 
 # Raw Stuff to Filter
 
-- combat/interaction FDD:
-	- you have like a branch and when your fighting, your almost always moving
-	- when you low sanity, there will be a lot of enemies, but some are like fake and you dont know which are fake
-instead of hub world, multiple small safe points.
-- OR when progressing, hub/safeword will become smaller and you have to do more yourself
-	- (like BOTW/TOTK great deku tree forst mist, and you can unlock more of the mist, but your safe zone also shrinks and such. also like a favor system? idk tho)
-	- both?
-
-the vibe of like progressing is that its hopeless, and you get like shit equipment
-
-
-- There will be random and set encounters where you can gain or lose sanity depending on the choices you make during that encounter.
-- You can regain sanity by using certain items (books, food etc)
-- You regain some sanity when you enter a safe space for the first time
-- You can gain some sanity when completing objectives
-
-- You lose sanity by interacting with enemies (running, fighting back etc)
-- You lose sanity by making wrong dialogue choices or witnessing certain story events
 - You lose sanity 
-
-- no upgrade system
-- no level system (no player levels)
-- no combat
-- upgrade your hub world????
-- 
 
 # Cool Beginning Start of Game
 - You spawn in a forest with a large dying tree in the middle
@@ -84,6 +60,8 @@ Core pillars:
 
 Mood: surreal/dreamlike, "whimsical horror", heavy atmosphere. 
 see inspirations in: [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>), (mood/vibe only, not gameplay, narrative, 3d/2d, UI or artstyle).
+
+the vibe of like progressing is that its hopeless, and you get like shit equipment
 
 > [!question] Unclear
 > - [ ] what will the Exact genre name be? idk tf to call it, name later if we are further in development? kinda important as then we can reference and compare our game to others and such.
@@ -113,6 +91,8 @@ see inspirations in: [deans moodboard for huge breakthough project](<./deans moo
 - Choices and consequences: what you say and do changes the course of the game
 - Favors: talk to NPCs, trade favors, get things back
 - Exploration: closed world, but you can go back and find hidden things
+- no upgrade system
+- no level system (no player levels)
 
 ## Functional Requirements
 
@@ -129,11 +109,16 @@ see inspirations in: [deans moodboard for huge breakthough project](<./deans moo
 - [ ] Low sanity changes the world (visuals, sound, dialogue, enemies)
 -  Must not be a minor annoyance, and must not make the game unplayable
 	- (or maybe must make it inplayable if the player ignores everything?)
+- There will be random and set encounters where you can gain or lose sanity depending on the choices you make during that encounter.
+- You can regain sanity by using certain items (books, food etc)
+- You regain some sanity when you enter a safe space for the first time
+- You can gain some sanity when completing objectives
+- You lose sanity by interacting with enemies (running, fighting back etc)
+- You lose sanity by making wrong dialogue choices or witnessing certain story events
+- when you low sanity, there will be a lot of enemies, but some are like fake and you dont know which are fake
+- [x] Environmental damage, where the meter fills up in a certain proximity of something
 
-> [!question] Unclear
-> - [ ] Environmental damage, where the meter fills up in a certain proximity of something
-
-Sanity loop (just sketch):
+Sanity loop (sketch):
 
 ```mermaid
 flowchart TD
@@ -147,10 +132,12 @@ flowchart TD
 ### Dialogue and Choices
 
 - Nonlinear story/dialogue
-- [ ] Choices change NPC opinion (hidden fairy meter?) and the story
-- [ ] Everything has a consequence, nothing is a fake choice 
+- [x] Choices change NPC opinion and the story
+	- [ ] (hidden fairy meter? like a FUN value) 
+- [x] Everything has a consequence, nothing is a fake choice 
 	- Define minimum consequence per choice.
-- [ ] Good/bad side leads to a fake ending, the true ending is hidden (talk to a hidden NPC?)
+- [ ] Good/bad side leads to a fake ending, the true ending is hidden 
+	- [ ] (talk to a hidden NPC?)
 
 ### Story
 
@@ -172,7 +159,11 @@ flowchart TD
 - Checkpoints and level progress are saved
 - [ ] Eventually find someone for map design and level structuring
 - [ ] Central hub where you dive deeper into the fairy realm, each zone with its own requirements (one where you dodge, one where you fight, etc)
-- [ ] Randomized items
+- instead of hub world, multiple small safe points.
+- OR when progressing, hub/safeword will become smaller and you have to do more yourself
+	- (like BOTW/TOTK great deku tree forst mist, and you can unlock more of the mist, but your safe zone also shrinks and such. also like a favor system? idk tho)
+	- both?
+- upgrade your hub world????
 
 World structure idea visualized by dean:
 
@@ -195,6 +186,9 @@ flowchart TD
 	- [ ] Omori/Undertale like battle system
 	- [ ] Fire Emblem or Cadence of Hyrule like (sanity can be way more challenging there)
 - [ ] Sanity affects combat
+- combat/interaction FDD:
+	- you have like a branch and when your fighting, your almost always moving
+- no combat
 
 ### Audio
 
@@ -204,9 +198,7 @@ flowchart TD
 
 ### Platform
 
-
-- [ ] PC, Phone or Web
-	-  for now just small formfactor laptop
+- for now just small formfactor laptop
 
 ## Workflow / Production Thingies
 
@@ -225,6 +217,4 @@ flowchart TD
 ## Refinement of Each Requirement
 
 Refine each requirement and include drawings below.
-
-
-
+- for now just check the mermaid diagrams, will do drawings later
