@@ -405,8 +405,8 @@
   "tagLinkStyle": {},
   "hierarchyLinkStyles": {},
   "navigationHistory": [
-    "huge breakthrough project/Big things for dean to do.md",
-    "huge breakthrough project/Gameplay moodboard thingie.canvas"
+    "long term celcit pixie horror game/Big things for dean to do.md",
+    "long term celcit pixie horror game/Gameplay moodboard thingie.canvas"
   ],
   "allowOntologySuggester": true,
   "ontologySuggesterParentTrigger": "::p",
@@ -445,8 +445,33 @@
   "noteTypeStyles": {},
   "kplexInitialized": true,
   "startInPopout": false,
-  "lastActivePath": "huge breakthrough project/Gameplay moodboard thingie.canvas",
+  "lastActivePath": "long term celcit pixie horror game/Gameplay moodboard thingie.canvas",
   "pinnedNodes": [],
+  "periodicPinSettings": {
+    "day": {
+      "folder": "",
+      "format": "YYYY-MM-DD",
+      "useDailyNotes": true,
+      "weekStart": "iso"
+    },
+    "week": {
+      "folder": "",
+      "format": "GGGG-[W]WW",
+      "useDailyNotes": false,
+      "weekStart": "iso"
+    },
+    "month": {
+      "folder": "",
+      "format": "YYYY-MM",
+      "useDailyNotes": false,
+      "weekStart": "iso"
+    }
+  },
+  "showDailyCalendar": true,
+  "dailyNoteLinkFields": {
+    "previous": "",
+    "next": ""
+  },
   "layoutProfiles": {
     "desktop:leaf": {
       "compactingFactor": 2,
@@ -532,6 +557,9 @@
   "allowRemoteNodeImages": false,
   "editNewNodeAfterCreate": false,
   "newNodeAfterSaving": "return",
+  "periodicNoteAfterSaving": "sidecar",
+  "folderCreationTab": "note",
+  "linkAfterSaving": "return",
   "newNodeDefaultType": "markdown",
   "lastDrawingTemplatePath": null,
   "startupIndexInfoBubbleSeen": true,

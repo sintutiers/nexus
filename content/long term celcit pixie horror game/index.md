@@ -13,13 +13,13 @@ aliases:
 
 # Huge Breakthrough Project
 
-- [Big things for dean to do](<./Big things for dean to do.md>)
-- [collecter note stuff that i quicly thought of](<./collecter note stuff that i quicly thought of.md>)
+- [Big things for dean to do](<Big things for dean to do.md>)
+- [collecter note stuff that i quicly thought of](<collecter note stuff that i quicly thought of.md>)
 - [<./cool canvas.canvas>]
 - [(<./deans moodboard for huge breakthough project.canvas>]
 - [(<./Erin's visual ideas.canvas>]
-- [FDD](<./FDD.md>)
-- [TDD](<./TDD.md>)
+- [FDD](<FDD.md>)
+- [TDD](<TDD.md>)
 - [<./Gameplay moodboard thingie.canvas>]
 - [<./inventory ideas.canvas>]
-- [mink Example TDD and FDD](<./mink Example TDD and FDD.md>)
+- [mink Example TDD and FDD](<mink Example TDD and FDD.md>)

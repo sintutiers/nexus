@@ -10,6 +10,6 @@
   "external-rename-handler",
   "note_uid_generator",
   "k-plex",
-  "obsidian-custom-attachment-location",
-  "advanced-metadata-cache"
+  "advanced-metadata-cache",
+  "obsidian-custom-attachment-location"
 ]

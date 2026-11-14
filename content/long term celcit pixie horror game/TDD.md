@@ -10,7 +10,7 @@ author:
 
 # Technical Design Document
 
-> see also: [FDD](<./FDD.md>)
+> see also: [FDD](<FDD.md>)
 
 > [!NOTE] foreword
 > this is for a 1 person programmer, maybe in the future more, but for now that is the constraint

@@ -9,7 +9,7 @@ created: Sunday, October 25th 2026, 9:25 pm
 - [ ] Objects that you can pick up
 	- [x] object that you can collect
 - [x] Player inventory (non visual components)
-	- [inventory ideas](<./inventory ideas.canvas>)
+	- [inventory ideas](<inventory ideas.canvas>)
 - [x] Dialogue
 - [x] Basic NPCs
 - [x] basic Choices system
@@ -17,5 +17,5 @@ created: Sunday, October 25th 2026, 9:25 pm
 
 
 ### References
-[Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)
+[Gameplay moodboard thingie](<Gameplay moodboard thingie.canvas>)
 
