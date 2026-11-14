@@ -13,6 +13,8 @@ author:
 
 > see also: [GDD](<./GDD.md>) for vision/story/world, [TDD](<./TDD.md>) for technical
 
+> sources: [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), [inventory ideas](<./inventory ideas.canvas>)
+
 status:
 - done = works in game
 - designed = decided, not built
@@ -48,39 +50,40 @@ priority:
 sanity is core pillar so it needs to be concrete, not just "you lose sanity" with no consequenses. what the game already does + what to fill in:
 
 - 0 to 100, 4 zones at 25/50/75 
-- drain: flat per second in the world, plus event drains from wrong dialogue, story beats, interacting with enemies, proximity to certain objects
+- drain:
+	- flat per second in the world [ ] how much
+	- wrong dialogue choices, witnessing certain story events [ ] how much per event
+	- interacting with enemies? (running, fighting back etc)
+	- proximity to certain objects
 - pauses: during locking interactions, and inside sanctuaries
-- restore: items, first time entering a safe space, completing quest steps, some NPC favors
+- restore:
+	- items (books, food etc), amount set per item
+	- first time entering sanctuary, +15 (see below)
+	- completing quest steps / objectives [ ] how much
+	- NPC favors [ ] which, how much
+- encounters, random and set: gain or lose sanity depending on choices
 - low zone changes the world per zone:
 	- zone 0 (75-100): baseline
 	- zone 1 (50-75): minor unease. visuals in, sound ?
 	- zone 2 (25-50): stronger distortion, some NPC lines change, fake enemies may show up
 	- zone 3 (0-25): heavy distortion, more fake enemies, some real threats
+	- fake enemies: you dont know which are fake
+	- [ ] numbers: how many fake enemies in zone 2 and 3, how many real threats in zone 3
 - sanity 0: [ ] this is big open one. things:
-	- fail forward: teleport to last sanctuary, lose some progress (not the save), world remembers. no game over screen. fits the hopeless vibe
-	- checkpoint reload at reduced sanity. standard, boring
+	- fail forward: teleport to last sanctuary, lose progress ([ ] how much, not the save), world remembers. no game over screen. fits the hopeless vibe
+	- checkpoint reload at reduced sanity ([ ] how much). standard, boring
 	- sanity 0 is one of the endings. aggressive, needs the fake-ending system first
-	- pick one before more sanity work, its literally waiting on this
 	- unlocking a whole different world when your a dick? 
 
 must not be a minor annoyance, and must not make the game unplayable
 - (or maybe must make it inplayable if the player ignores everything?)
-
-- there will be random and set encounters where you can gain or lose sanity depending on the choices you make during that encounter
-- you can regain sanity by using certain items (books, food etc)
-- you regain some sanity when you enter a safe space for the first time
-- you can gain some sanity when completing objectives
-- you lose sanity by interacting with enemies? (running, fighting back etc)
-- you lose sanity by making wrong dialogue choices or witnessing certain story events
-- when you low sanity, there will be a lot of enemies, but some are like fake and you dont know which are fake
-- [x] environmental damage, where the meter fills up in a certain proximity of something
 
 safe spaces / sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Darkwood):
 
 > status: half done (drain pause works), priority: must
 
 - first entry: +15 sanity, once per sanctuary
-- some objects inside restore extra sanity
+- some objects inside restore extra sanity [ ] how much
 - each sanctuary has 1 NPC or interesting interaction
 - fixed locations, handcrafted
 - never randomly become unsafe. only scripted (dying tree in tutorial)
@@ -105,7 +108,7 @@ flowchart TD
 - [ ] everything has a consequence, nothing is a fake choice
 	- minimum consequence per choice: every player-facing choice writes at least one of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, it's a fake choice, cut it or make it write something
 - [ ] good/bad side leads to a fake ending, the true ending is hidden
-	- [ ] (talk to a hidden NPC?)  decide gating shape before writing endgame dialogue
+	- [ ] (talk to a hidden NPC?)
 
 sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Disco Elysium):
 - dialogue options can need minimum sanity
@@ -119,14 +122,13 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 
 - [ ] NPCs give favors/quests
 	- define structure and tracking (quests have stages, game remembers current stage. journal UI [ ])
-- [ ] rewards are items, info, or sanity
+- [ ] rewards: item, info, sanity, or access to new location
 	- economy: no. favors are the economy. no shops, no currency. it's the celtic-pact thing anyway
 
 numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Majora's Mask):
 - 4-5 important NPCs
 - each has 1 relationship value (= fairy meter)
 - each gives 1-2 favors
-- reward: item, info, or access to new location
 - NPC dialogue changes with relationship
 - no reputation simulation, few values + conditional dialogue
 
@@ -143,7 +145,7 @@ numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>
 ### Combat
 
 > [!failure] Blocker
-> combat needs a decision before combat can be designed. (create moodboard for that, combatboard?)
+> see Blocking Decisions. (create moodboard for that, combatboard?)
 
 options:
 - A) no combat. threats are dialogue/choice encounters. fighting back is a dialogue option that costs sanity. fake vs real enemies resolved by interacting, not hitting. fits the input surface + horror tone. buildable on what exists
@@ -153,13 +155,10 @@ options:
 		- choices hit sanity, NPC relationship, or inventory
 		- some only at certain sanity levels
 		- scripted, no enemy AI
-- B) turn-based Undertale/Omori. input is choices + maybe a timed minigame. whole new system, not built
-
-- [ ] pick A or B before designing any
-
-- [ ] small and tactical
-	- [ ] omori/undertale like battle system
+- B) small and tactical. whole new system, not built
+	- [ ] turn-based Undertale/Omori like. input is choices + maybe a timed minigame
 	- [ ] fire emblem or cadence of hyrule like (sanity can be way more challenging there)
+
 - [ ] sanity affects combat
 - combat/interaction FDD:
 	- you have like a branch and when your fighting, your almost always moving
@@ -188,8 +187,6 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 > status: done (no visual yet), priority: must
 
 - carry, use, give items
-- items can restore sanity
-- no currency, no shops (decided)
 - [ ] inventory size limit?
 - [ ] inventory UI. see [inventory ideas](<./inventory ideas.canvas>). like minecraft hotbar or point n click HUD
 - pickup flow (from [inventory ideas](<./inventory ideas.canvas>)):
@@ -209,7 +206,7 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 
 > status: half designed, priority: must
 
-- dying tree explains world and sanity, few tasks, tree dies, safe area gone
+- story: see Cool Beginning in [GDD](<./GDD.md>)
 - teach by doing: movement, interact, talk, choice, sanity drain, sanctuary, sanity restore
 - [ ] list what is taught where. no text popups if tree can say it
 - done when: new player leaves forest without asking us
@@ -225,7 +222,6 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 
 > status: open, priority: should
 
-- quest progress saved (done)
 - [ ] journal UI, exists at all? helps, but fits badly with lost / hopeless vibe. maybe diary unreliable at low sanity
 - [ ] next objective shown or nothing
 
@@ -233,7 +229,7 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 
 > status: done, priority: must
 
-- checkpoints, level progress saved
+- checkpoints, level progress, quest progress saved
 - picked up items, per level flags saved
 - [ ] manual save or checkpoints only? (checkpoints only is plan)
 - [ ] old saves after updates add or change items / quests
@@ -254,7 +250,6 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 
 - [ ] gamepad?
 - [ ] web: keyboard only ok?
-- [ ] remap keys
 - [ ] list all actions (move, run, jump, dash, crouch, interact, pause, [ ] journal)
 
 ### Camera
@@ -269,7 +264,7 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 ### Platform
 
 - dev/test on small formfactor laptop for now
-- ship to desktop + web . web is the perf target, never below 45 fps
+- ship to desktop + web . web is the perf target
 - Compatibility renderer, heavier only if needed
 
 ### Performance
@@ -290,4 +285,4 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 ### Multiplayer
 
 - other players show in same level, works offline (done)
-- [ ] feature or tech demo? GDD cut list says first to go
+- [ ] feature or tech demo?

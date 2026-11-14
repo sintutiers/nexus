@@ -14,9 +14,11 @@ author:
 
 > see also: [FDD](<./FDD.md>) for functional, [TDD](<./TDD.md>) for technical
 
+> sources: [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), [cool canvas](<./cool canvas.canvas>), [deans moodboard](<./deans moodboard for huge breakthough project.canvas>), [Erin's visual ideas](<./Erin's visual ideas.canvas>)
+
 > [!NOTE]- who does what?
 > Erin:
-> - artstyle
+> - artstyle (sometimes asks dean for feedback)
 > - artist
 >
 > Dean:
@@ -40,12 +42,13 @@ Core pillars:
 - Psychological horror
 - Strong story/narrative
 - [ ] RPG?
-- Sanity meter
+- Sanity meter, changes how the game behaves
+- Choices and consequences: what you say and do changes the course of the game
+- Favors: talk to NPCs, trade favors, get things back
+- Exploration: closed world, but you can go back and find hidden things
 
 Mood: surreal/dreamlike, "whimsical horror", heavy atmosphere. 
 see inspirations in: [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>), (mood/vibe only, not gameplay, narrative, 3d/2d, UI or artstyle).
-
-the vibe of like progressing is that its hopeless, and you get like shit equipment?
 
 > [!question] Unclear
 > - [ ] what will the Exact genre name be? idk tf to call it, name later if we are further in development? kinda important as then we can reference and compare our game to others and such.
@@ -69,7 +72,7 @@ one sentence, so anyone (us in 6 months) knows tf is:
 deciding what its not collapses future choices and makes thing in the future be less work and more efficient:
 
 - not combat focused game. combat is blocker, see [FDD](<./FDD.md>)
-- not RPG with stats. no player levels, no upgrade system?(godamnit)
+- not RPG with stats. no player levels, no upgrade system?(godamnit) (perhaps later add small upgrades?)
 - not economy game. no shops, no currency, favors are money
 - not open world. closed world, zones.
 - not jump scare game. horror from atmosphere and sanity, not loud noises
@@ -106,15 +109,6 @@ team favorites ([cool canvas](<./cool canvas.canvas>)):
 - omori, rayman 3, yume 2kki, collective unconscious, celeste, ENA dream bbq, citizen sleeper, deltarune, pseudoregalia, neva
 - undertale, links awakening, swordigo, majora's mask, earthbound
 
-## Stuff
-
-- Sanity: a meter that changes how the game behaves
-- Choices and consequences: what you say and do changes the course of the game
-- Favors: talk to NPCs, trade favors, get things back
-- Exploration: closed world, but you can go back and find hidden things
-- no upgrade system
-- no level system (no player levels)
-
 ## Core Loop
 
 FDD has sanity loop. this is "what player does" loop. draft:
@@ -131,7 +125,7 @@ flowchart TD
 	D --> E{Enough favors done?}
 	E -- no --> B
 	E -- yes --> F[Way forward opens]
-	F --> G[Safe space, regain a bit]
+	F --> G[Safe space, +15 sanity first time]
 	G --> A
 ```
 
@@ -140,12 +134,13 @@ flowchart TD
 
 ## Progression and Difficulty
 
-no levels, no upgrades?(perhaps later add small upgrades?) player gains only:
+the vibe of like progressing is that its hopeless, and you get like shit equipment?
+player gains only:
 
 - story (what you know)
 - favors (who owes you, who you owe)
 - abilities / movement unlocks [ ] (zone table decides)
-- items (mostly consumables, shit equipment, see vibe above)
+- items (mostly consumables, shit equipment)
 
 - difficulty rises by world getting stranger, not bigger numbers. sanity is difficulty knob
 - [ ] easy mode / lower sanity drain? probably, see accessibility
@@ -186,23 +181,20 @@ will change alot when we have writing and lore and such.
 ## World
 
 - Closed world, split into zones (idk, like some interconnected weave like yume 2kki ? <https://explorer.yume.wiki/>)
-- Checkpoints and level progress are saved
 - [ ] Eventually find someone for map design and level structuring
-- [ ] Central hub where you dive deeper into the fairy realm, each zone with its own requirements (one where you dodge, one where you fight, etc)
-- instead of hub world, multiple small safe points.
-- OR when progressing, hub/safeword will become smaller and you have to do more yourself
+- handcrafted only, no procedural generation
+- shortcuts unlock while exploring
+
+hub structure, [ ] pick one (see Decisions):
+- A) Central hub where you dive deeper into the fairy realm, each zone with its own requirements (one where you dodge, one where you fight, etc)
+	- from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>) (Hollow Knight): 1 central forest, 3 areas branch off, each area has 1 access requirement
+- B) instead of hub world, multiple small safe points.
+- C) when progressing, hub/safeword will become smaller and you have to do more yourself
 	- (like BOTW/TOTK great deku tree forst mist, and you can unlock more of the mist, but your safe zone also shrinks and such. also like a favor system? idk tho)
 	- both?
 - upgrade your hub world????
 
-from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>) (Hollow Knight):
-- 1 central forest
-- 3 areas branch off
-- each area has 1 access requirement
-- shortcuts unlock while exploring
-- handcrafted only, no procedural generation
-
-World structure idea visualized by dean:
+option A visualized by dean:
 
 ```mermaid
 flowchart TD
@@ -232,8 +224,7 @@ zone 0 is tutorial, rest placeholder.
 - You spawn in a forest with a large dying tree in the middle.(yggdrasil? deku tree? last of the great trees)
 - You must interact with tree to progress, he will tell you he is dying and he will explain a little bit about the world you're in and how to survive.
 - The area around the tree is a temporary safe hub
-- You help the tree complete a few tasks and then he dies, the place he is in is no longer safe and you have to move on and survive with what youve learned
-- sanity point needs to be concrete, like in how it works and what you get from it.
+- You help the tree complete tasks ([ ] how many) and then he dies, the place he is in is no longer safe and you have to move on and survive with what youve learned
 
 ## Perspective and Visuals
 
@@ -264,10 +255,8 @@ zone 0 is tutorial, rest placeholder.
 ## UI / UX
 
 - [ ] HUD: sanity meter always visible, only when low, or never (world only)? big mood decision
-- [ ] menus: main, pause, settings. Maaack template as base, reskin later
-- [ ] journal: quests/favors, see FDD
 - [ ] dialogue box style, must match art style, wait for Erin
-- [ ] controls: keyboard + gamepad, web too
+- menus, journal, controls: see [FDD](<./FDD.md>)
 
 ## Accessibility
 
@@ -279,12 +268,9 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 - [ ] toggle for screen distortion / camera shake strength
 - [ ] subtitles for important sounds
 - [ ] colorblind check, esp if real vs fake enemies differ by color only
-- [ ] content warning at start
 - [x] remappable keys
 
 ## Scope
-
-1 main driving force(de deanste dean/th3 seeker)
 
 ### MRP (Minimal Game to Deliver)
 
@@ -293,9 +279,9 @@ smallest version of game. if this is not fun, more zones wont fix it. and then w
 - tutorial forest with dying tree
 - one zone after it
 - sanity working, 4 stages
-- few favors with real consequences
+- favors with real consequences [ ] how many
 - one fake ending
-- final art style for player + 1 area (Erin decides art style before this)
+- final art style for player + 1 area
 
 ### Milestones
 
@@ -314,12 +300,11 @@ rough timeline from [cool canvas](<./cool canvas.canvas>): pre-release after 1 y
 
 ### Risks
 
-- art style undecided, blocks all visuals
-- combat undecided, blocks zone design
+- open decisions block stuff, see Decisions
 - only Dean codes,
 - Erin only artist, art takes longest and different timezone
 - scope creep, i love adding ideas (see this whole doc)
-- dean is main driving force bc everyone else is busy
+- dean (de deanste dean/th3 seeker) is main driving force bc everyone else is busy
 
 ## Decisions
 
@@ -340,8 +325,6 @@ these block other stuff.
 
 - Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
 - ARCHIVE folder for old reusable assets (sorted with TagStudio)
-- Erin does artstyle and sometimes ask dean for feedback
-- Dean does level design
 - Friends can join temporarily, or permanently as extra teammates, does need discusion
 - Funding
 	- Simple donation [donations](<../donation.md>)
