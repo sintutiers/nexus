@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Saturday, November 14th 2026, 3:12 pm
+modified: Saturday, November 14th 2026, 4:50 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -11,7 +11,9 @@ author:
 
 # Game Design Document
 
-> see also: [FDD](<FDD.md>) for functional, [TDD](<TDD.md>) for technical
+> this doc is game/vision oriented
+
+> see also: [FDD](<./FDD.md>) for functional, [TDD](<./TDD.md>) for technical
 
 Legend:
 - bullet: decided
@@ -56,7 +58,7 @@ Core pillars:
 - Sanity meter
 
 Mood: surreal/dreamlike, "whimsical horror", heavy atmosphere. 
-see inspirations in: [deans moodboard for huge breakthough project](<deans moodboard for huge breakthough project.canvas>), (mood/vibe only, not gameplay, narrative, 3d/2d, UI or artstyle).
+see inspirations in: [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>), (mood/vibe only, not gameplay, narrative, 3d/2d, UI or artstyle).
 
 the vibe of like progressing is that its hopeless, and you get like shit equipment?
 
@@ -74,7 +76,7 @@ the vibe of like progressing is that its hopeless, and you get like shit equipme
 	- [ ] low-res/pixel player against high-res surroundings
 	- [ ] unique non-pixel style
 	- Owner: Erin.
-- [ ] Art style: see for exact drawing and inspirations and inspirations [Erin's visual ideas](<Erin's visual ideas.canvas>) 
+- [ ] Art style: see for exact drawing and inspirations and inspirations [Erin's visual ideas](<./Erin's visual ideas.canvas>) 
 	- Erin vote: 2D painterly watercolor, maybe 3D if time allows
 	- Dean vote: the first painterly blitch/arcyllic, and the painterly watercolor style
 	- Celtic-style elements are liked
@@ -93,7 +95,7 @@ the vibe of like progressing is that its hopeless, and you get like shit equipme
 
 ## Story
 
-- see [Erin's visual ideas](<Erin's visual ideas.canvas>) for erin minimum storyboard
+- see [Erin's visual ideas](<./Erin's visual ideas.canvas>) for erin minimum storyboard
 
  - [ ] Fairies stole your name, trade favors to get it back (and maybe steal theirs)
  - [ ] Set it in the Celtic world directly instead of isekai-ing the main character
