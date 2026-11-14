@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Saturday, November 14th 2026, 7:11 pm
+modified: Saturday, November 14th 2026, 7:26 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -29,15 +29,6 @@ author:
 > - idk maybe he can like play shitty guitar
 
 ---
-# Cool Beginning Start of Game
-
-#### First Tutorial Level
-- You spawn in a forest with a large dying tree in the middle.(yggdrasil? deku tree? last of the great trees)
-- You must interact with tree to progress, he will tell you he is dying and he will explain a little bit about the world you're in and how to survive.
-- The area around the tree is a temporary safe hub
-- You help the tree complete a few tasks and then he dies, the place he is in is no longer safe and you have to move on and survive with what youve learned
-- sanity point needs to be concrete, like in how it works and what you get from it.
-
 ## General Description
 
 Psychological horror adventure driven by story and narrative, set in a closed world with multiple choice. It plays in a fantasy Celtic mythological faeric world. The Celtic world does exist, but the main character is not from it. The main character slowly goes mentally insane. (can ofc be changed)
@@ -95,24 +86,25 @@ needed for genre name above. one line each, what it is a comp for:
 - Octopath Traveler: [ ] (2.5D)
 	- [ ] more, find horror game with good sanity
 
-## Perspective and Visuals
+from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)
+- Disco Elysium: sanity changes dialogue and perception
+- Hollow Knight: small interconnected world, shortcuts, locked paths
+- Darkwood: temporary safe spaces
+- Majora's Mask: favors, NPC relationships
+- Little Nightmares: environmental encounters
+- Fire Emblem: everything has consequence ([cool canvas](<./cool canvas.canvas>))
 
-- 2.5D, like Octopath Traveler or Illusion Carnival(and others, need to create link specific moodboards)
-- Player is 2D, third person camera and viewpoint
-- Sprites always face the camera (also the player), so sides never need to be drawn
-- [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
-	- Owner: Erin. 
-- [ ] Player style:
-	- [ ] low-res/pixel player against high-res surroundings
-	- [ ] unique non-pixel style
-	- Owner: Erin.
-- [ ] Art style: see for exact drawing and inspirations and inspirations [Erin's visual ideas](<./Erin's visual ideas.canvas>) 
-	- Erin vote: 2D painterly watercolor, maybe 3D if time allows
-	- Dean vote: the first painterly blitch/arcyllic, and the painterly watercolor style
-	- Celtic-style elements are liked
-	- Owner: Erin.
-- [ ] Separate moodboards/example canvases for gameplay and artstyle
-	- Owner: Dean.
+mood only, from [deans moodboard](<./deans moodboard for huge breakthough project.canvas>):
+- Alice Madness Returns, The Path, Fran Bow, Collective Unconscious, The Excavation of Hob's Barrow, Folklore, Blacktail, Bramble The Mountain King, The Night of the Rabbit, The Dark Eye Chains of Satinav
+
+art only, from [Erin's visual ideas](<./Erin's visual ideas.canvas>):
+- Child of Light
+- Dragon Quest I&II HD-2D
+- Cinderia
+
+team favorites ([cool canvas](<./cool canvas.canvas>)):
+- omori, rayman 3, yume 2kki, collective unconscious, celeste, ENA dream bbq, citizen sleeper, deltarune, pseudoregalia, neva
+- undertale, links awakening, swordigo, majora's mask, earthbound
 
 ## Stuff
 
@@ -146,6 +138,19 @@ flowchart TD
 - [ ] "skill" part? movement is all in code (dash, wall jump), where is it used. dodge zones? platforming between NPCs? decide with zone table below
 - [ ] zone length
 
+## Progression and Difficulty
+
+no levels, no upgrades?(perhaps later add small upgrades?) player gains only:
+
+- story (what you know)
+- favors (who owes you, who you owe)
+- abilities / movement unlocks [ ] (zone table decides)
+- items (mostly consumables, shit equipment, see vibe above)
+
+- difficulty rises by world getting stranger, not bigger numbers. sanity is difficulty knob
+- [ ] easy mode / lower sanity drain? probably, see accessibility
+- [ ] pacing: first real scare, first "oh no" moment
+
 ## Story
 
 - see [Erin's visual ideas](<./Erin's visual ideas.canvas>) for erin minimum storyboard
@@ -159,10 +164,17 @@ will change alot when we have writing and lore and such.
 (one short paragraph each is enough for now)
 
 - [ ] protagonist: who, why here, wants what. what "slowly goes insane" looks like across game
+	- Erin ideas ([Erin's visual ideas](<./Erin's visual ideas.canvas>)):
+		- name parallel to celtic myth: Setante (cu chulainn, iron weapon vs fairies), Nechtan (sword of light), or modern name with celtic origin
+		- or normal teen / young guy, struggling in school, mental health
+		- introverted, nerdy, into celtic myth fiction
+		- depression, maybe psychotic
+		- escapes into books/games, maybe thats how he ends up in the realm
 - [ ] name: what it does in this world, why fairies want it, what if never recovered
 - [ ] fairies: one court or several? who is nice, who lies, who lies but nice
 - [ ] dying tree: why dying, killed by what, returns later?
 - [ ] world rules (fae cant lie? iron? food? usual celtic stuff, which to keep, which to drop)
+	- iron: Erin wants big in story, way to "defeat" fairies (Setante idea)
 - [ ] themes: what it is about under the horror
 - [ ] ending structure:
 	- fake ending (good/bad side)
@@ -182,6 +194,13 @@ will change alot when we have writing and lore and such.
 	- (like BOTW/TOTK great deku tree forst mist, and you can unlock more of the mist, but your safe zone also shrinks and such. also like a favor system? idk tho)
 	- both?
 - upgrade your hub world????
+
+from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>) (Hollow Knight):
+- 1 central forest
+- 3 areas branch off
+- each area has 1 access requirement
+- shortcuts unlock while exploring
+- handcrafted only, no procedural generation
 
 World structure idea visualized by dean:
 
@@ -207,18 +226,33 @@ zone 0 is tutorial, rest placeholder.
 | 2                   |           |                           |                |                  |        |
 | 3                   |           |                           |                |                  |        |
 
-## Progression and Difficulty
+## Cool Beginning Start of Game
 
-no levels, no upgrades?(perhaps later add small upgrades?) player gains only:
+### First Tutorial Level
+- You spawn in a forest with a large dying tree in the middle.(yggdrasil? deku tree? last of the great trees)
+- You must interact with tree to progress, he will tell you he is dying and he will explain a little bit about the world you're in and how to survive.
+- The area around the tree is a temporary safe hub
+- You help the tree complete a few tasks and then he dies, the place he is in is no longer safe and you have to move on and survive with what youve learned
+- sanity point needs to be concrete, like in how it works and what you get from it.
 
-- story (what you know)
-- favors (who owes you, who you owe)
-- abilities / movement unlocks [ ] (zone table decides)
-- items (mostly consumables, shit equipment, see vibe above)
+## Perspective and Visuals
 
-- difficulty rises by world getting stranger, not bigger numbers. sanity is difficulty knob
-- [ ] easy mode / lower sanity drain? probably, see accessibility
-- [ ] pacing: first real scare, first "oh no" moment
+- 2.5D, like Octopath Traveler or Illusion Carnival(and others, need to create link specific moodboards)
+- Player is 2D, third person camera and viewpoint
+- Sprites always face the camera (also the player), so sides never need to be drawn
+- [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
+	- Owner: Erin. 
+- [ ] Player style:
+	- [ ] low-res/pixel player against high-res surroundings
+	- [ ] unique non-pixel style
+	- Owner: Erin.
+- [ ] Art style: see for exact drawing and inspirations and inspirations [Erin's visual ideas](<./Erin's visual ideas.canvas>) 
+	- Erin vote: 2D painterly watercolor, maybe 3D if time allows
+	- Dean vote: the first painterly blitch/arcyllic, and the painterly watercolor style
+	- Celtic-style elements are liked
+	- Owner: Erin.
+- [ ] Separate moodboards/example canvases for gameplay and artstyle
+	- Owner: Dean.
 
 ## Audio
 
@@ -248,19 +282,6 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 - [ ] content warning at start
 - [x] remappable keys
 
-## Workflow / Production Thingies
-
-- Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
-- ARCHIVE folder for old reusable assets (sorted with TagStudio)
-- Erin does artstyle and sometimes ask dean for feedback
-- Dean does level design
-- Friends can join temporarily, or permanently as extra teammates, does need discusion
-- Funding
-	- Simple donation [donations](<../donation.md>)
-- [ ] Devlog/blogpost: weekly or other?
-- [ ] Discord community server (when?)
-- [ ] Shared gmail address?
-
 ## Scope
 
 1 main driving force(de deanste dean/th3 seeker)
@@ -282,6 +303,8 @@ smallest version of game. if this is not fun, more zones wont fix it. and then w
 - [ ] 2: 3 zones, true ending reachable
 - [ ] 3: polish, audio, accessibility, web build tested
 - [ ] 4: release
+
+rough timeline from [cool canvas](<./cool canvas.canvas>): pre-release after 1 year, full game (maybe) after 1.5-2 years
 
 ### Cut List (First Things to Skip if Not Enough Time)
 
@@ -305,7 +328,7 @@ these block other stuff.
 | decision                      | options                                         | owner       | due                             | result |
 | ----------------------------- | ----------------------------------------------- | ----------- | ------------------------------- | ------ |
 | combat                        | A no combat / B turn-based / C idfk man         | Dean        | before zone design              |        |
-| sanity 0                      | fail forward / reload / ending                  | Dean        | before touching SanityComponent |        |
+| sanity 0                      | fail forward / reload / ending                  | Dean        | before more sanity work         |        |
 | true ending gating            | hidden NPC / ?                                  | Dean + Erin | before endgame dialogue         |        |
 | art style                     | watercolor / acrylic / pixel player             | Erin        | before vertical slice           |        |
 | environment                   | blender 3D / 2D layers                          | Erin        | before level art                |        |
@@ -313,19 +336,36 @@ these block other stuff.
 | isekai or set in celtic world | see story                                       | Dean + Erin | before story bible              |        |
 | game name + genre name        | ?                                               | all         | before devlog / discord         |        |
 
+## Workflow / Production Thingies
+
+- Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
+- ARCHIVE folder for old reusable assets (sorted with TagStudio)
+- Erin does artstyle and sometimes ask dean for feedback
+- Dean does level design
+- Friends can join temporarily, or permanently as extra teammates, does need discusion
+- Funding
+	- Simple donation [donations](<../donation.md>)
+- [ ] Devlog/blogpost: weekly or other?
+- [ ] Discord community server (when?)
+- [ ] Shared gmail address?
+- [ ] switch code licence GPLv2+ to EUPLv1.2+
+- [ ] update github organisation page
+- [ ] image for game dev group
+- [ ] exclusive updates for donators or not?
+
 ## Glossary
 
 words used interchangeably.
 
 - sanity: 0 to 100 number, 4 stages
-- sanctuary: area that pauses sanity drain (`Sanctuary` in code)
+- sanctuary: area that pauses sanity drain
 - safe space: same as sanctuary? first entry regains sanity
 - hub: safe area in tutorial / central place, depends on hub decision
 - favor: trade between you and NPC, the economy
 - fairy meter: hidden number, NPC opinion of you, [ ] maybe rename
 - fake ending: good/bad side ending
 - true ending: hidden one
-- fake enemy: low sanity only, not real
+- fake enemy: low sanity only, not real?
 
 ## Refinement of Each Requirement
 

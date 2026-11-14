@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Saturday, November 14th 2026, 7:13 pm
+modified: Saturday, November 14th 2026, 7:19 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -23,6 +23,13 @@ priority:
 2. should
 3. could
 
+## How to Write Requirement
+
+1. what the player does
+2. numbers
+3. when its done
+4. short and simplel is fine, its even prefered for now
+
 ## Blocking Decisions
 
  3 stop other stuff from getting designed. full table in [GDD](<GDD.md>#Decisions).
@@ -34,21 +41,7 @@ priority:
 3. true ending gating. 
 	1. blocks: endgame dialogue, hidden NPC
 
-## How to Write Requirement
-
-1. what the player does
-2. numbers
-3. when its done
-4. short and simplel is fine, its even prefered for now
-
 ## Functional Requirements
-
-### Movement
-
-walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited per airtime), crouch. all in.
-
-- [ ] which abilities stay per zone 
-	- [ ] tie to level design?
 
 ### Sanity
 
@@ -82,6 +75,17 @@ must not be a minor annoyance, and must not make the game unplayable
 - when you low sanity, there will be a lot of enemies, but some are like fake and you dont know which are fake
 - [x] environmental damage, where the meter fills up in a certain proximity of something
 
+safe spaces / sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Darkwood):
+
+> status: half done (drain pause works), priority: must
+
+- first entry: +15 sanity, once per sanctuary
+- some objects inside restore extra sanity
+- each sanctuary has 1 NPC or interesting interaction
+- fixed locations, handcrafted
+- never randomly become unsafe. only scripted (dying tree in tutorial)
+- done when: enter sanctuary first time, sanity +15, second time nothing
+
 Sanity loop (sketch):
 
 ```mermaid
@@ -103,12 +107,38 @@ flowchart TD
 - [ ] good/bad side leads to a fake ending, the true ending is hidden
 	- [ ] (talk to a hidden NPC?)  decide gating shape before writing endgame dialogue
 
+sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Disco Elysium):
+- dialogue options can need minimum sanity
+- low sanity replaces some options with other ones
+- example, NPC asks where you came from:
+	- high sanity: "I don't remember."
+	- low sanity: "You know where. You sent me here."
+- hallucination AI + just dialogue conditions ?
+
 ### Quests / Favors
 
 - [ ] NPCs give favors/quests
 	- define structure and tracking (quests have stages, game remembers current stage. journal UI [ ])
 - [ ] rewards are items, info, or sanity
 	- economy: no. favors are the economy. no shops, no currency. it's the celtic-pact thing anyway
+
+numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Majora's Mask):
+- 4-5 important NPCs
+- each has 1 relationship value (= fairy meter)
+- each gives 1-2 favors
+- reward: item, info, or access to new location
+- NPC dialogue changes with relationship
+- no reputation simulation, few values + conditional dialogue
+
+### NPCs
+
+> status: done (basic), priority: must
+
+- talk, pick dialogue choices
+- [ ] NPCs move / schedule, or stand still?
+- [ ] NPCs remember player actions (yes, "world remembers"). which ones, how long?
+- [ ] how NPCs show opinion
+- [ ] low sanity changes some lines (zone 2+). alt lines for every NPC or some?
 
 ### Combat
 
@@ -117,6 +147,12 @@ flowchart TD
 
 options:
 - A) no combat. threats are dialogue/choice encounters. fighting back is a dialogue option that costs sanity. fake vs real enemies resolved by interacting, not hitting. fits the input surface + horror tone. buildable on what exists
+	- encounters (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Little Nightmares):
+		- 5-8 handcrafted encounters
+		- 2-3 choices each: decide, escape, or interact with dangerous thing
+		- choices hit sanity, NPC relationship, or inventory
+		- some only at certain sanity levels
+		- scripted, no enemy AI
 - B) turn-based Undertale/Omori. input is choices + maybe a timed minigame. whole new system, not built
 
 - [ ] pick A or B before designing any
@@ -127,6 +163,13 @@ options:
 - [ ] sanity affects combat
 - combat/interaction FDD:
 	- you have like a branch and when your fighting, your almost always moving
+
+### Movement
+
+walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited per airtime), crouch. all in.
+
+- [ ] which abilities stay per zone 
+	- [ ] tie to level design?
 
 ### Interaction
 
@@ -148,21 +191,35 @@ options:
 - items can restore sanity
 - no currency, no shops (decided)
 - [ ] inventory size limit?
-- [ ] inventory UI. see [inventory ideas](<./inventory ideas.canvas>). gloot / expressobits addons possible, none picked
+- [ ] inventory UI. see [inventory ideas](<./inventory ideas.canvas>). like minecraft hotbar or point n click HUD
+- pickup flow (from [inventory ideas](<./inventory ideas.canvas>)):
+	- pick up by interact or walking over it [ ] which one, or both per item
+	- text: "you picked up *item*"
+	- cant pick up yet (missing other item first): popup says so
+	- NPC can give item (quest reward)
+	- item shows in inventory
+	- use: "you used *item*"
+	- one time use: "*item* has been destroyed"
 - [ ] drop items?
 - [ ] fake items at low sanity?
 - [ ] "shit equipment": what is equipment, does it do anything
 - done when: pick up book, see it, use it, sanity up
 
-### NPCs
+### Tutorial / Onboarding
 
-> status: done (basic), priority: must
+> status: half designed, priority: must
 
-- talk, pick dialogue choices
-- [ ] NPCs move / schedule, or stand still?
-- [ ] NPCs remember player actions (yes, "world remembers"). which ones, how long?
-- [ ] how NPCs show opinion
-- [ ] low sanity changes some lines (zone 2+). alt lines for every NPC or some?
+- dying tree explains world and sanity, few tasks, tree dies, safe area gone
+- teach by doing: movement, interact, talk, choice, sanity drain, sanctuary, sanity restore
+- [ ] list what is taught where. no text popups if tree can say it
+- done when: new player leaves forest without asking us
+
+### Map
+
+> status: open, priority: could
+
+- [ ] map? no map feels more lost, but people get stuck
+- [ ] if yes, lies at low sanity?
 
 ### Journal / Quest Tracker
 
@@ -206,22 +263,6 @@ options:
 
 - third person, 2.5D
 - [ ] camera changes per zone or low sanity (tilt, zoom)?
-
-### Tutorial / Onboarding
-
-> status: half designed, priority: must
-
-- dying tree explains world and sanity, few tasks, tree dies, safe area gone
-- teach by doing: movement, interact, talk, choice, sanity drain, sanctuary, sanity restore
-- [ ] list what is taught where. no text popups if tree can say it
-- done when: new player leaves forest without asking us
-
-### Map
-
-> status: open, priority: could
-
-- [ ] map? no map feels more lost, but people get stuck
-- [ ] if yes, lies at low sanity?
 
 ## Non-functional Requirements
 

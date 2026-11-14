@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Saturday, November 14th 2026, 1:19 pm
+modified: Saturday, November 14th 2026, 7:26 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -10,7 +10,7 @@ author:
 
 # Technical Design Document
 
-> see also: [FDD](<FDD.md>)
+> see also: [FDD](<./FDD.md>)
 
 > [!NOTE] foreword
 > this is for a 1 person programmer, maybe in the future more, but for now that is the constraint
@@ -45,6 +45,8 @@ GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
 - Fail loudly. A bad item ID should call `push_error`, and `_on_setup()` should report missing wiring. Never continue silently.
 - Clear, descriptive names over shortened or abbreviated names. (mostly relevant for functions, but not only) see FUNCTION NAMING below.
 - Signals up, methods down.
+- Event driven. react to signals, dont poll every frame when signal exists.
+- Never nester. early return / guard clause instead of nested ifs.
 - small, composable scenes, not a framework layered on top.
 - Separate machine-independent and machine-dependent code. That’s what makes the code hackable, not cleverness. `PlatformerMovementBase`, with its abstract 2D and 3D functions, is an example.
 - Use narrow interfaces where change is expected. `PlayerApi` (`give_item`, `has_item`, `set_level_flag`, `set_fact`, etc.) hides components, so you can rewrite them without touching dialogue files.
