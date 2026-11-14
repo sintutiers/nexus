@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Saturday, November 14th 2026, 7:26 pm
+modified: Saturday, November 14th 2026, 7:55 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -34,52 +34,71 @@ Godot 4.8
 	- [Project Time Tracker 3.0.1](https://github.com/Fifut/project-time-tracker/releases/tag/v3.0.1)
 
 ## CORE Programming Rules
+
 GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
-- main design pattern (but not only one present): godot flavored component-based architecture
+
+1. main design pattern (but not only one present): godot flavored component-based architecture
 	- but its not perfect, consider this:
-	- components adds a good bit of complexity over simply making a class, and communication between components becomes more challenging. making everything components would be stupid, some things can just be classes or such.
+	- components adds a good bit of complexity over simply making a class, and communication between components becomes more challenging.
+	- making everything components would be stupid, some things can just be classes or such.
 	- over-application can be solved with the golden rule, everything in balance. even the rule itself. (applies to all the rules)
-- Less code is a feature.
-- if considering abstraction, also consider deletion or merging scripts into one.
-	- First of all trying to keep it simple, but secondly when adding complexity how much benefit is coming from that complexity? is this abstraction earning its keep?
-- Fail loudly. A bad item ID should call `push_error`, and `_on_setup()` should report missing wiring. Never continue silently.
-- Clear, descriptive names over shortened or abbreviated names. (mostly relevant for functions, but not only) see FUNCTION NAMING below.
-- Signals up, methods down.
-- Event driven. react to signals, dont poll every frame when signal exists.
-- Never nester. early return / guard clause instead of nested ifs.
-- small, composable scenes, not a framework layered on top.
-- Separate machine-independent and machine-dependent code. That’s what makes the code hackable, not cleverness. `PlatformerMovementBase`, with its abstract 2D and 3D functions, is an example.
-- Use narrow interfaces where change is expected. `PlayerApi` (`give_item`, `has_item`, `set_level_flag`, `set_fact`, etc.) hides components, so you can rewrite them without touching dialogue files.
-- Make code easy to grep. Use one class per file, name file after class, and use stable IDs (item ID is the file name).
-- Write the minimum. Add a narrow interface only where you already expect change.
-- if its not necessary, make sure not to handroll our own logic, use godots inbuilt logic and functions and methods instead.
-- AUDIT, REVIEW, REPEAT: make sure old code is up to date with current codebase/code conventions, design patterns could have changed, things evolve and change. make sure stuff doesn't get left behind
-- GENERAL:
+2. Less code is a feature.
+3. if considering abstraction, also consider deletion or merging scripts into one.
+	- First of all trying to keep it simple, but secondly when adding complexity how much benefit is coming from that complexity?
+	- is this abstraction earning its keep?
+4. Fail loudly.
+	- A bad item ID should call `push_error`, and `_on_setup()` should report missing wiring.
+	- Never continue silently.
+5. Clear, descriptive names over shortened or abbreviated names.
+	- (mostly relevant for functions, but not only)
+	- see FUNCTION NAMING below.
+6. Signals up, methods down.
+7. Event driven.
+	- react to signals, dont poll every frame when signal exists.
+8. Never nester.
+	- early return / guard clause instead of nested ifs.
+9. small, composable scenes, not a framework layered on top.
+10. Separate machine-independent and machine-dependent code.
+	- That’s what makes the code hackable, not cleverness.
+	- `PlatformerMovementBase`, with its abstract 2D and 3D functions, is an example.
+11. Use narrow interfaces where change is expected.
+	- `PlayerApi` (`give_item`, `has_item`, `set_level_flag`, `set_fact`, etc.) hides components, so you can rewrite them without touching dialogue files.
+12. Make code easy to grep.
+	- Use one class per file, name file after class, and use stable IDs (item ID is the file name).
+13. Write the minimum.
+	- Add a narrow interface only where you already expect change.
+14. if its not necessary, make sure not to handroll our own logic, use godots inbuilt logic and functions and methods instead.
+15. AUDIT, REVIEW, REPEAT:
+	- make sure old code is up to date with current codebase/code conventions, design patterns could have changed, things evolve and change.
+	- make sure stuff doesn't get left behind
+16. GENERAL:
 	- keep code like netbsd; easy to inspect, modify, and extend. and like
 	- openbsd; simple, clear, and consistent.
 	- suckless: Clarity, frugality and small enough for one person to read and rewrite.
 
-FUNCTION NAMING
+### FUNCTION NAMING
+
 - Descriptive names. Longer is good when clearer.
-	- add() -> add_inventory_item()
+	- `add()` -> `add_inventory_item()`
 - Full words.
-	- _read_move() -> _get_movement_input()
+	- `_read_move()` -> `_get_movement_input()`
 - Name the actual behavior.
-	- _find_closest() -> _find_nearest_interactable()
+	- `_find_closest()` -> `_find_nearest_interactable()`
 - Add system/target/result when it clarifies.
-	- get_ratio() -> get_current_sanity_ratio()
+	- `get_ratio()` -> `get_current_sanity_ratio()`
 - Readable at call site.
-	- run(by) -> execute_interaction_for_actor(actor)
+	- `run(by)` -> `execute_interaction_for_actor(actor)`
 - Related names consistent.
-	- pause() -> pause_sanity_drain(), unpause() -> resume_sanity_drain()
+	- `pause()` -> `pause_sanity_drain()`, `unpause()` -> `resume_sanity_drain()`
 - Context from class alone isn't always enough.
-	- set_value() -> set_current_sanity_value()
+	- `set_value()` -> `set_current_sanity_value()`
 - No filler words.
-	- get_frame() stays get_frame() when it returns InputFrame.
+	- `get_frame()` stays `get_frame()` when it returns `InputFrame`.
 - Rename declarations, overrides, call sites together.
 - Preserve Godot-defined method names.
 
 ## Rules for Documentation and Comments
+
 GAME DEV DOCUMENTATION AND COMMENT PRINCIPLES
 
 - Comment the surprising, not the obvious with inline comments.
@@ -91,21 +110,16 @@ GAME DEV DOCUMENTATION AND COMMENT PRINCIPLES
 - Don't duplicate code in comments.
 	- If a comment just restates code, delete it.
 - Use two comment types, two jobs.
-	- Double-hash doc comments for public API docs (parsed by editor and shown
-	  in class reference).
-	- Single-hash comments for inline implementation notes
-	  (ignored by documentation system).
+	- Double-hash doc comments for public API docs (parsed by editor and shown in class reference).
+	- Single-hash comments for inline implementation notes (ignored by documentation system).
 
-API DOCS
-Use double-hash doc comments for public functions, signals, `@export` variables,
-`class_name`, and modules. A doc comment must sit immediately above member it
-documents. Members starting with `_` are treated as private and skipped by docs.
+### API DOCS
+
+Use double-hash doc comments for public functions, signals, `@export` variables, `class_name`, and modules. A doc comment must sit immediately above member it documents. Members starting with `_` are treated as private and skipped by docs.
 
 - `#` = why. `##` = public API contract (shows in Inspector). Don't mix them.
-- Document the contract: what it does, parameters,
-  return values, and side effects.
-- Link related symbols with [member health], [method take_damage], [signal died].
-  These become clickable in editor.
+- Document the contract: what it does, parameters, return values, and side effects.
+- Link related symbols with `[member health]`, `[method take_damage]`, `[signal died]`. These become clickable in editor.
 - Add a short usage example for non-trivial functions.
 
 Example:
@@ -114,11 +128,12 @@ Example:
 > @experimental: Timing May Change.
 	signal ball_peak_changed(in_peak: bool)
 
-INLINE COMMENTS
+### INLINE COMMENTS
+
 Use single-hash comments inside function bodies.
+
 - Comment the surprising, not the obvious.
-	- Good for: engine workarounds, ordering requirements, magic numbers,
-	  and warnings like "changing this breaks saves".
+	- Good for: engine workarounds, ordering requirements, magic numbers, and warnings like "changing this breaks saves".
 - Write for future fixer and extender.
 	- Explain invariants, pitfalls, and non-obvious choices.
 - Keep them short.
@@ -129,12 +144,12 @@ Example:
 > Peak Entry Still Fires Legacy Max-speed Event Cadence Latches On.
 > func _on_ball_peak_changed(in_peak: bool) -> void:
 
-HYGIENE
+### HYGIENE
+
 - Fix code, not comments.
 	- Don't use comments to patch bad names or messy GDScript. Rewrite it.
 - Update outdated doc comments.
-	- Editor hover and class reference will show stale docs. An incorrect
-	  comment is worse than no comment.
+	- Editor hover and class reference will show stale docs. An incorrect comment is worse than no comment.
 - Be consistent.
 	- Example: capital letter, end with period, put comments above code.
 

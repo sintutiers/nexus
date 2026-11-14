@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Saturday, November 14th 2026, 7:19 pm
+modified: Saturday, November 14th 2026, 8:00 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -30,18 +30,8 @@ priority:
 1. what the player does
 2. numbers
 3. when its done
-4. short and simplel is fine, its even prefered for now
+4. short and simple is fine, its even prefered for now
 
-## Blocking Decisions
-
- 3 stop other stuff from getting designed. full table in [GDD](<GDD.md>#Decisions).
-
-1. combat, A or B below. 
-	1. blocks: enemy/threat design, zone design, "sanity affects combat"
-2. sanity 0, what happens. 
-	1. blocks: sanity system, sanity ending, fail state
-3. true ending gating. 
-	1. blocks: endgame dialogue, hidden NPC
 
 ## Functional Requirements
 

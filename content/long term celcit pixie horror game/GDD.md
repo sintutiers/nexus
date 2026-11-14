@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Saturday, November 14th 2026, 7:26 pm
+modified: Saturday, November 14th 2026, 7:53 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -80,7 +80,7 @@ deciding what its not collapses future choices and makes thing in the future be 
 
 ### Comparable Games
 
-needed for genre name above. one line each, what it is a comp for:
+needed for genre name above:
 
 - Omori: [ ] 
 - Undertale: [ ] 
@@ -194,7 +194,7 @@ hub structure, [ ] pick one (see Decisions):
 	- both?
 - upgrade your hub world????
 
-option A visualized by dean:
+option A visualized:
 
 ```mermaid
 flowchart TD
@@ -208,7 +208,7 @@ flowchart TD
 
 ### Zone Table
 
-one row per zone. 
+> one row per zone. 
 zone 0 is tutorial, rest placeholder.
 
 | zone                | mood      | teaches                   | NPCs / threats | unlocks          | status |
@@ -331,7 +331,7 @@ these block other stuff.
 - [ ] Devlog/blogpost: weekly or other?
 - [ ] Discord community server (when?)
 - [ ] Shared gmail address?
-- [ ] switch code licence GPLv2+ to EUPLv1.2+
+- [x] switch code licence GPLv2+ to EUPLv1.2+
 - [ ] update github organisation page
 - [ ] image for game dev group
 - [ ] exclusive updates for donators or not?
