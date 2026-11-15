@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 6:59 pm
+modified: Sunday, November 15th 2026, 7:01 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -26,42 +26,34 @@ author:
 	- [Sanity](<#Sanity>)
 	- [Dialogue + Choices](<#Dialogue + Choices>)
 	- [NPCs](<#NPCs>)
-	- [Quests / Favors](<#Quests / Favors>)
+	- [Quests + Favors](<#Quests + Favors>)
 	- [Combat](<#Combat>)
-	- [Movement](<#Movement>)
-	- [Controls](<#Controls>)
+	- [Movement + Controls](<#Movement + Controls>)
 	- [Camera](<#Camera>)
 	- [Interaction](<#Interaction>)
 	- [Inventory + Items](<#Inventory + Items>)
-	- [Tutorial / Onboarding](<#Tutorial / Onboarding>)
-	- [Map](<#Map>)
-	- [Journal / Quest Tracker](<#Journal / Quest Tracker>)
-	- [Save + Load](<#Save + Load>)
-	- [Menus + Settings](<#Menus + Settings>)
+	- [Tutorial + Onboarding](<#Tutorial + Onboarding>)
+	- [Map + Journal](<#Map + Journal>)
+	- [Save + Menus](<#Save + Menus>)
 - [Non-functional Requirements](<#Non-functional Requirements>)
-	- [Platform](<#Platform>)
-	- [Performance](<#Performance>)
-	- [Compatibility](<#Compatibility>)
+	- [Platform & Performance](<#Platform & Performance>)
 	- [Accessibility](<#Accessibility>)
 	- [Multiplayer](<#Multiplayer>)
 - [Open Questions](<#Open Questions>)
 	- [Sanity](<#Open Questions#Sanity>)
 	- [Dialogue + Choices](<#Open Questions#Dialogue + Choices>)
 	- [NPCs](<#Open Questions#NPCs>)
-	- [Quests / Favors](<#Open Questions#Quests / Favors>)
+	- [Quests + Favors](<#Open Questions#Quests + Favors>)
 	- [Combat](<#Open Questions#Combat>)
-	- [Movement](<#Open Questions#Movement>)
-	- [Controls](<#Open Questions#Controls>)
+	- [Movement + Controls](<#Open Questions#Movement + Controls>)
 	- [Camera](<#Open Questions#Camera>)
 	- [Interaction](<#Open Questions#Interaction>)
 	- [Inventory + Items](<#Open Questions#Inventory + Items>)
-	- [Tutorial / Onboarding](<#Open Questions#Tutorial / Onboarding>)
-	- [Map](<#Open Questions#Map>)
-	- [Journal / Quest Tracker](<#Open Questions#Journal / Quest Tracker>)
-	- [Save + Load](<#Open Questions#Save + Load>)
-	- [Menus + Settings](<#Open Questions#Menus + Settings>)
-	- [Performance](<#Open Questions#Performance>)
-	- [Compatibility](<#Open Questions#Compatibility>)
+	- [Tutorial + Onboarding](<#Open Questions#Tutorial + Onboarding>)
+	- [Map + Journal](<#Open Questions#Map + Journal>)
+	- [Save + Menus](<#Open Questions#Save + Menus>)
+	- [Platform & Performance](<#Open Questions#Platform & Performance>)
+	- [Multiplayer](<#Open Questions#Multiplayer>)
 - [User Acceptance Test](<#User Acceptance Test>)
 
 ## General Info
@@ -165,13 +157,11 @@ numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>
 > [!failure] Blocker
 > see Decisions in [GDD](<./GDD.md>), options in [Open Questions](<#Open Questions>). (create moodboard for that, combatboard?)
 
-### Movement
+### Movement + Controls
 
 walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited per airtime), crouch. all in.
 
-### Controls
-
-> status: done (keyboard)
+> status: done (keyboard movement + controls)
 > priority: must
 
 keyboard for now, gamepad + touchscreen later
@@ -223,52 +213,36 @@ keyboard for now, gamepad + touchscreen later
 - no text popups if tree can say it
 - done when: new player leaves forest w/o asking us
 
-### Map
+### Map + Journal
 
 > status: open
-> priority: could
+> priority: could (map) / should (journal)
 
-see [Open Questions](<#Open Questions>)
+both are stubs. see [Open Questions](<#Open Questions>).
 
-### Journal / Quest Tracker
-
-> status: open
-> priority: should
-
-see [Open Questions](<#Open Questions>)
-
-### Save + Load
+### Save + Menus
 
 > status: done
-> priority: must
+> priority: must (save) / should (menus)
 
+**Save + Load:**
 - checkpoints, level progress, quest progress saved
 - picked up items, per level flags saved
 - checkpoints only, no manual save
 - done when: continue puts you at checkpoint with same items, sanity
 
-### Menus + Settings
-
-> status: done (placeholder look)
-> priority: should
-
+**Menus + Settings (placeholder look):**
 - main menu, pause, options
 
 ## Non-functional Requirements
 
-### Platform
+### Platform & Performance
 
 - dev/test on small formfactor laptop for now
 - ship to desktop + web. web = perf target
 - Compatibility renderer, heavier only if needed
-
-### Performance
-
 - 45 fps min on web, always
-
-### Compatibility
-
-see [Open Questions](<#Open Questions>)
+- languages + save compat: see [Open Questions](<#Open Questions>)
 
 ### Accessibility
 
@@ -341,13 +315,10 @@ options:
 - combat/interaction FDD:
 	- you have like a branch + when fighting, almost always moving
 
-### Movement
+### Movement + Controls
 
 - [ ] which abilities stay per zone 
 	- [ ] tie to level design?
-
-### Controls
-
 - [ ] web: keyboard only ok?
 - [ ] list all actions (move, run, jump, dash, crouch, interact, pause, journal?)
 
@@ -374,35 +345,30 @@ options:
 
 - [ ] list what = taught where
 
-### Map
+### Map + Journal
 
 - [ ] map? no map = more lost, but people get stuck
 - [ ] if yes, lies at low sanity?
-
-### Journal + Quest Tracker
-
 - [ ] journal UI, exists at all? helps, but fits badly with lost/hopeless vibe. maybe diary unreliable at low sanity
 - [ ] next objective shown or nothing
 
-### Save + Load
+### Save + Menus
 
 - [ ] old saves after updates add/change items/quests
 - [ ] web saves: browser storage, can get wiped. warn player? print warning that player should clear cache? perhaps player can export json file with save?
-
-### Menus + Settings
-
 - [ ] settings: volume, fullscreen + accessibility toggles (list in [GDD](<./GDD.md>))
 - [ ] art style, wait for Erin
 
-### Performance
+### Platform & Performance
 
 - [ ] load time target, esp web (max first download size?)
 - [ ] sanity visuals must hold 45 fps
-
-### Compatibility
-
 - [ ] languages: english only
 - [ ] save compatibility between versions
+
+### Multiplayer
+
+- [ ] feature or tech demo?
 
 ## User Acceptance Test
 

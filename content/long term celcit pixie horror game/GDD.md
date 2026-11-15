@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 6:59 pm
+modified: Sunday, November 15th 2026, 7:09 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -22,24 +22,27 @@ author:
 ## Content in Doc
 
 - [General Info](<#General Info>)
-- [General Description](<#General Description>)
+	- [Doc Rules](<#Doc Rules>)
+	- [Game Description](<#Game Description>)
 - [Pitch Thing (Most Other GDD Stuff Have)](<#Pitch Thing (Most Other GDD Stuff Have)>)
 	- [What Player Should Feel](<#What Player Should Feel>)
 	- [What Game = NOT](<#What Game = NOT>)
 	- [Comparable Games](<#Comparable Games>)
-- [Story](<#Story>)
-- [World](<#World>)
-	- [Zone Table](<#Zone Table>)
-- [Tutorial](<#Tutorial>)
+- [Story & World](<#Story & World>)
+	- [Story](<#Story>)
+	- [World](<#World>)
+		- [Zone Table](<#Zone Table>)
+		- [Tutorial](<#Tutorial>)
 - [Core Loop + Progression](<#Core Loop + Progression>)
-- [Perspective + Visuals](<#Perspective + Visuals>)
-- [Audio & UI](<#Audio & UI>)
-- [Accessibility](<#Accessibility>)
+- [Presentation](<#Presentation>)
+	- [Visuals](<#Visuals>)
+	- [Audio & UI](<#Audio & UI>)
 - [Scope](<#Scope>)
 	- [MRP (Minimal Game to Deliver)](<#MRP (Minimal Game to Deliver)>)
 	- [Milestones](<#Milestones>)
 	- [Cut List (First Things to Skip)](<#Cut List (First Things to Skip)>)
 	- [Risks](<#Risks>)
+	- [Accessibility](<#Accessibility>)
 	- [Workflow + Production Thingies](<#Workflow + Production Thingies>)
 - [Decisions](<#Decisions>)
 - [Open Questions](<#Open Questions>)
@@ -47,8 +50,7 @@ author:
 	- [Story](<#Open Questions#Story>)
 	- [World](<#Open Questions#World>)
 	- [Core Loop + Progression](<#Open Questions#Core Loop + Progression>)
-	- [Visuals](<#Open Questions#Visuals>)
-	- [Audio + UI](<#Open Questions#Audio + UI>)
+	- [Presentation](<#Open Questions#Presentation>)
 	- [Accessibility](<#Open Questions#Accessibility>)
 	- [Scope + Workflow](<#Open Questions#Scope + Workflow>)
 
@@ -70,13 +72,15 @@ author:
 
 ## General Info
 
+### Doc Rules
+
 - GDD = what game is + vibe. [FDD](<./FDD.md>) = rules + numbers. [TDD](<./TDD.md>) = code
 - sections = decided only. open stuff in [Open Questions](<#Open Questions>), big blocking ones in [Decisions](<#Decisions>)
 - decision made? update its section + Open Questions + Decisions
 - status: done = works in game / designed = decided, not built / open = needs decision
 - priority: must / should / could
 
-## General Description
+### Game Description
 
 Psychological horror adventure driven by story + narrative, set in a closed world with multiple choice. Plays in a fantasy Celtic mythological faeric world. Main character slowly goes mentally insane.
 
@@ -159,28 +163,29 @@ references:
 - swordigo
 - earthbound
 
-## Story
+## Story & World
+
+### Story
 
 ![file-20261021094624951](<../static_files/file-20261021094624951.png>)
 
 really minimal, but lore should not be focus now bc im mainly 1 guy
 
-## World
+### World
 
 - Closed world, split into zones (idk, like some interconnected weave like yume 2kki ? <https://explorer.yume.wiki/>)
 - handcrafted only, no procedural generation
 - shortcuts unlock while exploring
 - hub structure: not picked yet, options in [Open Questions](<#Open Questions>)
 
-### Zone Table
-
+#### Zone Table
 
 | zone                           | mood      | teaches                   | NPCs / threats | unlocks          | status |
 | ------------------------------ | --------- | ------------------------- | -------------- | ---------------- | ------ |
 | 0 dying tree forest (tutorial) | safe, sad | talking, sanity, interact | the tree       | leave the forest |        |
 | 1                              |           |                           |                |                  |        |
 
-## Tutorial
+#### Tutorial
 
 - You spawn in a forest with a large dying tree in the middle.(yggdrasil? deku tree? last of the great trees)
 - You must interact with tree to progress, he will tell you he is dying + he will explain a little bit about the world youre in + how to survive.
@@ -216,7 +221,9 @@ player gains only:
 
 difficulty rises by world getting stranger, not bigger numbers.
 
-## Perspective + Visuals
+## Presentation
+
+> Visuals + Audio & UI
 
 - 2.5D, like Octopath Traveler or Illusion Carnival(and others, need to create link specific moodboards)
 - Player = 2D
@@ -226,18 +233,8 @@ difficulty rises by world getting stranger, not bigger numbers.
 - Celtic-style elements are liked
 - environment, player style + art style: not decided, see [Open Questions](<#Open Questions>). Owner: Erin.
 
-## Audio & UI
-
-- Diverse + immersive music + sounds, part of atmosphere
+- immersive music + sounds, part of atmosphere
 - menus, journal, controls: see [FDD](<./FDD.md>)
-
-## Accessibility
-
-horror + screen distortion can make people sick. color blind people + such.
-this stuff comes later tho, should absolutly not be focus now
-can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
-
-- [x] remappable keys
 
 ## Scope
 
@@ -275,6 +272,14 @@ rough timeline: pre-release after 1 year, full game (maybe) after 1.5-2 years
 - scope creep, i love adding ideas (see this whole doc)
 - dean (de deanste dean/th3 seeker) = main driving force bc everyone else is busy
 
+### Accessibility
+
+horror + screen distortion can make people sick. color blind people + such.
+this stuff comes later tho, should absolutly not be focus now
+can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
+
+- [x] remappable keys
+
 ### Workflow + Production Thingies
 
 - Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
@@ -300,8 +305,8 @@ these block other stuff. smaller open stuff in [Open Questions](<#Open Questions
 
 ## Open Questions
 
-- not decided yet. 
-	- decided? move up into its section, delete here. big ones also in [Decisions](<#Decisions>).
+> not decided yet. 
+> decided? move up into its section, delete here. big ones also in [Decisions](<#Decisions>).
 
 ### General
 
@@ -350,7 +355,7 @@ these block other stuff. smaller open stuff in [Open Questions](<#Open Questions
 	- upgrade your hub world????
 - [ ] tutorial: how many tasks for tree
 
-option A sketch:
+A sketch:
 
 ```mermaid
 flowchart TD
@@ -370,7 +375,7 @@ flowchart TD
 - [ ] easy mode / lower sanity drain? probably, see accessibility
 - [ ] pacing: first real scare, first "oh no" moment
 
-### Visuals
+### Presentation
 
 - [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
 	- Owner: Erin. 
@@ -384,9 +389,6 @@ flowchart TD
 	- Owner: Erin.
 - [ ] Separate moodboards/example canvases for gameplay + artstyle
 	- Owner: Dean.
-
-### Audio + UI
-
 - [ ] sanity changes audio too (muffled, wrong sounds, detuned music).
 - [ ] music theme per zone or 1 warped theme that gets more garbled as progression + choices?
 - [ ] sound source (own recordings, free libraries) + licence

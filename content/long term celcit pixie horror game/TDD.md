@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Sunday, November 15th 2026, 5:33 pm
+modified: Sunday, November 15th 2026, 7:25 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -38,33 +38,30 @@ author:
 	- [Debug](<#Debug>)
 - [Technical Specifications](<#Technical Specifications>)
 
-
-
 ## Technical Stack
 
 Godot 4.8, GDScript. Godot compatibility renderer, if need more advanced features we use that then, not sooner.
 ### Addons
-- [GDScript Formatter 0.27.0](https://github.com/GDQuest/GDScript-formatter/releases/tag/0.27.0) - tool
-- [Antzs Debug Menu 1.3.0](https://github.com/antzGames/Antz-Debug-Menu/releases/tag/v1.3.0) - debug
-- [LimboConsole 0.8.0](https://github.com/limbonaut/limbo_console/releases/tag/v0.8.0) - debug `DebugCommands`
-- [Dialogue Manager 4.2.0](https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v4.2.0) - dialogue + choices
-- [health, hitboxes and hitscans 5.0.4](https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4) - future health?
-- [Godot State Charts 0.22.5](https://github.com/derkork/godot-statecharts/releases/tag/v0.22.5) - movement states
+- [Dialogue Manager 4.2.0](https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v4.2.0) - dialogue + choices : `DialogueManager` (autoload)
+- [Antzs Debug Menu 1.3.0](https://github.com/antzGames/Antz-Debug-Menu/releases/tag/v1.3.0) - debug : `DebugMenu` (autoload)
 - [Maaacks Game Template Addon 1.7.1](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.7.1) - level loading, saving (`GlobalState`, `LevelManager`)
-	- [Godot-UI-Sound-Controller 1.7.1](https://github.com/Maaack/Godot-UI-Sound-Controller/releases/tag/v1.7.1) - `ProjectUISoundController`
-	- [Godot-Scene-Loader 1.7.1](https://github.com/Maaack/Godot-Scene-Loader/releases/tag/v1.7.1) - `SceneLoader`
-	- [Godot-Music-Controller 1.7.1](https://github.com/Maaack/Godot-Music-Controller/releases/tag/v1.7.1) - `ProjectMusicController`
-- [Script-IDE 2.2.5](https://github.com/Maran23/script-ide/releases/tag/v2.2.5) - tool
-- [sound manager 2.6.2](https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2) - sound
-- [phantom camera 0.11.0.4](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4) - camera
-- [SpacetimeDB Client SDK 0.3.3](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.3) - multiplayer
-- [Plugin Updater 0.5.1](https://github.com/Maaack/Godot-Plugin-Updater/releases/tag/v0.5.1) - tool
-- [Project Time Tracker 3.0.1](https://github.com/Fifut/project-time-tracker/releases/tag/v3.0.1) - tool
+	- [Godot-UI-Sound-Controller 1.7.1](https://github.com/Maaack/Godot-UI-Sound-Controller/releases/tag/v1.7.1) : `ProjectUISoundController` (autoload)
+	- [Godot-Scene-Loader 1.7.1](https://github.com/Maaack/Godot-Scene-Loader/releases/tag/v1.7.1) : `SceneLoader` (autoload)
+	- [Godot-Music-Controller 1.7.1](https://github.com/Maaack/Godot-Music-Controller/releases/tag/v1.7.1) : `ProjectMusicController` (autoload)
+- [phantom camera 0.11.0.4](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4) - camera : `PhantomCameraManager` (autoload)
+- [sound manager 2.6.2](https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2) - sound : `SoundManager` (autoload)
+- [LimboConsole 0.8.0](https://github.com/limbonaut/limbo_console/releases/tag/v0.8.0) - debug : `LimboConsole` (autoload), `DebugCommands` (autoload)
+- [SpacetimeDB Client SDK 0.3.3](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.3) - multiplayer `SpacetimeDB` 
+- [GDScript Formatter 0.27.0](https://github.com/GDQuest/GDScript-formatter/releases/tag/0.27.0) - tool (no autoload)
+- [health, hitboxes and hitscans 5.0.4](https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4) - future health? (no autoload)
+- [Godot State Charts 0.22.5](https://github.com/derkork/godot-statecharts/releases/tag/v0.22.5) - movement states (no autoload)
+- [Script-IDE 2.2.5](https://github.com/Maran23/script-ide/releases/tag/v2.2.5) - tool (no autoload)
+- [Plugin Updater 0.5.1](https://github.com/Maaack/Godot-Plugin-Updater/releases/tag/v0.5.1) - tool (no autoload)
+- [Project Time Tracker 3.0.1](https://github.com/Fifut/project-time-tracker/releases/tag/v3.0.1) - tool (no autoload)
+
+only `DebugCommands` + `Net` autoloads are ours.
 
 > Server: [see Multiplayer.](<#multiplayer>)
-
-Autoloads; in order they load: `DialogueManager`, `DebugMenu`, `ProjectUISoundController`, `SceneLoader`, `ProjectMusicController`, `PhantomCameraManager`, `SoundManager`, `LimboConsole`, `DebugCommands`, `Net`, `SpacetimeDB`. 
-only `DebugCommands` + `Net` are ours, rest comes from addons.
 
 - `GlobalState` is static class, not autoload -> `GlobalState.save()` can be called from anywhere, order doesnt matter.
 - `LimboConsole` should stay above `DebugCommands`, bc that one adds its commands in `_ready`.
