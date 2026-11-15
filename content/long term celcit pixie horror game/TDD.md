@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Saturday, November 14th 2026, 7:55 pm
+modified: Saturday, November 14th 2026, 8:49 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -29,7 +29,7 @@ Godot 4.8
 	- [Script-IDE 2.2.5](https://github.com/Maran23/script-ide/releases/tag/2.2.5)
 	- [sound manager 2.6.2](https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2)
 	- [phantom camera 0.11.0.4](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4)
-	- [SpacetimeDB Client SDK 0.3.2](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.2)
+	- [SpacetimeDB Client SDK 0.3.3](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.3)
 	- [Plugin Updater 0.5.1](https://github.com/Maaack/Godot-Plugin-Updater/releases/tag/v0.5.1)
 	- [Project Time Tracker 3.0.1](https://github.com/Fifut/project-time-tracker/releases/tag/v3.0.1)
 

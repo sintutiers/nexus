@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Saturday, November 14th 2026, 8:00 pm
+modified: Saturday, November 14th 2026, 8:46 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -148,6 +148,10 @@ options:
 - B) small and tactical. whole new system, not built
 	- [ ] turn-based Undertale/Omori like. input is choices + maybe a timed minigame
 	- [ ] fire emblem or cadence of hyrule like (sanity can be way more challenging there)
+- C) real time
+	- [ ]  real time combat, you have a button to swing a weapon to deal damage
+	- [ ] enemy touches/hits you = lose sanity
+	- [ ] enemy dies after few hits
 
 - [ ] sanity affects combat
 - combat/interaction FDD:

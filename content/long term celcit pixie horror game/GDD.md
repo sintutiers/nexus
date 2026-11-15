@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Saturday, November 14th 2026, 7:53 pm
+modified: Sunday, November 15th 2026, 1:20 am
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -134,7 +134,7 @@ flowchart TD
 
 ## Progression and Difficulty
 
-the vibe of like progressing is that its hopeless, and you get like shit equipment?
+vibe of like progressing is that its hopeless, and you get like shit equipment?
 player gains only:
 
 - story (what you know)
@@ -158,24 +158,24 @@ player gains only:
 will change alot when we have writing and lore and such. 
 (one short paragraph each is enough for now)
 
-- [ ] protagonist: who, why here, wants what. what "slowly goes insane" looks like across game
+- [ ] **protagonist**: who, why here, wants what. what "slowly goes insane" looks like across game
 	- Erin ideas ([Erin's visual ideas](<./Erin's visual ideas.canvas>)):
 		- name parallel to celtic myth: Setante (cu chulainn, iron weapon vs fairies), Nechtan (sword of light), or modern name with celtic origin
 		- or normal teen / young guy, struggling in school, mental health
-		- introverted, nerdy, into celtic myth fiction
+		- introverted, nerdy, into celtic m yth fiction
 		- depression, maybe psychotic
 		- escapes into books/games, maybe thats how he ends up in the realm
-- [ ] name: what it does in this world, why fairies want it, what if never recovered
-- [ ] fairies: one court or several? who is nice, who lies, who lies but nice
-- [ ] dying tree: why dying, killed by what, returns later?
-- [ ] world rules (fae cant lie? iron? food? usual celtic stuff, which to keep, which to drop)
-	- iron: Erin wants big in story, way to "defeat" fairies (Setante idea)
-- [ ] themes: what it is about under the horror
-- [ ] ending structure:
+- [ ] **name**: what it does in this world, why fairies want it, what if never recovered
+- [ ] **fairies**: one court or several? who is nice, who lies, who lies but nice
+- [ ] **dying tree**: why dying, killed by what, returns later?
+- [ ] **world rules** (fae cant lie? iron? food? usual celtic stuff, which to keep, which to drop)
+	- weakness fairies?: iron? big in story, way to "defeat" fairies (Setante idea)
+- [ ] **themes**: what it is about under the horror
+- [ ] **ending structure**:
 	- fake ending (good/bad side)
 	- true ending (hidden)
 	- sanity 0 ending? (see sanity 0 in the [FDD](<./FDD.md>))
-- [ ] tone rules: what whimsical horror allows. gore? body horror? child characters? write down so Erin and Dean dont guess differently
+- [ ] **tone rules**: what whimsical horror allows. gore? body horror? child characters? write down so Erin and Dean dont guess differently
 - [ ] content warnings for store page / game start
 
 ## World
@@ -340,15 +340,15 @@ these block other stuff.
 
 words used interchangeably.
 
-- sanity: 0 to 100 number, 4 stages
-- sanctuary: area that pauses sanity drain
-- safe space: same as sanctuary? first entry regains sanity
-- hub: safe area in tutorial / central place, depends on hub decision
-- favor: trade between you and NPC, the economy
-- fairy meter: hidden number, NPC opinion of you, [ ] maybe rename
-- fake ending: good/bad side ending
-- true ending: hidden one
-- fake enemy: low sanity only, not real?
+- **sanity**: 0 to 100 number, 4 stages
+- **sanctuary**: area that pauses sanity drain
+- **safe space**: same as sanctuary? first entry regains sanity
+- **hub**: safe area in tutorial / central place, depends on hub decision
+- **favor**: trade between you and NPC, the economy
+- **fairy meter**: hidden number, NPC opinion of you, [ ] maybe rename
+- **fake ending**: good/bad side ending
+- **true ending**: hidden one
+- **fake enemy**: low sanity only, not real?
 
 ## Refinement of Each Requirement
 
