@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 7:27 pm
+modified: Sunday, November 15th 2026, 7:31 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -143,9 +143,10 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 
 ### Quests + Favors
 
-- economy: no. favors = economy. no shops, no currency. its celtic-pact thing anyway
+- economy: no. favors = economy. no shops, no currency.
 
-numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Majoras Mask):
+numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)):
+- Majoras Mask
 - 4-5 important NPCs
 - each has 1 relationship value (= fairy meter)
 - each gives 1-2 favors
