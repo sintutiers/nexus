@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 6:17 pm
+modified: Sunday, November 15th 2026, 6:42 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -14,6 +14,9 @@ author:
 > see also: [GDD](<./GDD.md>) for vision/story/world, [TDD](<./TDD.md>) for technical
 
 > sources: [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), [inventory ideas](<./inventory ideas.canvas>)
+
+> [!error] to dean, from dean
+> becarefull of scope creep, and perfectionism. i love adding ideas (see whole doc)
 
 ## Table of Contents
 
@@ -59,38 +62,30 @@ author:
 	- [Menus and Settings](<#Open Questions#Menus and Settings>)
 	- [Performance](<#Open Questions#Performance>)
 	- [Compatibility](<#Open Questions#Compatibility>)
-	- [Multiplayer](<#Open Questions#Multiplayer>)
 - [User Acceptance Test (UAT)](<#User Acceptance Test (UAT)>)
 
-## Info
+## General Info
 
-- FDD = what game does: rules, numbers, when its done. 
-- vision/story is in [GDD](<./GDD.md>), code in [TDD](<./TDD.md>)
-
-status:
-- done = works in game
-- designed = decided, not built
-- open = needs decision
-
-priority: 
-1. must 
-2. should
-3. could
+- FDD = what game does: rules + numbers. why/vive in [GDD](<./GDD.md>), code in [TDD](<./TDD.md>)
+- sections = decided only. 
+- open stuff in [Open Questions](<#Open Questions>)
+- status: done (works in game) / designed (decided, not built) / open (needs decision)
+- priority: must / should / could
 
 ## How to Write Requirement
 
 1. what the player does
 2. numbers
-3. when its done
-4. short and simple is fine, its even prefered for now
+3. done when: how to check it
+4. short and simple, prefered for now
 
 ## Functional Requirements
 
 ### Sanity
 
-sanity is core pillar so it needs to be concrete, not just "you lose sanity" with no consequenses. what the game already does:
+core pillar, so concrete, not just "you lose sanity" with no consequenses.
 
-- 0 to 100, 4 zones at 25/50/75 
+- 0 to 100, 4 stages at 25/50/75 
 - drain:
 	- flat per second in the world
 	- wrong dialogue choices, witnessing certain story events
@@ -102,19 +97,20 @@ sanity is core pillar so it needs to be concrete, not just "you lose sanity" wit
 	- completing quest steps / objectives
 	- NPC favors
 - encounters, random and set: gain or lose sanity depending on choices
-- low zone changes the world per zone:
-	- zone 0 (75-100): baseline
-	- zone 1 (50-75): minor unease. visuals in
-	- zone 2 (25-50): stronger distortion, some NPC lines change, fake enemies may show up
-	- zone 3 (0-25): heavy distortion, more fake enemies, some real threats
+- lower stage changes the world more:
+	- stage 0 (75-100): baseline
+	- stage 1 (50-75): minor unease. visuals in
+	- stage 2 (25-50): stronger distortion, some NPC lines change, fake enemies may show up
+	- stage 3 (0-25): heavy distortion, more fake enemies, some real threats
 	- fake enemies: you dont know which are fake
-- sanity 0: not decided, see [Open Questions](#Open Questions)
+- sanity 0: not decided, see [Open Questions](<#Open Questions>)
 
 must not be a minor annoyance, and must not make the game unplayable
 
-safe spaces / sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Darkwood):
+sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Darkwood):
 
-> status: half done (drain pause works), priority: must
+> status: half done (drain pause works)
+> priority: must
 
 - first entry: +15 sanity, once per sanctuary
 - some objects inside restore extra sanity
@@ -123,7 +119,7 @@ safe spaces / sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboa
 - never randomly become unsafe. only scripted (dying tree in tutorial)
 - done when: enter sanctuary first time, sanity +15, second time nothing
 
-Sanity loop sketch:
+sanity loop:
 
 ```mermaid
 flowchart TD
@@ -131,7 +127,6 @@ flowchart TD
 	B --> C[Low sanity changes the world]
 	C --> D[Restore via items / NPCs / favors]
 	D --> A
-	C -.-> E[Affects combat?]
 ```
 
 ### Dialogue and Choices
@@ -148,7 +143,8 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 
 ### NPCs
 
-> status: done (basic), priority: must
+> status: done (basic)
+> priority: must
 
 - talk, pick dialogue choices
 - NPCs remember player actions ("world remembers")
@@ -167,7 +163,7 @@ numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>
 ### Combat
 
 > [!failure] Blocker
-> see Decisions in [GDD](<./GDD.md>), options in [Open Questions](#Open Questions). (create moodboard for that, combatboard?)
+> see Decisions in [GDD](<./GDD.md>), options in [Open Questions](<#Open Questions>). (create moodboard for that, combatboard?)
 
 ### Movement
 
@@ -175,9 +171,10 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 
 ### Controls
 
-> status: done (keyboard), priority: must
+> status: done (keyboard)
+> priority: must
 
-for not with keyboard, in the future add gamepad and touchscreen
+keyboard for now, gamepad + touchscreen later
 
 ### Camera
 
@@ -187,7 +184,8 @@ for not with keyboard, in the future add gamepad and touchscreen
 - third person, 2.5D, perspective
 - third-person perspective follow camera with damping
 - a level can leave the camera unassigned for a fixed camera
-- no free look
+- no free look, no player orbit
+- slight mouse lean, see [GDD](<./GDD.md>)
 
 ### Interaction
 
@@ -230,14 +228,14 @@ for not with keyboard, in the future add gamepad and touchscreen
 > status: open
 > priority: could
 
-see [Open Questions](#Open Questions)
+see [Open Questions](<#Open Questions>)
 
 ### Journal / Quest Tracker
 
 > status: open
 > priority: should
 
-see [Open Questions](#Open Questions)
+see [Open Questions](<#Open Questions>)
 
 ### Save and Load
 
@@ -246,12 +244,12 @@ see [Open Questions](#Open Questions)
 
 - checkpoints, level progress, quest progress saved
 - picked up items, per level flags saved
-- checkpoints only is plan
+- checkpoints only, no manual save
 - done when: continue puts you at checkpoint with same items, sanity
 
 ### Menus and Settings
 
-> status: done (placeholder look), 
+> status: done (placeholder look)
 > priority: should
 
 - main menu, pause, options
@@ -270,7 +268,7 @@ see [Open Questions](#Open Questions)
 
 ### Compatibility
 
-see [Open Questions](#Open Questions)
+see [Open Questions](<#Open Questions>)
 
 ### Accessibility
 
@@ -282,7 +280,7 @@ see [Open Questions](#Open Questions)
 
 ## Open Questions
 
-everything not decided yet. when one is decided, move the answer up into its section and delete it here.
+not decided yet. decided? move answer up into its section, delete here.
 
 ### Sanity
 
@@ -292,8 +290,8 @@ everything not decided yet. when one is decided, move the answer up into its sec
 - [ ] restore: quest steps / objectives, how much
 - [ ] restore: NPC favors, which, how much
 - [ ] sanctuary objects, how much extra sanity
-- [ ] zone 1: sound ?
-- [ ] numbers: how many fake enemies in zone 2 and 3, how many real threats in zone 3
+- [ ] stage 1: sound ?
+- [ ] numbers: how many fake enemies in stage 2 and 3, how many real threats in stage 3
 - [ ] sanity 0: this is big open one. things:
 	- fail forward: teleport to last sanctuary, lose progress (how much, not the save), world remembers. no game over screen. fits the hopeless vibe
 	- checkpoint reload at reduced sanity (how much). standard, boring
@@ -307,8 +305,7 @@ everything not decided yet. when one is decided, move the answer up into its sec
 - [ ] (hidden fairy meter? like a FUN value) opinion. keep it as the fairy meter or rename, same thing
 - [ ] everything has a consequence, nothing is a fake choice
 	- minimum consequence per choice: every player-facing choice writes at least one of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, its a fake choice, cut it or make it write something
-- [ ] good/bad side leads to a fake ending, the true ending is hidden
-	- [ ] (talk to a hidden NPC?)
+- [ ] endings + true ending gating: see ending structure + Decisions in [GDD](<./GDD.md>)
 - [ ] hallucination AI + just dialogue conditions ?
 
 ### NPCs
@@ -316,7 +313,7 @@ everything not decided yet. when one is decided, move the answer up into its sec
 - [ ] NPCs move / schedule, or stand still?
 - [ ] NPCs remember player actions: which ones, how long?
 - [ ] how NPCs show opinion
-- [ ] low sanity changes some lines (zone 2+). alt lines for every NPC or some?
+- [ ] low sanity changes some lines (stage 2+). alt lines for every NPC or some?
 
 ### Quests / Favors
 
@@ -351,7 +348,6 @@ options:
 
 ### Controls
 
-- [ ] gamepad?
 - [ ] web: keyboard only ok?
 - [ ] list all actions (move, run, jump, dash, crouch, interact, pause, journal?)
 
@@ -390,25 +386,23 @@ options:
 
 ### Save and Load
 
-- [ ] manual save or checkpoints only?
 - [ ] old saves after updates add or change items / quests
 - [ ] web saves: browser storage, can get wiped. warn player? print a warning that player should clear cache? perhaps player can export json file with safe?
 
 ### Menus and Settings
 
-- [ ] settings: volume, fullscreen, key remap, distortion strength (see accessibility [GDD](<../yume nikki gamejam/GDD.md>))
+- [ ] settings: volume, fullscreen + accessibility toggles (list in [GDD](<./GDD.md>))
 - [ ] art style, wait for Erin
 
 ### Performance
 
 - [ ] load time target, esp web (max first download size?)
-- [ ] sanity visuals must hold 45 fps.
+- [ ] sanity visuals must hold 45 fps
+
 ### Compatibility
 
 - [ ] languages: english only
 - [ ] save compatibility between versions
-
-### Multiplayer
 
 ## User Acceptance Test (UAT)
 
@@ -426,7 +420,7 @@ Check if game meets all functional, design and game requirements in perspective 
 - [ ] Player can carry, use and give items
 - [ ] Picked up items stay gone after reload
 - [ ] Quest progress is saved and restored
-- [ ] Sanity drains and the screen changes per sanity zone
+- [ ] Sanity drains and the screen changes per sanity stage
 - [ ] Checkpoints and level progress are saved and restored on continue
 - [ ] Other players show up in the same level, and game still works offline
 - [ ] Game does not lag or drop below 45 FPS on web.

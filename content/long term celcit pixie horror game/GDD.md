@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 6:16 pm
+modified: Sunday, November 15th 2026, 6:47 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -15,6 +15,9 @@ author:
 > see also: [FDD](<./FDD.md>) for functional, [TDD](<./TDD.md>) for technical
 
 > sources: [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), [cool canvas](<./cool canvas.canvas>), [deans moodboard](<./deans moodboard for huge breakthough project.canvas>), [Erin's visual ideas](<./Erin's visual ideas.canvas>)
+
+> [!error] to dean, from dean
+> becarefull of scope creep, and perfectionism. i love adding ideas (see whole doc)
 
 ## Content in Doc
 
@@ -75,21 +78,11 @@ author:
 
 ## General Info
 
-- GDD = what the game is and should feel like. FDD = what it does, exact rules + numbers. TDD = how its built
-- sections above Open Questions are decided stuff only
-- big blocking choices go in [Decisions](<#Decisions>)
-- one fact, one place. GDD = why / feel, FDD = rules + numbers, TDD = code. other docs link, dont copy
-- decision made? update section + Open Questions + Decision
-
-status:
-- done = works in game
-- designed = decided, not built
-- open = needs decision
-
-priority: 
-1. must 
-2. should
-3. could
+- GDD = what game is + vibe. [FDD](<./FDD.md>) = rules + numbers. [TDD](<./TDD.md>) = code
+- sections = decided only. open stuff in [Open Questions](<#Open Questions>), big blocking ones in [Decisions](<#Decisions>)
+- decision made? update its section + Open Questions + Decisions
+- status: done (works in game) / designed (decided, not built) / open (needs decision)
+- priority: must / should / could
 
 ## General Description
 
@@ -109,18 +102,19 @@ Core pillars:
 Mood: surreal/dreamlike, "whimsical horror", heavy atmosphere. 
 see inspirations in: [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>), (mood/vibe only, not gameplay, narrative, 3d/2d, UI or artstyle).
 
-## Pitch Thing that Most Other GDD Related Stuff Have
+## Pitch Thing (Most Other GDD Stuff Have)
 
 one sentence, so anyone (in 6 months) knows tf is:
 
 - human stuck in faerie world that slowly eats your mind. only way out: trade favors with things that lie for a living.
 
-### What the Player Should Feel
+### What Player Should Feel
 
 - early: curious, bit lost, tree feels safe
-- middle: paranoid. cant tell what is real, cant tell who lies
+- middle: paranoid. cant tell whats real, cant tell who lies
 - late: traded away something unrecoverable
-- never: bored from grinding, cheated by fake choice. choice have consequence, but that should not be explained, it should be felt
+- never: bored from grinding, cheated by fake choice. 
+	- schoice have consequence, but that should not be explained, it should be felt
 
 ### What Game is NOT
 
@@ -133,63 +127,73 @@ deciding what its not collapses future choices and makes thing in the future be 
 - not jump scare game. horror from atmosphere and sanity, not loud noises
 
 ### Comparable Games
+references:
 
-needed for genre name (see [Open Questions](#Open Questions)):
+> [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)
+> [cool canvas](<./cool canvas.canvas>)
 
-- Omori
-- Undertale
-- Illusion Carnival (visuals)
-- Yume 2kki (world structure)
-- Octopath Traveler (2.5D)
-
-from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)
+- Illusion Carnival (for: visuals)
+- Yume 2kki (for: world structure)
+- Octopath Traveler (for: 2.5D)
 - Disco Elysium: sanity changes dialogue and perception
 - Hollow Knight: small interconnected world, shortcuts, locked paths
 - Darkwood: temporary safe spaces
 - Majoras Mask: favors, NPC relationships
 - Little Nightmares: environmental encounters
-- Fire Emblem: everything has consequence ([cool canvas](<./cool canvas.canvas>))
-
-mood only, from [deans moodboard](<./deans moodboard for huge breakthough project.canvas>):
-- Alice Madness Returns, The Path, Fran Bow, Collective Unconscious, The Excavation of Hobs Barrow, Folklore, Blacktail, Bramble The Mountain King, The Night of the Rabbit, The Dark Eye Chains of Satinav
-
-art only, from [Erin's visual ideas](<./Erin's visual ideas.canvas>):
-- Child of Light
-- Dragon Quest I&II HD-2D
-- Cinderia
-
-team favorites ([cool canvas](<./cool canvas.canvas>)):
-- omori, rayman 3, yume 2kki, collective unconscious, celeste, ENA dream bbq, citizen sleeper, deltarune, pseudoregalia, neva
-- undertale, links awakening, swordigo, majoras mask, earthbound
+- Fire Emblem: everything has consequence
+- Collective Unconscious (for: mood)
+- Alice Madness Returns (for: mood)
+- The Path (for: mood)
+- Fran Bow (for: mood)
+- The Excavation of Hobs Barrow (for: mood)
+- Folklore (for: mood)
+- Blacktail (for: mood)
+- Bramble The Mountain King (for: mood)
+- The Night of the Rabbit (for: mood)
+- The Dark Eye Chains of Satinav (for: mood)
+- Child of Light (for: art)
+- Dragon Quest I&II HD-2D (for: art)
+- Cinderia (for: art)
+- Omori
+- Undertale
+- rayman 3
+- celeste
+- ENA dream bbq
+- citizen sleeper
+- deltarune
+- pseudoregalia
+- neva
+- links awakening
+- swordigo
+- earthbound
 
 ## Story
 
-- see [Erin's visual ideas](<./Erin's visual ideas.canvas>) for erin minimum storyboard
+![file-20261021094624951](<../static_files/file-20261021094624951.png>)
 
-### Story Bible (Some Game Have like a Design Bible)
+really minimal, but the lore should not be the focus on now bc im mainly 1 guy
+
+### Story Bible (Some Game Have Design Bible)
 
 will change alot when we have writing and lore and such. 
 (one short paragraph each is enough for now)
 
-nothing decided yet, every entry is in [Open Questions](#Open Questions).
+nothing decided yet, see: [Open Questions](<#Open Questions>).
 
 ## World
 
 - Closed world, split into zones (idk, like some interconnected weave like yume 2kki ? <https://explorer.yume.wiki/>)
 - handcrafted only, no procedural generation
 - shortcuts unlock while exploring
-- hub structure: not picked yet, options in [Open Questions](#Open Questions)
+- hub structure: not picked yet, options in [Open Questions](<#Open Questions>)
 
 ### Zone Table
 
-> one row per zone. 
-zone 0 is tutorial, rest placeholder.
 
-| zone                | mood      | teaches                   | NPCs / threats | unlocks          | status |
-| ------------------- | --------- | ------------------------- | -------------- | ---------------- | ------ |
-| 0 dying tree forest | safe, sad | talking, sanity, interact | the tree       | leave the forest |        |
-| 1                   |           |                           |                |                  |        |
-| 2                   |           |                           |                |                  |        |
+| zone                           | mood      | teaches                   | NPCs / threats | unlocks          | status |
+| ------------------------------ | --------- | ------------------------- | -------------- | ---------------- | ------ |
+| 0 dying tree forest (tutorial) | safe, sad | talking, sanity, interact | the tree       | leave the forest |        |
+| 1                              |           |                           |                |                  |        |
 
 ## Cool Beginning Start of Game
 
@@ -228,7 +232,7 @@ player gains only:
 - favors (who owes you, who you owe)
 - items (mostly consumables, shit equipment)
 
-- difficulty rises by world getting stranger, not bigger numbers. sanity is difficulty knob
+difficulty rises by world getting stranger, not bigger numbers.
 
 ## Perspective and Visuals
 
@@ -238,7 +242,7 @@ player gains only:
 - Slight mouse lean adds depth without breaking the 2.5D look.
 - camera rules: see Camera in [FDD](<./FDD.md>)
 - Celtic-style elements are liked
-- environment, player style and art style: not decided, see [Open Questions](#Open Questions). Owner: Erin.
+- environment, player style and art style: not decided, see [Open Questions](<#Open Questions>). Owner: Erin.
 
 ## Audio
 
@@ -271,14 +275,14 @@ smallest version of game. if this is not fun, more zones wont fix it. and then w
 
 ### Milestones
 
-- [ ] 1: vertical slice playable start to finish
+- [ ] 1: MRP playable start to finish
 - [ ] 2: 3 zones, true ending reachable
-- [ ] 3: polish, audio, accessibility, web build tested
+- [ ] 3: polish, audio, web build tested
 - [ ] 4: release
 
-rough timeline from [cool canvas](<./cool canvas.canvas>): pre-release after 1 year, full game (maybe) after 1.5-2 years
+rough timeline: pre-release after 1 year, full game (maybe) after 1.5-2 years
 
-### Cut List (First Things to Skip if Not Enough Time)
+### Cut List (First Things to Skip)
 
 1. hub upgrading
 2. second fake ending
@@ -294,20 +298,18 @@ rough timeline from [cool canvas](<./cool canvas.canvas>): pre-release after 1 y
 
 ## Decisions
 
-these block other stuff. smaller open stuff is in [Open Questions](#Open Questions).
+these block other stuff. smaller open stuff is in [Open Questions](<#Open Questions>).
 
-| decision                      | options                                         | owner       | due                     | result                            |
-| ----------------------------- | ----------------------------------------------- | ----------- | ----------------------- | --------------------------------- |
-| combat                        | A no combat / B turn-based / C idfk man         | Dean        | before zone 1 design    |                                   |
-| sanity 0                      | fail forward / reload / ending                  | Dean        | before first playable   |                                   |
-| true ending gating            | hidden NPC / ?                                  | Dean + Erin | before dialogue writing |                                   |
-| art style                     | watercolor / acrylic / pixel player             | Erin        | before level art        |                                   |
-| environment                   | blender 3D / 2D layers                          | Erin        | before level art        |                                   |
-| hub structure                 | central hub / small safe points / shrinking hub | Dean        | before zone 1 design    |                                   |
-| camera                        | perspective 3rd-person, no orbit                | Dean        | revisitable             | perspective, no orbit, mouse lean |
-| isekai or set in celtic world | see story                                       | Dean + Erin | before story bible      |                                   |
-| game name + genre name        | ?                                               | all         | before devlog / discord |                                   |
-
+| decision           | options                                         | owner       | due                     | result |
+| ------------------ | ----------------------------------------------- | ----------- | ----------------------- | ------ |
+| combat             | no combat / turn-based / real-time              | Dean        | before zone 1 design    |        |
+| sanity 0           | fail forward / reload / ending                  | Dean        | before first playable   |        |
+| true ending gating | hidden NPC / other                              | Dean + Erin | before dialogue writing |        |
+| art style          | watercolor / acrylic / pixel player             | Erin        | before level art        |        |
+| environment        | 3D / 2D layers                                  | Erin        | before level art        |        |
+| hub structure      | central hub / small safe points / shrinking hub | Dean        | before zone 1 design    |        |
+| isekai vs celtic   | isekai / set in celtic world directly           | Dean + Erin | before story bible      |        |
+| game name + genre  | TBD                                             | all         | before devlog / discord |        |
 ## Workflow / Production Thingies
 
 - Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
@@ -318,9 +320,10 @@ these block other stuff. smaller open stuff is in [Open Questions](#Open Questio
 
 ## Open Questions
 
-everything not decided yet. when one is decided, move the answer up into its section and delete it here. big ones are also in [Decisions](<#Decisions>).
+- not decided yet. 
+	-decided? move up into its section, delete here. big ones also in [Decisions](<#Decisions>).
 
-### General / Pitch
+### General
 
 - [ ] RPG? (core pillar or not)
 - [ ] what will the Exact genre name be? idk tf to call it, name later if we are further in development? kinda important as then we can reference and compare our game to others and such.
@@ -366,7 +369,7 @@ everything not decided yet. when one is decided, move the answer up into its sec
 		- both?
 	- upgrade your hub world????
 
-option A visualized:
+option A sketch:
 
 ```mermaid
 flowchart TD
@@ -411,9 +414,9 @@ flowchart TD
 - [ ] music theme per zone or 1 warped theme that gets more garbled as progression and choises?
 - [ ] sound source (own recordings, free libraries) and licence
 
-### UI / UX
+### UI
 
-- [ ] HUD: sanity meter always visible, only when low, or never (world only)? big mood decision
+- [ ] HUD: sanity meter always visible, only when low, or never (world only)?
 - [ ] dialogue box style, must match art style, wait for Erin
 
 ### Accessibility
