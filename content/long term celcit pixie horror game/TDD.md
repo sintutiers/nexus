@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Saturday, November 14th 2026, 8:49 pm
+modified: Sunday, November 15th 2026, 1:26 am
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -26,7 +26,7 @@ Godot 4.8
 		- [Godot-UI-Sound-Controller 1.7.1](https://github.com/Maaack/Godot-UI-Sound-Controller/releases/tag/v1.7.1)
 		- [Godot-Scene-Loader 1.7.1](https://github.com/Maaack/Godot-Scene-Loader/releases/tag/v1.7.1)
 		- [Godot-Music-Controller 1.7.1](https://github.com/Maaack/Godot-Music-Controller/releases/tag/v1.7.1)
-	- [Script-IDE 2.2.5](https://github.com/Maran23/script-ide/releases/tag/2.2.5)
+	- [Script-IDE 2.2.5](https://github.com/Maran23/script-ide/releases/tag/v2.2.5)
 	- [sound manager 2.6.2](https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2)
 	- [phantom camera 0.11.0.4](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4)
 	- [SpacetimeDB Client SDK 0.3.3](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.3)
@@ -190,6 +190,13 @@ Game (for now) is divided into these main components:
 	- `LevelManager` extended with state saving (`level_and_state_manager.gd`)
 	- `InteractableThing` for things player interacts with (optional `persistent_id` keeps `free_after` pickups gone after reload)
 	- `Sanctuary` (Area3D pauses sanity drain while player is inside)
+- Camera
+	- `PhantomCameraHost` + third-person `PhantomCamera3D`, follows the player
+	- Assigned by `PlayerSpawner`; a level can leave it unassigned for a fixed camera
+	- Damping `0.05` per axis
+	- Spring arm length `3.5`
+	- No free orbit; no free look
+	- `CameraMouseLean` is a child of `PhantomCamera3D` and adds slight mouse lean; tuning values live on its exports
 - Multiplayer
 	- `Net` autoload with SpacetimeDB, server module is in `server/`
 	- `RemotePlayer` / `RemotePlayer2D` show other players, scene picked by local body dimension
@@ -243,6 +250,15 @@ Game makes use of Godot's built-in API (`CharacterBody3D`, `Resource`, signals) 
 - New component extends `Component`, goes in body scene and gets wired in body.
 - New item or quest is a `.tres` in `scenes/items/` or `scenes/quests/`.
 - New interactable thing is `Node3D` scene with `InteractableThing` script on root. Zone `Area3D` is built in `_ready`, player sensor detects.
+
+**Camera setup**
+
+- Perspective third-person camera, using `PhantomCameraHost` + third-person `PhantomCamera3D`.
+- Follows the player, assigned by `PlayerSpawner`; damping `0.05` per axis.
+- Spring arm length `3.5`.
+- No free orbit.
+- Tuning values live on `PhantomCamera3D` and `CameraMouseLean` exports.
+- `CameraMouseLean` must be a child of a `PhantomCamera3D`.
 
 **Performance**
 

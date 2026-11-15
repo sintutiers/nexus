@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Saturday, November 14th 2026, 8:46 pm
+modified: Sunday, November 15th 2026, 1:25 am
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -250,7 +250,10 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 
 > status: done, priority: could
 
-- third person, 2.5D
+- third person, 2.5D, perspective
+- third-person perspective follow camera with damping
+- a level can leave the camera unassigned for a fixed camera
+- no free look
 - [ ] camera changes per zone or low sanity (tilt, zoom)?
 
 ## Non-functional Requirements

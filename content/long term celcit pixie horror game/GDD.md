@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 1:20 am
+modified: Sunday, November 15th 2026, 1:30 am
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -134,7 +134,7 @@ flowchart TD
 
 ## Progression and Difficulty
 
-vibe of like progressing is that its hopeless, and you get like shit equipment?
+Vibe of like progressing is that its hopeless, and you get like shit equipment?
 player gains only:
 
 - story (what you know)
@@ -162,7 +162,7 @@ will change alot when we have writing and lore and such.
 	- Erin ideas ([Erin's visual ideas](<./Erin's visual ideas.canvas>)):
 		- name parallel to celtic myth: Setante (cu chulainn, iron weapon vs fairies), Nechtan (sword of light), or modern name with celtic origin
 		- or normal teen / young guy, struggling in school, mental health
-		- introverted, nerdy, into celtic m yth fiction
+		- introverted, nerdy, into celtic myth fiction
 		- depression, maybe psychotic
 		- escapes into books/games, maybe thats how he ends up in the realm
 - [ ] **name**: what it does in this world, why fairies want it, what if never recovered
@@ -231,6 +231,9 @@ zone 0 is tutorial, rest placeholder.
 - 2.5D, like Octopath Traveler or Illusion Carnival(and others, need to create link specific moodboards)
 - Player is 2D, third person camera and viewpoint
 - Sprites always face the camera (also the player), so sides never need to be drawn
+- Third-person perspective 2.5D camera and no player orbit.
+- Slight mouse lean adds depth without breaking the 2.5D look.
+- This is the player-facing feel; fits with "sprites always face the camera."
 - [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
 	- Owner: Erin. 
 - [ ] Player style:
@@ -310,16 +313,17 @@ rough timeline from [cool canvas](<./cool canvas.canvas>): pre-release after 1 y
 
 these block other stuff.
 
-| decision                      | options                                         | owner       | due                             | result |
-| ----------------------------- | ----------------------------------------------- | ----------- | ------------------------------- | ------ |
-| combat                        | A no combat / B turn-based / C idfk man         | Dean        | before zone design              |        |
-| sanity 0                      | fail forward / reload / ending                  | Dean        | before more sanity work         |        |
-| true ending gating            | hidden NPC / ?                                  | Dean + Erin | before endgame dialogue         |        |
-| art style                     | watercolor / acrylic / pixel player             | Erin        | before vertical slice           |        |
-| environment                   | blender 3D / 2D layers                          | Erin        | before level art                |        |
-| hub structure                 | central hub / small safe points / shrinking hub | Dean        | before zone 1                   |        |
-| isekai or set in celtic world | see story                                       | Dean + Erin | before story bible              |        |
-| game name + genre name        | ?                                               | all         | before devlog / discord         |        |
+| decision                      | options                                         | owner       | due                     | result                            |
+| ----------------------------- | ----------------------------------------------- | ----------- | ----------------------- | --------------------------------- |
+| combat                        | A no combat / B turn-based / C idfk man         | Dean        | before zone 1 design    |                                   |
+| sanity 0                      | fail forward / reload / ending                  | Dean        | before first playable   |                                   |
+| true ending gating            | hidden NPC / ?                                  | Dean + Erin | before dialogue writing |                                   |
+| art style                     | watercolor / acrylic / pixel player             | Erin        | before level art        |                                   |
+| environment                   | blender 3D / 2D layers                          | Erin        | before level art        |                                   |
+| hub structure                 | central hub / small safe points / shrinking hub | Dean        | before zone 1 design    |                                   |
+| camera                        | perspective 3rd-person, no orbit                | Dean        | revisitable             | perspective, no orbit, mouse lean |
+| isekai or set in celtic world | see story                                       | Dean + Erin | before story bible      |                                   |
+| game name + genre name        | ?                                               | all         | before devlog / discord |                                   |
 
 ## Workflow / Production Thingies
 
