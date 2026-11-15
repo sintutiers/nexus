@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 7:40 pm
+modified: Sunday, November 15th 2026, 9:59 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -45,14 +45,6 @@ author:
 	- [Accessibility](<#Accessibility>)
 	- [Workflow + Production Thingies](<#Workflow + Production Thingies>)
 - [Decisions](<#Decisions>)
-- [Open Questions](<#Open Questions>)
-	- [General](<#Open Questions#General>)
-	- [Story](<#Open Questions#Story>)
-	- [World](<#Open Questions#World>)
-	- [Core Loop + Progression](<#Open Questions#Core Loop + Progression>)
-	- [Presentation](<#Open Questions#Presentation>)
-	- [Accessibility](<#Open Questions#Accessibility>)
-	- [Scope + Workflow](<#Open Questions#Scope + Workflow>)
 
 > [!NOTE]- who does what?
 > Erin:
@@ -98,6 +90,17 @@ Core pillars:
 Mood: surreal/dreamlike, "whimsical horror", heavy atmosphere. 
 see inspirations in: [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>), (mood/vibe only, not gameplay, narrative, 3d/2d, UI or artstyle).
 
+### Game Description Questions
+
+- [ ] RPG? (core pillar or not)
+- [ ] what will exact genre name be? idk tf to call it, name later if we are further in development? kinda important as then we can reference + compare our game to others + such.
+- [ ] target player: story game people who tolerate discomfort (omori, undertale, lisa). not grinders
+- [ ] no upgrade system?(godamnit) (perhaps later add small upgrades?)
+- [ ] not "kill X monsters" quest game?
+- [ ] comparable games: fill in what we take from Omori, Undertale, Illusion Carnival, Yume 2kki, Octopath Traveler
+- [ ] more comparable games, find horror game with good sanity
+
+---
 ## Pitch Thing (Most Other GDD Stuff Have)
 
 one sentence, so anyone (in 6 months) knows tf is:
@@ -193,6 +196,30 @@ references:
 
 really minimal, but lore should not be focus now bc im mainly 1 guy
 
+#### Story Questions
+
+- [ ] Fairies stole your name, trade favors to get it back (maybe steal theirs). core loop "whole game" line depends on this
+- [ ] Set it in the Celtic world directly instead of isekai-ing the main character (current draft: Celtic world does exist, but main character is not from it)
+- [ ] **protagonist**: who, why here, wants what. what "slowly goes insane" looks like across game
+	- Erin ideas ([Erin's visual ideas](<./Erin's visual ideas.canvas>)):
+		- name parallel to celtic myth: Setante (cu chulainn, iron weapon vs fairies), Nechtan (sword of light), or modern name with celtic origin
+		- or normal teen/young guy, struggling in school, mental health
+		- introverted, nerdy, into celtic myth fiction
+		- depression, maybe psychotic
+		- escapes into books/games, maybe thats how he ends up in the realm
+- [ ] **name**: what it does in this world, why fairies want it, what if never recovered
+- [ ] **fairies**: one court or several? who is nice, who lies, who lies but nice
+- [ ] **dying tree**: why dying, killed by what, returns later?
+- [ ] **world rules** (fae cant lie? iron? food? usual celtic stuff, which to keep, which to drop)
+	- weakness fairies?: iron? big in story, way to "defeat" fairies (Setante idea)
+- [ ] **themes**: what it is about under the horror
+- [ ] **ending structure**:
+	- fake ending (good/bad side)
+	- true ending (hidden)
+	- sanity 0 ending? (see sanity 0 in the [FDD](<./FDD.md>))
+- [ ] **tone rules**: what whimsical horror allows. gore? body horror? child characters? write down so Erin + Dean dont guess differently
+- [ ] content warnings for store page / game start
+
 ### World
 
 - Closed world, split into zones (idk, like some interconnected weave like yume 2kki ? <https://explorer.yume.wiki/>)
@@ -214,6 +241,32 @@ really minimal, but lore should not be focus now bc im mainly 1 guy
 - Area around tree = temporary safe hub
 - You help the tree complete tasks + then he dies, the place he is in is no longer safe + you have to move on + survive with what youve learned
 
+#### Questions world/hub
+
+- [ ] Eventually find someone for map design + level structuring
+- [ ] hub structure, pick one (see Decisions):
+	- A) Central hub where you dive deeper into fairy realm, each zone with own requirements (one where you dodge, one where you fight, etc)
+		- from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>) (Hollow Knight): 1 central forest, 3 areas branch off, each area has 1 access requirement
+	- B) instead of hub world, multiple small safe points.
+	- C) when progressing, hub/safeword will become smaller + you have to do more yourself
+		- (like BOTW/TOTK great deku tree forst mist, + you can unlock more of mist, but your safe zone also shrinks + such. also like a favor system? idk tho)
+		- both?
+	- upgrade your hub world????
+- [ ] tutorial: how many tasks for tree
+
+A sketch:
+
+```mermaid
+flowchart TD
+	H[Central hub] --> Z1[Zone 1: dodge]
+	H --> Z2[Zone 2: fight]
+	H --> Z3[Zone 3: other requirement?]
+	Z1 --> H
+	Z2 --> H
+	Z3 --> H
+```
+
+---
 ## Core Loop + Progression
 
 FDD has sanity loop. this "tf player does" loop:
@@ -243,6 +296,15 @@ player gains only:
 
 difficulty rises by world getting stranger, not bigger numbers.
 
+### loop/progresion Questions
+
+- [ ] "skill" part? movement = all in code (dash, wall jump), where is it used. dodge zones? platforming between NPCs? decide with zone table
+- [ ] zone length
+- [ ] abilities / movement unlocks (zone table decides)
+- [ ] easy mode / lower sanity drain? probably, see accessibility
+- [ ] pacing: first real scare, first "oh no" moment
+
+---
 ## Presentation
 
 > Visuals + Audio & UI
@@ -258,6 +320,27 @@ difficulty rises by world getting stranger, not bigger numbers.
 - immersive music + sounds, part of atmosphere
 - menus, journal, controls: see [FDD](<./FDD.md>)
 
+### Presentation Questions
+
+- [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
+	- Owner: Erin. 
+- [ ] Player style:
+	- [ ] low-res/pixel player against high-res surroundings
+	- [ ] unique non-pixel style
+	- Owner: Erin.
+- [ ] Art style: see for exact drawing + inspirations [Erin's visual ideas](<./Erin's visual ideas.canvas>) 
+	- Erin vote: 2D painterly watercolor, maybe 3D if time allows
+	- Dean vote: painterly blitch/arcyllic + painterly watercolor style
+	- Owner: Erin.
+- [ ] Separate moodboards/example canvases for gameplay + artstyle
+	- Owner: Dean.
+- [ ] sanity changes audio too (muffled, wrong sounds, detuned music).
+- [ ] music theme per zone or 1 warped theme that gets more garbled as progression + choices?
+- [ ] sound source (own recordings, free libraries) + licence
+- [ ] HUD: sanity meter always visible, only when low, or never (world only)?
+- [ ] dialogue box style, must match art style, wait for Erin
+
+---
 ## Scope
 
 ### MRP (Minimal Game to Deliver)
@@ -302,6 +385,14 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 
 - [x] remappable keys
 
+#### Accessibility Questions
+
+- [ ] photosensitivity: carefull with fast flashing. test sanity distortion
+- [ ] toggle for screen distortion / camera shake strength
+- [ ] subtitles for important sounds
+- [ ] colorblind check, esp if real vs fake enemies differ by color only
+
+---
 ### Workflow + Production Thingies
 
 - Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
@@ -309,6 +400,18 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 - Funding
 	- Simple donation [donations](<../donation.md>)
 - [x] switch code licence GPLv2+ to EUPLv1.2+
+
+#### Workflow + Production Thingies Questions
+
+- [ ] MRP: favors with real consequences, how many
+- [ ] milestone 1 date
+- [ ] Friends can join temporarily or permanently as extra teammates, does need discussion
+- [ ] Devlog/blogpost: weekly or other?
+- [ ] Discord community server (when?)
+- [ ] Shared gmail address?
+- [ ] update github organisation page
+- [ ] image for game dev group
+- [ ] exclusive updates for donators or not?
 
 ## Decisions
 
@@ -324,114 +427,3 @@ these block other stuff. smaller open stuff in [Open Questions](<#Open Questions
 | hub structure      | central hub / small safe points / shrinking hub | Dean        | before zone 1 design    |        |
 | isekai vs celtic   | isekai / set in celtic world directly           | Dean + Erin | before story bible      |        |
 | game name + genre  | TBD                                             | all         | before devlog / discord |        |
-
-## Open Questions
-
-> not decided yet. 
-> decided? move up into its section, delete here. big ones also in [Decisions](<#Decisions>).
-
-### General
-
-- [ ] RPG? (core pillar or not)
-- [ ] what will exact genre name be? idk tf to call it, name later if we are further in development? kinda important as then we can reference + compare our game to others + such.
-- [ ] target player: story game people who tolerate discomfort (omori, undertale, lisa). not grinders
-- [ ] no upgrade system?(godamnit) (perhaps later add small upgrades?)
-- [ ] not "kill X monsters" quest game?
-- [ ] comparable games: fill in what we take from Omori, Undertale, Illusion Carnival, Yume 2kki, Octopath Traveler
-- [ ] more comparable games, find horror game with good sanity
-
-### Story
-
-- [ ] Fairies stole your name, trade favors to get it back (maybe steal theirs). core loop "whole game" line depends on this
-- [ ] Set it in the Celtic world directly instead of isekai-ing the main character (current draft: Celtic world does exist, but main character is not from it)
-- [ ] **protagonist**: who, why here, wants what. what "slowly goes insane" looks like across game
-	- Erin ideas ([Erin's visual ideas](<./Erin's visual ideas.canvas>)):
-		- name parallel to celtic myth: Setante (cu chulainn, iron weapon vs fairies), Nechtan (sword of light), or modern name with celtic origin
-		- or normal teen/young guy, struggling in school, mental health
-		- introverted, nerdy, into celtic myth fiction
-		- depression, maybe psychotic
-		- escapes into books/games, maybe thats how he ends up in the realm
-- [ ] **name**: what it does in this world, why fairies want it, what if never recovered
-- [ ] **fairies**: one court or several? who is nice, who lies, who lies but nice
-- [ ] **dying tree**: why dying, killed by what, returns later?
-- [ ] **world rules** (fae cant lie? iron? food? usual celtic stuff, which to keep, which to drop)
-	- weakness fairies?: iron? big in story, way to "defeat" fairies (Setante idea)
-- [ ] **themes**: what it is about under the horror
-- [ ] **ending structure**:
-	- fake ending (good/bad side)
-	- true ending (hidden)
-	- sanity 0 ending? (see sanity 0 in the [FDD](<./FDD.md>))
-- [ ] **tone rules**: what whimsical horror allows. gore? body horror? child characters? write down so Erin + Dean dont guess differently
-- [ ] content warnings for store page / game start
-
-### World
-
-- [ ] Eventually find someone for map design + level structuring
-- [ ] hub structure, pick one (see Decisions):
-	- A) Central hub where you dive deeper into fairy realm, each zone with own requirements (one where you dodge, one where you fight, etc)
-		- from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>) (Hollow Knight): 1 central forest, 3 areas branch off, each area has 1 access requirement
-	- B) instead of hub world, multiple small safe points.
-	- C) when progressing, hub/safeword will become smaller + you have to do more yourself
-		- (like BOTW/TOTK great deku tree forst mist, + you can unlock more of mist, but your safe zone also shrinks + such. also like a favor system? idk tho)
-		- both?
-	- upgrade your hub world????
-- [ ] tutorial: how many tasks for tree
-
-A sketch:
-
-```mermaid
-flowchart TD
-	H[Central hub] --> Z1[Zone 1: dodge]
-	H --> Z2[Zone 2: fight]
-	H --> Z3[Zone 3: other requirement?]
-	Z1 --> H
-	Z2 --> H
-	Z3 --> H
-```
-
-### Core Loop + Progression
-
-- [ ] "skill" part? movement = all in code (dash, wall jump), where is it used. dodge zones? platforming between NPCs? decide with zone table
-- [ ] zone length
-- [ ] abilities / movement unlocks (zone table decides)
-- [ ] easy mode / lower sanity drain? probably, see accessibility
-- [ ] pacing: first real scare, first "oh no" moment
-
-### Presentation
-
-- [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
-	- Owner: Erin. 
-- [ ] Player style:
-	- [ ] low-res/pixel player against high-res surroundings
-	- [ ] unique non-pixel style
-	- Owner: Erin.
-- [ ] Art style: see for exact drawing + inspirations [Erin's visual ideas](<./Erin's visual ideas.canvas>) 
-	- Erin vote: 2D painterly watercolor, maybe 3D if time allows
-	- Dean vote: painterly blitch/arcyllic + painterly watercolor style
-	- Owner: Erin.
-- [ ] Separate moodboards/example canvases for gameplay + artstyle
-	- Owner: Dean.
-- [ ] sanity changes audio too (muffled, wrong sounds, detuned music).
-- [ ] music theme per zone or 1 warped theme that gets more garbled as progression + choices?
-- [ ] sound source (own recordings, free libraries) + licence
-- [ ] HUD: sanity meter always visible, only when low, or never (world only)?
-- [ ] dialogue box style, must match art style, wait for Erin
-
-### Accessibility
-
-- [ ] photosensitivity: carefull with fast flashing. test sanity distortion
-- [ ] toggle for screen distortion / camera shake strength
-- [ ] subtitles for important sounds
-- [ ] colorblind check, esp if real vs fake enemies differ by color only
-
-### Scope + Workflow
-
-- [ ] MRP: favors with real consequences, how many
-- [ ] milestone 1 date
-- [ ] Friends can join temporarily or permanently as extra teammates, does need discussion
-- [ ] Devlog/blogpost: weekly or other?
-- [ ] Discord community server (when?)
-- [ ] Shared gmail address?
-- [ ] update github organisation page
-- [ ] image for game dev group
-- [ ] exclusive updates for donators or not?

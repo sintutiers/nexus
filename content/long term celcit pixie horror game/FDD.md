@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 9:45 pm
+modified: Sunday, November 15th 2026, 10:09 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -39,21 +39,6 @@ author:
 	- [Platform & Performance](<#Platform & Performance>)
 	- [Accessibility](<#Accessibility>)
 	- [Multiplayer](<#Multiplayer>)
-- [Open Questions](<#Open Questions>)
-	- [Sanity](<#Open Questions#Sanity>)
-	- [Dialogue + Choices](<#Open Questions#Dialogue + Choices>)
-	- [NPCs](<#Open Questions#NPCs>)
-	- [Quests + Favors](<#Open Questions#Quests + Favors>)
-	- [Combat](<#Open Questions#Combat>)
-	- [Movement + Controls](<#Open Questions#Movement + Controls>)
-	- [Camera](<#Open Questions#Camera>)
-	- [Interaction](<#Open Questions#Interaction>)
-	- [Inventory + Items](<#Open Questions#Inventory + Items>)
-	- [Tutorial + Onboarding](<#Open Questions#Tutorial + Onboarding>)
-	- [Map + Journal](<#Open Questions#Map + Journal>)
-	- [Save + Menus](<#Open Questions#Save + Menus>)
-	- [Platform & Performance](<#Open Questions#Platform & Performance>)
-	- [Multiplayer](<#Open Questions#Multiplayer>)
 - [User Acceptance Test](<#User Acceptance Test>)
 
 ## General Info
@@ -95,7 +80,7 @@ core pillar, so concrete, not just "you lose sanity" with no consequenses.
 	- stage 2 (25-50): stronger distortion, some NPC lines change, fake enemies may show up
 	- stage 3 (0-25): heavy distortion, more fake enemies, some real threats
 	- fake enemies: you dont know which are fake
-- sanity 0: not decided, see [Open Questions](<#Open Questions>)
+- sanity 0: not decided, see [Open Questions](<#Sanity#Open Questions>)
 
 must not be minor annoyance, must not make game unplayable
 
@@ -121,6 +106,25 @@ flowchart TD
 	D --> A
 ```
 
+#### Sanity Questions
+
+- [ ] drain: flat per second, how much
+- [ ] drain: wrong dialogue choices/story events, how much per event
+- [ ] drain: interacting with enemies? (running, fighting back etc)
+- [ ] restore: quest steps/objectives, how much
+- [ ] restore: NPC favors, which, how much
+- [ ] sanctuary objects, how much extra sanity
+- [ ] stage 1: sound ?
+- [ ] numbers: how many fake enemies in stage 2+3, how many real threats in stage 3
+- [ ] sanity 0: this = big open one. things:
+	- fail forward: teleport to last sanctuary, lose progress (how much, not save), world remembers. no game over screen. fits hopeless vibe
+	- checkpoint reload at reduced sanity (how much). standard, boring
+	- sanity 0 = one of endings. aggressive, needs fake-ending system first
+	- unlocking whole different world when your a dick? 
+- [ ] (or maybe must make it inplayable if player ignores everything?)
+- [ ] sanity affects combat?
+
+---
 ### Dialogue + Choices
 
 - nonlinear story/dialogue
@@ -133,7 +137,16 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 	- high sanity: "I dont remember."
 	- low sanity: "You know where. You sent me here."
 
-### NPCs
+#### Dialogue + Choices Questions
+
+- [ ] (hidden fairy meter? like FUN value) opinion. keep as fairy meter or rename, same thing
+- [ ] everything = consequence, nothing = fake choice
+	- minimum consequence per choice: every player-facing choice writes at least 1 of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, its fake choice, cut it or make it write something
+- [ ] endings + true ending gating: see ending structure + Decisions in [GDD](<./GDD.md>)
+- [ ] hallucination AI + just dialogue conditions ?
+
+---
+### NPC
 
 > status: done (basic)
 > priority: must
@@ -141,6 +154,14 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 - talk, pick dialogue choices
 - NPCs remember player actions ("world remembers")
 
+#### NPC Questions
+
+- [ ] NPCs move/schedule, or stand still?
+- [ ] NPCs remember player actions: which ones, how long?
+- [ ] how NPCs show opinion
+- [ ] low sanity changes some lines (stage 2+). alt lines for every NPC or some?
+
+---
 ### Quests + Favors
 
 # RAW Brainstorming Systems, Im Brainstorming This Part Heavily
@@ -173,159 +194,28 @@ failure states? :
 FACTS THAT ARE DECIDED FOR THE FDD
 - economy: is the favors and deps. favors = economy. favor = currency
 - 4-5 important NPCs
+- player can own and be owned by same NPC
 - each has 1 relationship value (= fairy meter)
-- each gives 1-2 favors
+- each gives 1-2 favors, depending on the NPC
 - NPC dialogue changes with relationship
 - player can hold multiple deps and favors
 - a favor is spent when used
 - some quests give favors, some dont.
 - fairy meter/opinion changes by way of dialogue, dialogue is also how you can trick fairies and how fairies trick you
-- 
 
-### Combat
-
-> [!failure] Blocker
-> Decisions in [GDD](<./GDD.md>), options in [Open Questions](<#Open Questions>). (create moodboard for that, combatboard?)
-
-### Movement + Controls
-
-walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited airtime), crouch. all in.
-
-> status: done (keyboard movement + controls)
-> priority: must
-
-keyboard for now, gamepad + touchscreen later
-
-### Camera
-
-> status: done
-> priority: could
-
-- third person, 2.5D, perspective
-- third-person perspective follow camera with damping
-- a level can leave camera unassigned for fixed camera
-- no free look, no player orbit
-- slight mouse lean, see [GDD](<./GDD.md>)
-
-### Interaction
-
-> status: done
-> priority: must
-
-- press interact near something, closest one reacts
-- things can be gated by item/flag, blocked until present
-- picked up things stay gone after reload
-- done when: gate opens with right item, stays open after reload
-
-### Inventory + Items
-
-> status: done (no visual yet)
-> priority: must
-
-- carry, use, give items
-- pickup flow (from [inventory ideas](<./inventory ideas.canvas>)):
-	- pick up by interact or walking over it
-	- text: "you picked up *item*"
-	- cant pick up yet (missing other item first): popup says so
-	- NPC can give item (quest reward)
-	- item shows in inventory
-	- use: "you used *item*"
-	- one time use: "*item* has been destroyed"
-- done when: pick up book, see it, use it, sanity up
-
-### Tutorial + Onboarding
-
-> status: half designed
-> priority: must
-
-- story: see Tutorial in [GDD](<./GDD.md>)
-- teach by doing: movement, interact, talk, choice, sanity drain, sanctuary, sanity restore
-- no text popups if tree can say it
-- done when: new player leaves forest w/o asking us
-
-### Map + Journal
-
-> status: open
-> priority: could (map) / should (journal)
-
-both are stubs. see [Open Questions](<#Open Questions>).
-
-### Save + Menus
-
-> status: done
-> priority: must (save) / should (menus)
-
-**Save + Load:**
-- checkpoints, level progress, quest progress saved
-- picked up items, per level flags saved
-- checkpoints only, no manual save
-- done when: continue puts you at checkpoint with same items, sanity
-
-**Menus + Settings (placeholder look):**
-- main menu, pause, options
-
-## Non-functional Requirements
-
-### Platform & Performance
-
-- dev/test on small formfactor laptop for now
-- ship to desktop + web. web = perf target
-- Compatibility renderer, heavier only if needed
-- 45 fps min on web, always
-- languages + save compat: see [Open Questions](<#Open Questions>)
-
-### Accessibility
-
-- see accessibility list in [GDD](<./GDD.md>). every toggle gets a line here once decided
-
-### Multiplayer
-
-- other players show in same level, works offline (done)
-
-## Open Questions
-
-not decided yet. decided? move answer up into its section, delete here.
-
-### Sanity
-
-- [ ] drain: flat per second, how much
-- [ ] drain: wrong dialogue choices/story events, how much per event
-- [ ] drain: interacting with enemies? (running, fighting back etc)
-- [ ] restore: quest steps/objectives, how much
-- [ ] restore: NPC favors, which, how much
-- [ ] sanctuary objects, how much extra sanity
-- [ ] stage 1: sound ?
-- [ ] numbers: how many fake enemies in stage 2+3, how many real threats in stage 3
-- [ ] sanity 0: this = big open one. things:
-	- fail forward: teleport to last sanctuary, lose progress (how much, not save), world remembers. no game over screen. fits hopeless vibe
-	- checkpoint reload at reduced sanity (how much). standard, boring
-	- sanity 0 = one of endings. aggressive, needs fake-ending system first
-	- unlocking whole different world when your a dick? 
-- [ ] (or maybe must make it inplayable if player ignores everything?)
-- [ ] sanity affects combat?
-
-### Dialogue + Choices
-
-- [ ] (hidden fairy meter? like FUN value) opinion. keep as fairy meter or rename, same thing
-- [ ] everything = consequence, nothing = fake choice
-	- minimum consequence per choice: every player-facing choice writes at least 1 of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, its fake choice, cut it or make it write something
-- [ ] endings + true ending gating: see ending structure + Decisions in [GDD](<./GDD.md>)
-- [ ] hallucination AI + just dialogue conditions ?
-
-### NPCs
-
-- [ ] NPCs move/schedule, or stand still?
-- [ ] NPCs remember player actions: which ones, how long?
-- [ ] how NPCs show opinion
-- [ ] low sanity changes some lines (stage 2+). alt lines for every NPC or some?
-
-### Quests + Favors
+#### Quest + Favor Questions
 
 - [ ] NPCs give favors/quests
 	- define structure + tracking (quests have stages, game remembers current stage. journal UI ?)
 - [ ] rewards: item/info/sanity/new location access
 
+---
 ### Combat
+
+> [!failure] Blocker
+> Decisions in [GDD](<./GDD.md>), options in [Open Questions](<#Combat#Open Questions>). (create moodboard for that, combatboard?)
+
+#### Combat Questions
 
 options:
 - A) no combat. threats = dialogue/choice encounters. fighting back = dialogue option, costs sanity. fake vs real enemies resolved by interacting, not hitting. fits input surface + horror tone. buildable on what exists
@@ -345,24 +235,75 @@ options:
 - combat/interaction FDD:
 	- you have like a branch + when fighting, almost always moving
 
+---
 ### Movement + Controls
+
+walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited airtime), crouch. all in.
+
+> status: done (keyboard movement + controls)
+> priority: must
+
+keyboard for now, gamepad + touchscreen later
+
+#### Movement + Control Questions
 
 - [ ] which abilities stay per zone 
 	- [ ] tie to level design?
 - [ ] web: keyboard only ok?
 - [ ] list all actions (move, run, jump, dash, crouch, interact, pause, journal?)
 
+---
 ### Camera
+
+> status: done
+> priority: could
+
+- third person, 2.5D, perspective
+- third-person perspective follow camera with damping
+- a level can leave camera unassigned for fixed camera
+- no free look, no player orbit
+- slight mouse lean, see [GDD](<./GDD.md>)
+
+#### Camera Questions
 
 - [ ] camera changes per zone or low sanity (tilt, zoom)?
 
+---
+
 ### Interaction
+
+> status: done
+> priority: must
+
+- press interact near something, closest one reacts
+- things can be gated by item/flag, blocked until present
+- picked up things stay gone after reload
+- done when: gate opens with right item, stays open after reload
+
+#### Interaction Questions
 
 - [ ] interact prompt: look, shown at low sanity or lies?
 - [ ] two things equally close?
 - [ ] interact while dashing/in air?
 
+---
 ### Inventory + Items
+
+> status: done (no visual yet)
+> priority: must
+
+- carry, use, give items
+- pickup flow (from [inventory ideas](<./inventory ideas.canvas>)):
+	- pick up by interact or walking over it
+	- text: "you picked up *item*"
+	- cant pick up yet (missing other item first): popup says so
+	- NPC can give item (quest reward)
+	- item shows in inventory
+	- use: "you used *item*"
+	- one time use: "*item* has been destroyed"
+- done when: pick up book, see it, use it, sanity up
+
+#### Inventory + Items Questions
 
 - [ ] inventory size limit?
 - [ ] inventory UI. see [inventory ideas](<./inventory ideas.canvas>). like minecraft hotbar or point n click HUD
@@ -371,11 +312,30 @@ options:
 - [ ] fake items at low sanity?
 - [ ] "shit equipment": what = equipment, does it do anything
 
+---
 ### Tutorial + Onboarding
+
+> status: half designed
+> priority: must
+
+- story: see Tutorial in [GDD](<./GDD.md>)
+- teach by doing: movement, interact, talk, choice, sanity drain, sanctuary, sanity restore
+- no text popups if tree can say it
+- done when: new player leaves forest w/o asking us
+
+#### Tutorial + Onboarding Questions
 
 - [ ] list what = taught where
 
+---
 ### Map + Journal
+
+> status: open
+> priority: could (map) / should (journal)
+
+both are stubs. see [Open Questions](<#Open Questions>).
+
+#### Map + Journal Questions
 
 - [ ] map? no map = more lost, but people get stuck
 - [ ] if yes, lies at low sanity?
@@ -384,21 +344,49 @@ options:
 
 ### Save + Menus
 
+> status: done
+> priority: must (save) / should (menus)
+
+**Save + Load:**
+- checkpoints, level progress, quest progress saved
+- picked up items, per level flags saved
+- checkpoints only, no manual save
+- done when: continue puts you at checkpoint with same items, sanity
+
+**Menus + Settings:**
+- main menu, pause, options
+
+#### Save + Menus Questions
+
 - [ ] old saves after updates add/change items/quests
 - [ ] web saves: browser storage, can get wiped. warn player? print warning that player should clear cache? perhaps player can export json file with save?
 - [ ] settings: volume, fullscreen + accessibility toggles (list in [GDD](<./GDD.md>))
 - [ ] art style, wait for Erin
 
+## Non-functional Requirements
+
 ### Platform & Performance
+
+- dev/test on small formfactor laptop for now
+- ship to desktop + web. web = perf target
+- Compatibility renderer, heavier only if needed
+- 45 fps min on web, always
+- languages + save compat: see [Open Questions](<#Open Questions>)
+
+#### Platform & Performance Questions
 
 - [ ] load time target, esp web (max first download size?)
 - [ ] sanity visuals must hold 45 fps
 - [ ] languages: english only
 - [ ] save compatibility between versions
 
+### Accessibility
+
+- see accessibility list in [GDD](<./GDD.md>). every toggle gets a line here once decided
+
 ### Multiplayer
 
-- [ ] feature or tech demo?
+- other players show in same level, works offline (done)
 
 ## User Acceptance Test
 
