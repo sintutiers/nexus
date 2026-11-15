@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 7:01 pm
+modified: Sunday, November 15th 2026, 7:27 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -104,7 +104,7 @@ sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.can
 > status: half done (drain pause works)
 > priority: must
 
-- first entry: +15 sanity, once per sanctuary
+- first entry: +10 sanity, once per sanctuary
 - some objects inside restore extra sanity
 - each sanctuary = 1 NPC or interesting interaction
 - fixed locations, handcrafted
@@ -155,11 +155,11 @@ numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>
 ### Combat
 
 > [!failure] Blocker
-> see Decisions in [GDD](<./GDD.md>), options in [Open Questions](<#Open Questions>). (create moodboard for that, combatboard?)
+> Decisions in [GDD](<./GDD.md>), options in [Open Questions](<#Open Questions>). (create moodboard for that, combatboard?)
 
 ### Movement + Controls
 
-walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited per airtime), crouch. all in.
+walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited airtime), crouch. all in.
 
 > status: done (keyboard movement + controls)
 > priority: must
