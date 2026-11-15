@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Sunday, November 15th 2026, 7:25 pm
+modified: Sunday, November 15th 2026, 7:35 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -202,8 +202,6 @@ _capsule = _capsule.duplicate()
 
 ## Game System Architecture
 (architecture inspired by <https://gameprogrammingpatterns.com> and others i need to link)
-Game (for now) is divided into these main components.
-
 ### Components (Extend `Component`, Wired by Body, Not Looked up Themselves)
 
 ```mermaid

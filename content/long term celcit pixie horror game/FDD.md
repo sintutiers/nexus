@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 7:31 pm
+modified: Sunday, November 15th 2026, 9:45 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -85,7 +85,7 @@ core pillar, so concrete, not just "you lose sanity" with no consequenses.
 - pauses: during locking interactions + inside sanctuaries
 - restore:
 	- items (books, food etc), amount = per item
-	- first time entering sanctuary, +15 (see below)
+	- first time entering sanctuary, +10 (see below)
 	- completing quest steps/objectives
 	- NPC favors
 - encounters, random + set: gain or lose sanity depending on choices
@@ -109,7 +109,7 @@ sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.can
 - each sanctuary = 1 NPC or interesting interaction
 - fixed locations, handcrafted
 - never randomly become unsafe. only scripted (dying tree in tutorial)
-- done when: enter sanctuary first time, sanity +15, second time nothing
+- done when: enter sanctuary first time, sanity +10, second time nothing
 
 sanity loop:
 
@@ -143,15 +143,44 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 
 ### Quests + Favors
 
-- economy: no. favors = economy. no shops, no currency.
+# RAW Brainstorming Systems, Im Brainstorming This Part Heavily
 
-numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)):
-- Majoras Mask
+what is a favor?
+- its a point you get from a quest
+- a social depts for mythical entities
+- a transaction point.
+	- they are a confusing and contradicting mess. ass that is how those creatures operate.
+
+fairies for example, are cheaters and lyers. if they own you a favor, they will do everything in their power to pay it back minimally. if you by example saved their life, and you own them a favor, then them just giving you a coockie or some shit is considered a favor paid, but the other example is that a favor can also be used to get them to join you in a quest in destroying the world.
+
+Debt Ledger
+
+- Debts have size and direction. A small debt is not a big debt.
+- A dialogue choice can use debt.
+- Unpaid debt gets called in at a bad time.
+- This makes the world remember you.
+
+Favor Terms
+
+- A favor's rules are stored as facts.
+- "Done" means the rules are met, not just the task.
+- A fairy can twist it: task done, rules not met, debt stays.
+- The player can twist it too: bluff, argue, or lie.
+
+failure states? :
+	- forfeit, betrayal, bankruptcy. Debt bankruptcy = NPCs refuse to deal = soft fail-forward into a different zone path, not a game over.
+
+FACTS THAT ARE DECIDED FOR THE FDD
+- economy: is the favors and deps. favors = economy. favor = currency
 - 4-5 important NPCs
 - each has 1 relationship value (= fairy meter)
 - each gives 1-2 favors
 - NPC dialogue changes with relationship
-- no reputation simulation, few values + conditional dialogue
+- player can hold multiple deps and favors
+- a favor is spent when used
+- some quests give favors, some dont.
+- fairy meter/opinion changes by way of dialogue, dialogue is also how you can trick fairies and how fairies trick you
+- 
 
 ### Combat
 

@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 7:09 pm
+modified: Sunday, November 15th 2026, 7:40 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -128,28 +128,50 @@ references:
 > [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)
 > [cool canvas](<./cool canvas.canvas>)
 
-- Illusion Carnival (for: visuals)
-- Yume 2kki (for: world structure)
-- Octopath Traveler (for: 2.5D)
-- Disco Elysium: sanity changes dialogue + perception
-- Hollow Knight: small interconnected world, shortcuts + locked paths
-- Darkwood: temporary safe spaces
-- Majoras Mask: favors, NPC relationships
-- Little Nightmares: environmental encounters
-- Fire Emblem: everything has consequence
-- Collective Unconscious (for: mood)
-- Alice Madness Returns (for: mood)
-- The Path (for: mood)
-- Fran Bow (for: mood)
-- The Excavation of Hobs Barrow (for: mood)
-- Folklore (for: mood)
-- Blacktail (for: mood)
-- Bramble The Mountain King (for: mood)
-- The Night of the Rabbit (for: mood)
-- The Dark Eye Chains of Satinav (for: mood)
-- Child of Light (for: art)
-- Dragon Quest I&II HD-2D (for: art)
-- Cinderia (for: art)
+- Illusion Carnival 
+	- visuals + mood
+- Yume 2kki 
+	- world structure
+- Octopath Traveler 
+	- 2.5D + art
+- Disco Elysium: 
+	- sanity changes dialogue + perception
+- Hollow Knight: 
+	- small interconnected world, shortcuts + locked paths
+- Darkwood: 
+	- temporary safe spaces
+- Majoras Mask: 
+	- favors, NPC relationships
+- Little Nightmares: 
+	- environmental encounters
+- Fire Emblem: 
+	- everything has consequence
+- Collective Unconscious 
+	- mood
+- Alice Madness Returns 
+	- mood
+- The Path 
+	- mood
+- Fran Bow 
+	- mood
+- The Excavation of Hobs Barrow 
+	- mood
+- Folklore 
+	- mood
+- Blacktail 
+	- mood
+- Bramble The Mountain King 
+	- mood
+- The Night of the Rabbit 
+	- mood
+- The Dark Eye Chains of Satinav 
+	- mood
+- Child of Light 
+	- art
+- Dragon Quest I&II HD-2D
+	- art
+- Cinderia 
+	- art
 - Omori
 - Undertale
 - rayman 3
