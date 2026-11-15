@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 1:30 am
+modified: Sunday, November 15th 2026, 1:31 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -93,12 +93,12 @@ from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>)
 - Disco Elysium: sanity changes dialogue and perception
 - Hollow Knight: small interconnected world, shortcuts, locked paths
 - Darkwood: temporary safe spaces
-- Majora's Mask: favors, NPC relationships
+- Majoras Mask: favors, NPC relationships
 - Little Nightmares: environmental encounters
 - Fire Emblem: everything has consequence ([cool canvas](<./cool canvas.canvas>))
 
 mood only, from [deans moodboard](<./deans moodboard for huge breakthough project.canvas>):
-- Alice Madness Returns, The Path, Fran Bow, Collective Unconscious, The Excavation of Hob's Barrow, Folklore, Blacktail, Bramble The Mountain King, The Night of the Rabbit, The Dark Eye Chains of Satinav
+- Alice Madness Returns, The Path, Fran Bow, Collective Unconscious, The Excavation of Hobs Barrow, Folklore, Blacktail, Bramble The Mountain King, The Night of the Rabbit, The Dark Eye Chains of Satinav
 
 art only, from [Erin's visual ideas](<./Erin's visual ideas.canvas>):
 - Child of Light
@@ -107,7 +107,7 @@ art only, from [Erin's visual ideas](<./Erin's visual ideas.canvas>):
 
 team favorites ([cool canvas](<./cool canvas.canvas>)):
 - omori, rayman 3, yume 2kki, collective unconscious, celeste, ENA dream bbq, citizen sleeper, deltarune, pseudoregalia, neva
-- undertale, links awakening, swordigo, majora's mask, earthbound
+- undertale, links awakening, swordigo, majoras mask, earthbound
 
 ## Core Loop
 
@@ -222,7 +222,7 @@ zone 0 is tutorial, rest placeholder.
 
 ### First Tutorial Level
 - You spawn in a forest with a large dying tree in the middle.(yggdrasil? deku tree? last of the great trees)
-- You must interact with tree to progress, he will tell you he is dying and he will explain a little bit about the world you're in and how to survive.
+- You must interact with tree to progress, he will tell you he is dying and he will explain a little bit about the world youre in and how to survive.
 - The area around the tree is a temporary safe hub
 - You help the tree complete tasks ([ ] how many) and then he dies, the place he is in is no longer safe and you have to move on and survive with what youve learned
 

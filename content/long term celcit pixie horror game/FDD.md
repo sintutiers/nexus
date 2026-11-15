@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 1:25 am
+modified: Sunday, November 15th 2026, 1:31 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -96,7 +96,7 @@ flowchart TD
 - [x] choices change NPC opinion and the story
 	- [ ] (hidden fairy meter? like a FUN value) opinion. keep it as the fairy meter or rename, same thing
 - [ ] everything has a consequence, nothing is a fake choice
-	- minimum consequence per choice: every player-facing choice writes at least one of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, it's a fake choice, cut it or make it write something
+	- minimum consequence per choice: every player-facing choice writes at least one of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, its a fake choice, cut it or make it write something
 - [ ] good/bad side leads to a fake ending, the true ending is hidden
 	- [ ] (talk to a hidden NPC?)
 
@@ -104,7 +104,7 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 - dialogue options can need minimum sanity
 - low sanity replaces some options with other ones
 - example, NPC asks where you came from:
-	- high sanity: "I don't remember."
+	- high sanity: "I dont remember."
 	- low sanity: "You know where. You sent me here."
 - hallucination AI + just dialogue conditions ?
 
@@ -113,9 +113,9 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 - [ ] NPCs give favors/quests
 	- define structure and tracking (quests have stages, game remembers current stage. journal UI [ ])
 - [ ] rewards: item, info, sanity, or access to new location
-	- economy: no. favors are the economy. no shops, no currency. it's the celtic-pact thing anyway
+	- economy: no. favors are the economy. no shops, no currency. its the celtic-pact thing anyway
 
-numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Majora's Mask):
+numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Majoras Mask):
 - 4-5 important NPCs
 - each has 1 relationship value (= fairy meter)
 - each gives 1-2 favors
@@ -283,3 +283,24 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 
 - other players show in same level, works offline (done)
 - [ ] feature or tech demo?
+
+## User Acceptance Test (UAT)
+
+Check if game meets all functional, design and game requirements in perspective of player.
+
+- [ ] Player can walk and run
+- [ ] Player can jump, with variable height and a double jump
+- [ ] Player can wall slide and wall jump
+- [ ] Player can dash, with a cooldown
+- [ ] Player can crouch
+- [ ] Character faces direction it moves in
+- [ ] Movement values can be changed through movement profile
+- [ ] Player can talk to NPCs with dialogue and choices
+- [ ] Player can interact with things, and gated ones stay blocked until item or flag is there
+- [ ] Player can carry, use and give items
+- [ ] Picked up items stay gone after reload
+- [ ] Quest progress is saved and restored
+- [ ] Sanity drains and the screen changes per sanity zone
+- [ ] Checkpoints and level progress are saved and restored on continue
+- [ ] Other players show up in the same level, and game still works offline
+- [ ] Game does not lag or drop below 45 FPS on web.

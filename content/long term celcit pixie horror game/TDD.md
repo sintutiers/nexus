@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Sunday, November 15th 2026, 1:26 am
+modified: Sunday, November 15th 2026, 5:32 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -15,69 +15,123 @@ author:
 > [!NOTE] foreword
 > this is for a 1 person programmer, maybe in the future more, but for now that is the constraint
 
-Godot 4.8
-	- [GDScript Formatter 0.27.0](https://github.com/GDQuest/GDScript-formatter/releases/tag/0.27.0)
-	- [Antz's Debug Menu 1.3.0](https://github.com/antzGames/Antz-Debug-Menu/releases/tag/v1.3.0)
-	- [LimboConsole 0.8.0](https://github.com/limbonaut/limbo_console/releases/tag/v0.8.0)
-	- [Dialogue Manager 4.2.0](https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v4.2.0)
-	- [health, hitboxes and hitscans 5.0.4](https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4)
-	- [Godot State Charts 0.22.5](https://github.com/derkork/godot-statecharts/releases/tag/v0.22.5)
-	- [Maaack's Game Template Addon 1.7.1](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.7.1)
-		- [Godot-UI-Sound-Controller 1.7.1](https://github.com/Maaack/Godot-UI-Sound-Controller/releases/tag/v1.7.1)
-		- [Godot-Scene-Loader 1.7.1](https://github.com/Maaack/Godot-Scene-Loader/releases/tag/v1.7.1)
-		- [Godot-Music-Controller 1.7.1](https://github.com/Maaack/Godot-Music-Controller/releases/tag/v1.7.1)
-	- [Script-IDE 2.2.5](https://github.com/Maran23/script-ide/releases/tag/v2.2.5)
-	- [sound manager 2.6.2](https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2)
-	- [phantom camera 0.11.0.4](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4)
-	- [SpacetimeDB Client SDK 0.3.3](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.3)
-	- [Plugin Updater 0.5.1](https://github.com/Maaack/Godot-Plugin-Updater/releases/tag/v0.5.1)
-	- [Project Time Tracker 3.0.1](https://github.com/Fifut/project-time-tracker/releases/tag/v3.0.1)
+## Content in Doc
+
+- [Technical Stack](<#Technical Stack>)
+	- [Addons](<#Addons>)
+- [Project Layout](<#Project Layout>)
+- [CORE Programming Rules](<#CORE Programming Rules>)
+	- [FUNCTION NAMING](<#FUNCTION NAMING>)
+- [Rules for Documentation and Comments](<#Rules for Documentation and Comments>)
+	- [API DOCS](<#API DOCS>)
+	- [INLINE COMMENTS](<#INLINE COMMENTS>)
+		- [HYGIENE](<#HYGIENE>)
+- [Game System Architecture](<#Game System Architecture>)
+	- [Components (Extend `Component`, Wired by Body, Not Looked up Themselves)](<#Components (Extend `Component`, Wired by Body, Not Looked up Themselves)>)
+	- [Component Wiring](<#Component Wiring>)
+	- [Bodies and Spawner](<#Bodies and Spawner>)
+	- [Player API](<#Player API>)
+	- [Other](<#Other>)
+	- [Game State and Level Management](<#Game State and Level Management>)
+	- [Camera](<#Camera>)
+	- [Multiplayer](<#Multiplayer>)
+	- [Debug](<#Debug>)
+- [Technical Specifications](<#Technical Specifications>)
+
+
+
+## Technical Stack
+
+Godot 4.8, GDScript. Godot compatibility renderer, if need more advanced features we use that then, not sooner.
+### Addons
+- [GDScript Formatter 0.27.0](https://github.com/GDQuest/GDScript-formatter/releases/tag/0.27.0) - tool
+- [Antzs Debug Menu 1.3.0](https://github.com/antzGames/Antz-Debug-Menu/releases/tag/v1.3.0) - debug
+- [LimboConsole 0.8.0](https://github.com/limbonaut/limbo_console/releases/tag/v0.8.0) - debug `DebugCommands`
+- [Dialogue Manager 4.2.0](https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v4.2.0) - dialogue + choices
+- [health, hitboxes and hitscans 5.0.4](https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4) - future health?
+- [Godot State Charts 0.22.5](https://github.com/derkork/godot-statecharts/releases/tag/v0.22.5) - movement states
+- [Maaacks Game Template Addon 1.7.1](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.7.1) - level loading, saving (`GlobalState`, `LevelManager`)
+	- [Godot-UI-Sound-Controller 1.7.1](https://github.com/Maaack/Godot-UI-Sound-Controller/releases/tag/v1.7.1) - `ProjectUISoundController`
+	- [Godot-Scene-Loader 1.7.1](https://github.com/Maaack/Godot-Scene-Loader/releases/tag/v1.7.1) - `SceneLoader`
+	- [Godot-Music-Controller 1.7.1](https://github.com/Maaack/Godot-Music-Controller/releases/tag/v1.7.1) - `ProjectMusicController`
+- [Script-IDE 2.2.5](https://github.com/Maran23/script-ide/releases/tag/v2.2.5) - tool
+- [sound manager 2.6.2](https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2) - sound
+- [phantom camera 0.11.0.4](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4) - camera
+- [SpacetimeDB Client SDK 0.3.3](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.3) - multiplayer
+- [Plugin Updater 0.5.1](https://github.com/Maaack/Godot-Plugin-Updater/releases/tag/v0.5.1) - tool
+- [Project Time Tracker 3.0.1](https://github.com/Fifut/project-time-tracker/releases/tag/v3.0.1) - tool
+
+> Server: [see Multiplayer.](<#multiplayer>)
+
+Autoloads; in order they load: `DialogueManager`, `DebugMenu`, `ProjectUISoundController`, `SceneLoader`, `ProjectMusicController`, `PhantomCameraManager`, `SoundManager`, `LimboConsole`, `DebugCommands`, `Net`, `SpacetimeDB`. 
+only `DebugCommands` + `Net` are ours, rest comes from addons.
+
+- `GlobalState` is static class, not autoload -> `GlobalState.save()` can be called from anywhere, order doesnt matter.
+- `LimboConsole` should stay above `DebugCommands`, bc that one adds its commands in `_ready`.
+
+## Project Layout
+
+```mermaid
+mindmap
+  root((ROOT))
+    📁 content/
+      items/
+      quests/
+      dialogue/
+    📁 scripts/
+      autoload/
+      save/
+      components/
+      data/
+      entities/
+      ARCHIVE SCRIPTS/
+    📁 scenes/
+    📁 server/
+    📁 The Amazing Art and Sound Folder/
+```
 
 ## CORE Programming Rules
-
 GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
 
-1. main design pattern (but not only one present): godot flavored component-based architecture
-	- but its not perfect, consider this:
-	- components adds a good bit of complexity over simply making a class, and communication between components becomes more challenging.
-	- making everything components would be stupid, some things can just be classes or such.
-	- over-application can be solved with the golden rule, everything in balance. even the rule itself. (applies to all the rules)
-2. Less code is a feature.
-3. if considering abstraction, also consider deletion or merging scripts into one.
+1. main design pattern (but not only one present): 
+	- *godot flavored component-based architecture*
+		- but its not perfect, consider this:
+		- components add  complexity over simply making a class, and communication between components becomes more challenging.
+		- making everything components is stupid, some things can just be classes or such.
+	- over-application can be solved with the golden rule, everything in balance. even the rule itself. (*applies to all rules*)
+2. if considering abstraction, also consider deletion or merging scripts into one.
 	- First of all trying to keep it simple, but secondly when adding complexity how much benefit is coming from that complexity?
 	- is this abstraction earning its keep?
-4. Fail loudly.
-	- A bad item ID should call `push_error`, and `_on_setup()` should report missing wiring.
+3. Fail loudly.
+	- A bad item ID should call `push_error`.
 	- Never continue silently.
-5. Clear, descriptive names over shortened or abbreviated names.
-	- (mostly relevant for functions, but not only)
-	- see FUNCTION NAMING below.
-6. Signals up, methods down.
-7. Event driven.
+4. Clear, descriptive names over shortened or abbreviated names.
+	- [mostly relevant for functions, but not only.](<#function naming>)
+5. Signals up, methods down.
+6. Event driven.
 	- react to signals, dont poll every frame when signal exists.
-8. Never nester.
-	- early return / guard clause instead of nested ifs.
-9. small, composable scenes, not a framework layered on top.
-10. Separate machine-independent and machine-dependent code.
-	- That’s what makes the code hackable, not cleverness.
-	- `PlatformerMovementBase`, with its abstract 2D and 3D functions, is an example.
-11. Use narrow interfaces where change is expected.
+7. Never nester.
+	- no giant nested ifs.
+8. small, composable scenes, not a framework layered on top.
+9. Separate machine-independent and machine-dependent code.
+	- Thats what makes the code hackable, not cleverness.
+	- `PlatformerMovementBase`, with its abstract 2D and 3D functions, is example.
+10. Use narrow interfaces where change is expected.
 	- `PlayerApi` (`give_item`, `has_item`, `set_level_flag`, `set_fact`, etc.) hides components, so you can rewrite them without touching dialogue files.
-12. Make code easy to grep.
+11. Make code easy to grep.
 	- Use one class per file, name file after class, and use stable IDs (item ID is the file name).
-13. Write the minimum.
+12. Write the minimum, Less code is a feature.
 	- Add a narrow interface only where you already expect change.
-14. if its not necessary, make sure not to handroll our own logic, use godots inbuilt logic and functions and methods instead.
-15. AUDIT, REVIEW, REPEAT:
+13. if not necessary, make sure not to handroll our own logic, use godots inbuilt logic and functions and methods instead.
+14. AUDIT, REVIEW, REPEAT:
 	- make sure old code is up to date with current codebase/code conventions, design patterns could have changed, things evolve and change.
-	- make sure stuff doesn't get left behind
-16. GENERAL:
-	- keep code like netbsd; easy to inspect, modify, and extend. and like
+	- make sure stuff doesnt get left behind
+15. GENERAL, keep code like:
+	- netbsd; easy to inspect, modify, and extend. and like
 	- openbsd; simple, clear, and consistent.
-	- suckless: Clarity, frugality and small enough for one person to read and rewrite.
+	- suckless; Simpel, Clarity, frugality and small enough for one person to read and rewrite.
 
-### FUNCTION NAMING
-
+##### FUNCTION NAMING
 - Descriptive names. Longer is good when clearer.
 	- `add()` -> `add_inventory_item()`
 - Full words.
@@ -90,7 +144,7 @@ GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
 	- `run(by)` -> `execute_interaction_for_actor(actor)`
 - Related names consistent.
 	- `pause()` -> `pause_sanity_drain()`, `unpause()` -> `resume_sanity_drain()`
-- Context from class alone isn't always enough.
+- Context from class alone isnt always enough.
 	- `set_value()` -> `set_current_sanity_value()`
 - No filler words.
 	- `get_frame()` stays `get_frame()` when it returns `InputFrame`.
@@ -98,193 +152,336 @@ GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
 - Preserve Godot-defined method names.
 
 ## Rules for Documentation and Comments
-
 GAME DEV DOCUMENTATION AND COMMENT PRINCIPLES
 
 - Comment the surprising, not the obvious with inline comments.
-- be direct and concise, skip the word "the" and "a" and "'" even if it's less pretty (keeps things more direct)
+- be direct and concise, skip the word "the" and "a" and apostrophes even if its less pretty (keeps things more direct)
 - Explain why, not what.
-- Code shows what it does. Comments show reasoning, decisions, and/or constraints.
+- Code shows what it does. Comments show reasoning, decisions, xor constraints.
 - Code documents implementation; comments document intent.
 	- If intent changes, update comment.
-- Don't duplicate code in comments.
+- Dont duplicate code in comments.
 	- If a comment just restates code, delete it.
 - Use two comment types, two jobs.
-	- Double-hash doc comments for public API docs (parsed by editor and shown in class reference).
-	- Single-hash comments for inline implementation notes (ignored by documentation system).
+	- Double-hash doc comments for public API docs (shown in editor and shown in class reference).
+	- Single-hash comments for inline implementation notes
 
 ### API DOCS
+Use double-hash doc comments for public functions, signals, `@export` variables, `class_name`, and modules. Doc comment must sit above the member it documents.
 
-Use double-hash doc comments for public functions, signals, `@export` variables, `class_name`, and modules. A doc comment must sit immediately above member it documents. Members starting with `_` are treated as private and skipped by docs.
-
-- `#` = why. `##` = public API contract (shows in Inspector). Don't mix them.
+- `#` = why. `##` = public API contract (shows in editor). Dont mix.
 - Document the contract: what it does, parameters, return values, and side effects.
-- Link related symbols with `[member health]`, `[method take_damage]`, `[signal died]`. These become clickable in editor.
-- Add a short usage example for non-trivial functions.
+- Link related symbols with `[member health]`, `[method take_damage]`, `[signal died]`. (become clickable in editor.)
+- Add short usage example for non-trivial functions.
 
 Example:
-
-> Emitted when the Ball Reaches Peak Height.
-> @experimental: Timing May Change.
-	signal ball_peak_changed(in_peak: bool)
+```gdscript
+## Emitted when facing changes.
+signal flipped(new_facing_x: float)
+```
 
 ### INLINE COMMENTS
-
 Use single-hash comments inside function bodies.
 
-- Comment the surprising, not the obvious.
-	- Good for: engine workarounds, ordering requirements, magic numbers, and warnings like "changing this breaks saves".
+- Good: engine workarounds, ordering requirements, magic numbers, and warnings like "changing this breaks saves".
 - Write for future fixer and extender.
 	- Explain invariants, pitfalls, and non-obvious choices.
 - Keep them short.
-	- Long explanations belong in API docs or design docs.
+	- Long explanations belong in API docs or this [TDD](<./TDD.md>).
 
 Example:
+```gdscript
+# Own copy: height changes at runtime and scene shape resource shared by every instance.
+_capsule = _capsule.duplicate()
+```
 
-> Peak Entry Still Fires Legacy Max-speed Event Cadence Latches On.
-> func _on_ball_peak_changed(in_peak: bool) -> void:
-
-### HYGIENE
-
+#### HYGIENE
 - Fix code, not comments.
-	- Don't use comments to patch bad names or messy GDScript. Rewrite it.
+	- Dont use comments to patch bad names or messy GDScript. Rewrite it.
 - Update outdated doc comments.
 	- Editor hover and class reference will show stale docs. An incorrect comment is worse than no comment.
 - Be consistent.
 	- Example: capital letter, end with period, put comments above code.
 
-## System Architecture
+## Game System Architecture
+(architecture inspired by <https://gameprogrammingpatterns.com> and others i need to link)
+Game (for now) is divided into these main components.
 
-Game (for now) is divided into these main components:
+### Components (Extend `Component`, Wired by Body, Not Looked up Themselves)
 
-- Components (extend `Component`, wired by body, never looked up themselves)
-	- Input (`InputComponent`, `PlayerInputComponent`, `InputFrame`)
-	- Facing (`FacingComponent`)
-	- Movement (`PlatformerMovementBase` > `Movement3DComponent` / `Movement2DComponent`)
-		- Walk, run, jump, dash, crouch, wall slide
-		- Ground, Air, Wall Slide, Dash and Crouch states, driven by Godot State Charts
-		- `MovementProfile` resource holding all tunable values (speed, jump, dash, etc.)
-		- 3D player uses `AnimatedSprite3D` (2D-style sprites on 3D plane); 2D twin `Movement2DComponent` for pure 2D player
-	- Animation (`AnimationComponent`)
-	- Interaction (`InteractionComponent`, finds and runs closest `InteractableThing`)
-	- Inventory (`InventoryComponent`)
-	- Sanity (`SanityComponent`, `SanityVisualsComponent`)
-	- Net sync (`NetSyncComponent`)
-- Bodies (own and wire components)
-	- `PlayerBody` (3D), `PlayerBody2D` (2D)
-	- `PlayerSpawner` places player in level (a `Marker3D`)
-- Player API
-	- `PlayerApi` is one way dialogue, interactables and debug commands talk to player, 2D or 3D
-- Dialogue
-	- Talk to NPCs with Dialogue Manager
-- Items and Quests
-	- `ItemData` and `QuestData` resources, one `.tres` each, id is file name
-	- Quest progress is fact in `GameState`
-- Animations
-	- `Animations` name constants, driven by movement signals
-- Game State
-	- `GameState` and `LevelState` resources
-	- Level progress, checkpoints, per level flags and global facts
-	- Saving through `GlobalState`
-- Level Management
-	- `LevelManager` extended with state saving (`level_and_state_manager.gd`)
-	- `InteractableThing` for things player interacts with (optional `persistent_id` keeps `free_after` pickups gone after reload)
-	- `Sanctuary` (Area3D pauses sanity drain while player is inside)
-- Camera
-	- `PhantomCameraHost` + third-person `PhantomCamera3D`, follows the player
-	- Assigned by `PlayerSpawner`; a level can leave it unassigned for a fixed camera
-	- Damping `0.05` per axis
-	- Spring arm length `3.5`
-	- No free orbit; no free look
-	- `CameraMouseLean` is a child of `PhantomCamera3D` and adds slight mouse lean; tuning values live on its exports
-- Multiplayer
-	- `Net` autoload with SpacetimeDB, server module is in `server/`
-	- `RemotePlayer` / `RemotePlayer2D` show other players, scene picked by local body dimension
-	- Offline should still works if connection fails(why tf would it not? some idiots bad desin probbly, or in case of big companies; Greed)
-- Debug
-	- `DebugCommands` adds commands to LimboConsole
-	- `StateEvents` holds event names `PlatformerMovementBase` sends to state chart.
+```mermaid
+graph TB
+    subgraph Body["PlayerBody"]
+        IC["InputComponent<br/>PlayerInputComponent"]
+        FC["FacingComponent"]
+        MC["Movement3DComponent"]
+        AC["AnimationComponent"]
+        IAC["InteractionComponent"]
+        INV["InventoryComponent"]
+        SC["SanityComponent"]
+        SVC["SanityVisualsComponent"]
+        NSC["NetSyncComponent"]
+    end
+
+    subgraph Bases["Bases + Data"]
+        PMB["PlatformerMovementBase<br/>does actual movement"]
+        MPROF["MovementProfile<br/>(tweak movement here)"]
+        IF["InputFrame<br/>(1 frame of input)"]
+    end
+
+    IC -->|"builds each frame"| IF
+    IF -->|"read once per physics frame"| MC
+    IF -->|interact pressed?| IAC
+    MC -.->|extends| PMB
+    MPROF -->|speeds, jump height, ETC| MC
+    MC -->|"jumped / landed / dashed / ground_motion_changed"| AC
+    MC -->|"update_facing_from_input()"| FC
+    FC -->|flipped| AC
+    IAC -->|"interact_started / interact_ended<br/>(ignore input)"| MC
+    IAC -->|"interact_started / interact_ended<br/>(pause drain)"| SC
+    INV -->|"using item restores sanity,<br/>add_sanity()"| SC
+    SC -->|zone_changed| SVC
+    NSC -.->|"sends position + facing + animation<br/>(see Multiplayer)"| NET["Net"]
+
+    click IC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/input_component.gd" _blank
+    click FC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/facing_component.gd" _blank
+    click MC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/movement_3d_component.gd" _blank
+    click AC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/animation_component.gd" _blank
+    click IAC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/interaction_component.gd" _blank
+    click INV href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/inventory_component.gd" _blank
+    click SC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/sanity_component.gd" _blank
+    click SVC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/sanity_visuals_component.gd" _blank
+    click PMB href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/components/platformer_movement_base.gd" _blank
+    click MPROF href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/data/movement_profile.gd" _blank
+    click IF href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/data/input_frame.gd" _blank
+```
+
+context; (what player actually does, see [FDD](<./FDD.md>))
+
+- Input: read once per physics frame into an `InputFrame`, and `InputComponent.get_frame()` hands everyone that same frame. 
+	- `PlayerInputComponent` remembers presses + releases from input events, held buttons are polled.
+- Movement: state chart decides which state is active (Ground/Air/WallSlide/Dash/Crouch). `PlatformerMovementBase` does physics for that state + sends `StateEvents` back to chart.
+- Facing: movement tells `FacingComponent` where player is going with `update_facing_from_input()`.
+	- `FacingComponent` emits `flipped` (not movement).
+- 3D player uses `AnimatedSprite3D` (2D art on 3D plane).
+- Animation: names are constants in `Animations`, and its all driven by movement + facing signals.
+- Interaction: `InteractionComponent` runs the closest `InteractableThing` player is standing in zone of. 
+	- if that thing locks player it emits `interact_started` / `interact_ended`, -> movement ignores input + sanity stops draining while its busy.
+- Sanity: `SanityComponent` keeps value + zone. 
+	- `SanityVisualsComponent` listens to `zone_changed`, so the meter itself knows nothing about visuals.
 
 ### Component Wiring
 
-Every component extends `Component`. Two hooks run in order:
+Two hooks run in order:
 
 1. `_on_ready` runs inside `Node._ready`. Dependencies already set, but sibling `_ready`s may not be.
-2. `_on_setup` runs deferred (idle time after all `_ready`s). Check dependencies here with `_require_dependencies({ "label": value })`, which collects every null into a single error and returns true/false so component can bail out.
+2. `_on_setup` runs deferred (idle time after all `_ready`s). Check dependencies here with `_require_dependencies({ "label": value })`, which collects every null into 1 error + returns true/false so component can bail out.
 
-Body (`PlayerBody` / `PlayerBody2D`) is only place dependencies are assigned. It runs in `_enter_tree`, finds every component and the sprite with `Component.find_descendant_of_type(self, Type)`, and assigns the typed fields before hooks run. Components never look each other up. Adding component is two steps: add node to scene, wire it in body. Missing wiring is reported once, in `_on_setup`, by every component that depends on it.
+```mermaid
+sequenceDiagram
+    participant Engine
+    participant Body as PlayerBody
+    participant Comp as Component
 
-Components communicate through signals (`jumped`, `landed`, `dashed`, `flipped`, etc.). Input is read once per frame into an `InputFrame`, so movement never reads `Input` directly. `Component.find_descendant_of_type()` exists only for body's own wiring. It is not a service locator.
-### Technical Stack
+    Engine->>Body: _enter_tree
+    Body->>Comp: find + wire (set fields)
+    Engine->>Comp: _ready -> _on_ready()
+    Note over Comp: dependencies set,<br/>siblings maybe not ready
+    Engine-->>Comp: all ready -> _on_setup()
+    Comp->>Comp: _require_dependencies({ "label": value })
+    alt something missing
+        Comp->>Comp: 1 error naming all, stop
+    else all there
+        Comp->>Comp: carry on
+    end
+```
 
-Godot 4.8, GDScript, Compatibility renderer. Exported for desktop and web.
+`PlayerBody` is the only place dependencies are assigned. It runs in `_enter_tree`, finds every component + sprite with `Component.find_descendant_of_type(self, Type)`, assigns typed fields before hooks run. 
+If component is missing body just skips it. Not a service locator. 
+Missing wiring is reported once, in `_on_setup`, by every component that depends on it.
 
-Server is a SpacetimeDB module in Rust, in `server/`. Schema changes regenerate client SDK types (`SpacetimeDB.Faerie`, `FaerieNetPlayer`); only `Net` reads them.
+Hooks dont call their parent on their own. if component extends `Component` directly it needs no `super()`, but if it extends another component (like `Movement3DComponent`) it must call it.
 
-Autoloads: `GlobalState`, `DialogueManager`, `Net`, `DebugCommands`, `LimboConsole`. Nothing else is singleton. Order matters where one calls another (`GlobalState` before anything that calls `GlobalState.save()`).
+Components communicate through signals (`jumped`, `landed`, `dashed`, `flipped`, etc.). 
+Input is read once per physics frame into an `InputFrame`, so movement never reads `Input` directly. 
 
-Addons by role:
-- Movement states; Godot State Charts
-- Dialogue and choices; Dialogue Manager
-- Level loading, saving, scene loading, music and UI sound Maaack's Game Template (`GlobalState`, `LevelManager`, `SceneLoader`, `MusicController`, `UISoundController`)
-- Camera; Phantom Camera (`PlayerSpawner.camera`)
-- Debug; LimboConsole (via `DebugCommands`), Antz's Debug Menu
-- Sound; sound manager
-- Multiplayer; SpacetimeDB Client SDK
-- Tool stuff; Script-IDE, GDScript Formatter, Project Time Tracker
 
-`PlayerApi` is not an autoload. `PlayerBody`/`PlayerBody2D` create it in `_enter_tree`, store it on body, and expose it through `PlayerApi.find_local_player_api()`. Dialogue and `InteractableThing` get it as extra game state, never as a global.
+### Bodies and Spawner
 
-**Deployment**
+- `PlayerBody` is god and wires all components.
+- `PlayerSpawner` (`Marker3D`) spawns player scene as its own child in `_enter_tree` + tells its `camera` to follow that player.
 
-Game will be exported from Godot as build for as much platforms as reasonably possible
+### Player API
+
+```mermaid
+graph LR
+    D["Dialogue files"]
+    I["InteractableThing"]
+    DBG["DebugCommands"]
+    S["Sanctuary"]
+
+    PA["PlayerApi<br/>items / sanity / level flags /<br/>facts / opinions / quests"]
+    PB["PlayerBody"]
+    C["InventoryComponent<br/>SanityComponent"]
+
+    D -->|gets as extra game state| PA
+    I -->|gets as actor| PA
+    DBG -->|"finds it, find_local_player_api()"| PA
+    S -->|"takes from body.api"| PA
+    PB -.->|makes in _enter_tree<br/>+ keeps as api| PA
+    PA -.->|hides| C
+
+    click I href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/interactable_thing.gd" _blank
+    click DBG href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/autoload/debug_commands.gd" _blank
+    click S href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/sanctuary.gd" _blank
+    click PA href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/player_api.gd" _blank
+    click PB href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/player_body.gd" _blank
+```
+
+Not autoload. Body creates it in `_enter_tree`, keeps it as `api` + joins group `player`. thats how `PlayerApi.find_local_player_api(tree)` finds it.
+
+`InteractionComponent` gives it to `InteractableThing` as actor, and that one gives it to dialogue as extra game state (never as global). 
+Dialogue files and `InteractableThing` should only call its methods, that way components can be rewritten without touching any dialogue file. 
+other code (`DebugCommands`, `Sanctuary`, HUD) is allowed to read `api.inventory` + `api.sanity` directly.
+
+Quest stage and NPC opinion are "just": 
+	`quest.<id>` + `opinion.<npc>`.
+
+### Other
+
+- Dialogue: talk to NPCs with Dialogue Manager.
+- Items and Quests: `ItemData` + `QuestData` resources. quest itself holds no progress, that is fact `quest.<id>`.
+
+### Game State and Level Management
+
+```mermaid
+graph LR
+    GS["GlobalState<br/>(static class, not autoload)"]
+    GSR["GameState resource<br/>facts, inventory, sanity,<br/>level paths, save_version"]
+    LSR["LevelState resource<br/>flags of 1 level"]
+    LM["our LevelManager"]
+    USERS["everything else<br/>(PlayerApi, InteractableThing,<br/>Sanctuary, components)"]
+
+    GS -->|"loads + saves"| GSR
+    GSR -->|"1 per level,<br/>by scene uid"| LSR
+    LM -->|"writes current level<br/>+ checkpoint"| GSR
+    USERS -->|"only through GameState<br/>static functions"| GSR
+
+    click GSR href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/save/game_state.gd" _blank
+    click LSR href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/save/level_state.gd" _blank
+    click LM href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/save/level_and_state_manager.gd" _blank
+```
+
+- everything reads + writes through static functions in `GameState`, setting something = saved immediately.
+	- except sanity; changes every physics frame -> only copied into `GameState` + file gets written when `SanityComponent` leaves tree.
+- when running scene straight from editor theres no game state -> default values + nothing saved.
+- facts are global and their keys start with what wrote them: `choice.`, `opinion.`, `quest.`. level flags are per level: `thing.<persistent_id>`, `sanctuary.<persistent_id>`.
+- if changing what saved data is (renamed fact key, reordered quest stages), bump `SAVE_VERSION` + add step in `_migrate_save_to_current_version`. not; old saves break.
+- items + quests are saved by id -> renaming `.tres` breaks every save that has that.
+- `InteractableThing`: optional `persistent_id` keeps `free_after` pickups gone after reload.
+- `Sanctuary` pauses sanity drain while player inside. with optional `persistent_id` entry; bonus stays used after reload.
+
+### Camera
+
+```mermaid
+graph LR
+    PS["PlayerSpawner"]
+    PC3["PhantomCamera3D<br/>third-person follow"]
+    CML["CameraMouseLean<br/>(child of PhantomCamera3D)"]
+
+    PS -->|"follow this player<br/>"| PC3
+    CML -->|"leans toward mouse"| PC3
+
+    click PS href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/player_spawner.gd" _blank
+    click CML href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/camera_mouse_lean.gd" _blank
+```
+
+> how camera should feel for player: see Camera [FDD](<./FDD.md>).
+
+- `CameraMouseLean` must be child of `PhantomCamera3D` in third-person follow mode, if not errors + does nothing.
+- damping + spring arm length tweaked per level on `PhantomCamera3D`, not in code.
+- lean tweaked in `CameraMouseLean` export.
+
+### Multiplayer
+
+```mermaid
+graph LR
+    PB["PlayerBody<br/>NetSyncComponent"]
+    NET["Net autoload"]
+    STDB[("SpacetimeDB<br/>server/ (Rust module)")]
+    RP["RemotePlayer"]
+
+    PB -->|position + facing + animation| NET
+    NET <-->|sends ours + gets others| STDB
+    NET -->|spawns 1 per player| RP
+
+    click PB href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/player_body.gd" _blank
+    click NET href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/autoload/net.gd" _blank
+    click RP href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/remote_player.gd" _blank
+```
+
+- Server module in `server/`
+- only `Net` touches `SpacetimeDB.Faerie`. `FaerieNetPlayer` rows are also read by `RemotePlayer`.
+- Offline still works if connection fails (why tf would it not? idiots bad desin probbly, or in case of corpos; Greed)
+
+### Debug
+
+```mermaid
+graph LR
+    DC["DebugCommands<br/>(autoload)"]
+    LC["LimboConsole<br/>(autoload)"]
+    PA["PlayerApi"]
+    DLG[".dialogue files"]
+
+    DC -->|"give / use / sanity"| LC
+    DC -->|"commands go through"| PA
+    DC -->|"checks ids that dont exist"| DLG
+
+    click DC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/autoload/debug_commands.gd" _blank
+```
+
+- every time you run from the editor, `DebugCommands` checks all `.dialogue` files and gives error for item + quest ids that dont exist (rule 3, fail loudly). it only sees ids that are typed out, flags + facts cant be checked bc there is no list of them.
 
 ## Technical Specifications
 
-Game makes use of Godot's built-in API (`CharacterBody3D`, `Resource`, signals) plus addons listed above.
+Game makes use of Godots API (`CharacterBody3D`, `Resource`, signals) plus addons listed above.
 
 - Movement values are tweaked in a `MovementProfile` resource, not in code.
-- State chart's state nodes must be named `%Ground`, `%Air`, `%WallSlide`, `%Dash` and `%Crouch`. Chart itself is injected.
-- New input source is made by extending `InputComponent` and overriding `_build_frame()`.
-- 2D version is made by extending `PlatformerMovementBase` and implementing its abstract functions.
-- New component extends `Component`, goes in body scene and gets wired in body.
-- New item or quest is a `.tres` in `scenes/items/` or `scenes/quests/`.
-- New interactable thing is `Node3D` scene with `InteractableThing` script on root. Zone `Area3D` is built in `_ready`, player sensor detects.
+- State charts state nodes must have unique names `%Ground`, `%Air`, `%WallSlide`, `%Dash`, `%Crouch` + be in same scene as movement component. Chart is injected.
+- transition events in player scene must be same as `StateEvents` constants. carefull!; 1 typo / rename on either side gives no error, event just gets ignored.
 
-**Camera setup**
+```mermaid
+stateDiagram-v2
+    state "%Ground" as Ground
+    state "%Air" as Air
+    state "%WallSlide" as WallSlide
+    state "%Dash" as Dash
+    state "%Crouch" as Crouch
 
-- Perspective third-person camera, using `PhantomCameraHost` + third-person `PhantomCamera3D`.
-- Follows the player, assigned by `PlayerSpawner`; damping `0.05` per axis.
-- Spring arm length `3.5`.
-- No free orbit.
-- Tuning values live on `PhantomCamera3D` and `CameraMouseLean` exports.
-- `CameraMouseLean` must be a child of a `PhantomCamera3D`.
+    [*] --> Ground
+
+    Ground --> Air: jump/fall
+    Ground --> Crouch: crouch
+    Ground --> Dash: dash
+    Air --> Ground: land
+    Air --> WallSlide: wall_slide
+    Air --> Dash: dash
+    WallSlide --> Air: jump/fall
+    WallSlide --> Ground: land
+    Dash --> Ground: land
+    Dash --> Air: fall
+    Crouch --> Ground: crouch_end
+    Crouch --> Air: fall
+```
+
+adding new stuff?:
+
+- New component extend `Component`, goes in body scene + gets wired in body.
+- New item / quest = `.tres` in `content/items/` / `content/quests/`, id = file name.
+- New interactablething is `Node3D` scene with `InteractableThing` script on root, or just use `interactable_thing_prefab.tscn`. how far you can reach it is its `Area3D` child, if it has none a sphere zone gets built in `_ready`. player sensor finds that zone; physics layer 5.
 
 **Performance**
 
-- Game should not lag or drop below 45 FPS on web. absolute rule, if we keep at this then other platform are likely to be optimised as well
+- Web should be 45 FPS minimum (see Performance [FDD](<./FDD.md>)). if its followed; other platforms are automatically optimised as well
 
-**Platform**
-
-- For now just use Godot compatibility renderer, if need more advanced features we will use that then, not sooner.
-
-### User Acceptance Test (UAT)
-
-Check whether game meets all functional, design and code quality requirements from perspective of end user.
-
-- [ ] Player can walk and run
-- [ ] Player can jump, with variable height and a double jump
-- [ ] Player can wall slide and wall jump
-- [ ] Player can dash, with a cooldown
-- [ ] Player can crouch
-- [ ] Character faces direction it moves in
-- [ ] Movement values can be changed through movement profile
-- [ ] Player can talk to NPCs with dialogue and choices
-- [ ] Player can interact with things, and gated ones stay blocked until item or flag is there
-- [ ] Player can carry, use and give items
-- [ ] Picked up items stay gone after reload
-- [ ] Quest progress is saved and restored
-- [ ] Sanity drains and the screen changes per sanity zone
-- [ ] Checkpoints and level progress are saved and restored on continue
-- [ ] Other players show up in the same level, and game still works offline
-- [ ] Game does not lag or drop below 45 FPS on web.
+> see [FDD](<./FDD.md>) for User acceptance tests

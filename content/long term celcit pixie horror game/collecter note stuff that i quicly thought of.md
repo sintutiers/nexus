@@ -1,7 +1,7 @@
 ---
 uid: mv4g4i14kxswmyhzj238o
 title: Collecter Note Stuff that I Quicly Thought of
-modified: Saturday, November 14th 2026, 5:34 pm
+modified: Sunday, November 15th 2026, 1:15 pm
 created: Monday, November 2nd 2026, 7:08 pm
 ---
 
@@ -44,3 +44,14 @@ created: Monday, November 2nd 2026, 7:08 pm
 9. <https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/design-balance-lore/technology.md>
 10. <https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/design-balance-lore/design-doc.md>
 11. <https://github.com/endless-sky/endless-sky/wiki/Endless-Sky's-Vision>
+
+
+## open source stuff i can use/take inspiration out of for code improvments
+- https://github.com/InvadingOctopus/comedot
+- https://github.com/Nordsoft91/godot-composition
+- https://github.com/ssube/zombie-game
+- https://codeberg.org/Liblast/liblast-framework
+- https://github.com/MRCalderon3D/everything-game-dev-code/blob/main/docs/templates/technical-design-document.md
+- https://github.com/toilanguyen2910/game-dev-studio/blob/master/skills/architecture/SKILL.md
+- https://github.com/godotengine/godot-demo-projects
+- https://github.com/jphulse/godot-shared-components
