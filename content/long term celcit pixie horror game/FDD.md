@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 5:50 pm
+modified: Sunday, November 15th 2026, 6:17 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -17,7 +17,7 @@ author:
 
 ## Table of Contents
 
-- [How to Read This](<#How to Read This>)
+- [Info](<#Info>)
 - [How to Write Requirement](<#How to Write Requirement>)
 - [Functional Requirements](<#Functional Requirements>)
 	- [Sanity](<#Sanity>)
@@ -60,9 +60,9 @@ author:
 	- [Performance](<#Open Questions#Performance>)
 	- [Compatibility](<#Open Questions#Compatibility>)
 	- [Multiplayer](<#Open Questions#Multiplayer>)
-- [User Acceptance Test (UAT)](<#Open Questions#User Acceptance Test (UAT)>)
+- [User Acceptance Test (UAT)](<#User Acceptance Test (UAT)>)
 
-## General Info
+## Info
 
 - FDD = what game does: rules, numbers, when its done. 
 - vision/story is in [GDD](<./GDD.md>), code in [TDD](<./TDD.md>)
@@ -108,7 +108,7 @@ sanity is core pillar so it needs to be concrete, not just "you lose sanity" wit
 	- zone 2 (25-50): stronger distortion, some NPC lines change, fake enemies may show up
 	- zone 3 (0-25): heavy distortion, more fake enemies, some real threats
 	- fake enemies: you dont know which are fake
-- sanity 0: not decided, see [FDD](<#Open Questions>)
+- sanity 0: not decided, see [Open Questions](#Open Questions)
 
 must not be a minor annoyance, and must not make the game unplayable
 
@@ -123,7 +123,7 @@ safe spaces / sanctuaries (from [Gameplay moodboard thingie](<./Gameplay moodboa
 - never randomly become unsafe. only scripted (dying tree in tutorial)
 - done when: enter sanctuary first time, sanity +15, second time nothing
 
-Sanity loop (sketch):
+Sanity loop sketch:
 
 ```mermaid
 flowchart TD
@@ -167,7 +167,7 @@ numbers (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>
 ### Combat
 
 > [!failure] Blocker
-> see Decisions in [GDD](<./GDD.md>), options in [FDD](<#Open Questions>). (create moodboard for that, combatboard?)
+> see Decisions in [GDD](<./GDD.md>), options in [Open Questions](#Open Questions). (create moodboard for that, combatboard?)
 
 ### Movement
 
@@ -230,14 +230,14 @@ for not with keyboard, in the future add gamepad and touchscreen
 > status: open
 > priority: could
 
-see [FDD](<#Open Questions>)
+see [Open Questions](#Open Questions)
 
 ### Journal / Quest Tracker
 
 > status: open
 > priority: should
 
-see [FDD](<#Open Questions>)
+see [Open Questions](#Open Questions)
 
 ### Save and Load
 
@@ -251,7 +251,7 @@ see [FDD](<#Open Questions>)
 
 ### Menus and Settings
 
-> status: done (placeholder look)
+> status: done (placeholder look), 
 > priority: should
 
 - main menu, pause, options
@@ -270,7 +270,7 @@ see [FDD](<#Open Questions>)
 
 ### Compatibility
 
-see [FDD](<#Open Questions>)
+see [Open Questions](#Open Questions)
 
 ### Accessibility
 
@@ -396,22 +396,19 @@ options:
 
 ### Menus and Settings
 
-- [ ] settings: volume, fullscreen, key remap, distortion strength (see accessibility in [GDD](<../yume nikki gamejam/GDD.md>))
-- [ ] reskin to art style, wait for Erin
+- [ ] settings: volume, fullscreen, key remap, distortion strength (see accessibility [GDD](<../yume nikki gamejam/GDD.md>))
+- [ ] art style, wait for Erin
 
 ### Performance
 
 - [ ] load time target, esp web (max first download size?)
-- [ ] sanity visuals must hold 45 fps, probably heaviest part
-
+- [ ] sanity visuals must hold 45 fps.
 ### Compatibility
 
-- [ ] languages: english only? decide before writing lots of dialogue
+- [ ] languages: english only
 - [ ] save compatibility between versions
 
 ### Multiplayer
-
-- [ ] feature or tech demo?
 
 ## User Acceptance Test (UAT)
 
@@ -433,4 +430,3 @@ Check if game meets all functional, design and game requirements in perspective 
 - [ ] Checkpoints and level progress are saved and restored on continue
 - [ ] Other players show up in the same level, and game still works offline
 - [ ] Game does not lag or drop below 45 FPS on web.
-

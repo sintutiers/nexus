@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 5:50 pm
+modified: Sunday, November 15th 2026, 6:16 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -16,9 +16,9 @@ author:
 
 > sources: [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), [cool canvas](<./cool canvas.canvas>), [deans moodboard](<./deans moodboard for huge breakthough project.canvas>), [Erin's visual ideas](<./Erin's visual ideas.canvas>)
 
-## Table of Contents
+## Content in Doc
 
-- [How to Read This](<#How to Read This>)
+- [General Info](<#General Info>)
 - [General Description](<#General Description>)
 - [Pitch Thing that Most Other GDD Related Stuff Have](<#Pitch Thing that Most Other GDD Related Stuff Have>)
 	- [What the Player Should Feel](<#What the Player Should Feel>)
@@ -43,7 +43,6 @@ author:
 	- [Risks](<#Risks>)
 - [Decisions](<#Decisions>)
 - [Workflow / Production Thingies](<#Workflow / Production Thingies>)
-- [Glossary](<#Glossary>)
 - [Open Questions](<#Open Questions>)
 	- [General / Pitch](<#Open Questions#General / Pitch>)
 	- [Story](<#Open Questions#Story>)
@@ -56,8 +55,7 @@ author:
 	- [Accessibility](<#Open Questions#Accessibility>)
 	- [Scope](<#Open Questions#Scope>)
 	- [Workflow](<#Open Questions#Workflow>)
-	- [Glossary](<#Open Questions#Glossary>)
-- [Refinement of Each Requirement](<#Open Questions#Refinement of Each Requirement>)
+- [Refinement of Each Requirement](<#Refinement of Each Requirement>)
 
 > [!NOTE]- who does what?
 > Erin:
@@ -79,7 +77,9 @@ author:
 
 - GDD = what the game is and should feel like. FDD = what it does, exact rules + numbers. TDD = how its built
 - sections above Open Questions are decided stuff only
-- big blocking choices go in [GDD](<#Decisions>)
+- big blocking choices go in [Decisions](<#Decisions>)
+- one fact, one place. GDD = why / feel, FDD = rules + numbers, TDD = code. other docs link, dont copy
+- decision made? update section + Open Questions + Decision
 
 status:
 - done = works in game
@@ -93,7 +93,7 @@ priority:
 
 ## General Description
 
-Psychological horror adventure driven by story and narrative, set in a closed world with multiple choice. It plays in a fantasy Celtic mythological faeric world. The Celtic world does exist, but the main character is not from it. The main character slowly goes mentally insane. (can ofc be changed)
+Psychological horror adventure driven by story and narrative, set in a closed world with multiple choice. It plays in a fantasy Celtic mythological faeric world. The main character slowly goes mentally insane.
 
 Core pillars:
 - 2.5D
@@ -134,7 +134,7 @@ deciding what its not collapses future choices and makes thing in the future be 
 
 ### Comparable Games
 
-needed for genre name (see [GDD](<#Open Questions>)):
+needed for genre name (see [Open Questions](#Open Questions)):
 
 - Omori
 - Undertale
@@ -171,14 +171,14 @@ team favorites ([cool canvas](<./cool canvas.canvas>)):
 will change alot when we have writing and lore and such. 
 (one short paragraph each is enough for now)
 
-nothing decided yet, every entry is in [GDD](<#Open Questions>).
+nothing decided yet, every entry is in [Open Questions](#Open Questions).
 
 ## World
 
 - Closed world, split into zones (idk, like some interconnected weave like yume 2kki ? <https://explorer.yume.wiki/>)
 - handcrafted only, no procedural generation
 - shortcuts unlock while exploring
-- hub structure: not picked yet, options in [GDD](<#Open Questions>)
+- hub structure: not picked yet, options in [Open Questions](#Open Questions)
 
 ### Zone Table
 
@@ -205,7 +205,7 @@ FDD has sanity loop. this "tf player does" loop:
 
 - every minute: walk, find something or someone, interact, choose
 - every zone: arrive, learn rules, do favors for locals, find way forward, leave more damaged
-- whole game: lose name, trade favors to get it back, sanity drops throughout, end somewhere
+- whole game: trade favors, sanity drops throughout, end somewhere
 
 ```mermaid
 flowchart TD
@@ -215,7 +215,7 @@ flowchart TD
 	D --> E{Enough favors done?}
 	E -- no --> B
 	E -- yes --> F[Way forward opens]
-	F --> G[Safe space, +15 sanity first time]
+	F --> G[Sanctuary, sanity back first time, see FDD]
 	G --> A
 ```
 
@@ -226,7 +226,6 @@ player gains only:
 
 - story (what you know)
 - favors (who owes you, who you owe)
-- abilities / movement unlocks (zone table decides)
 - items (mostly consumables, shit equipment)
 
 - difficulty rises by world getting stranger, not bigger numbers. sanity is difficulty knob
@@ -234,13 +233,12 @@ player gains only:
 ## Perspective and Visuals
 
 - 2.5D, like Octopath Traveler or Illusion Carnival(and others, need to create link specific moodboards)
-- Player is 2D, third person camera and viewpoint
+- Player is 2D
 - Sprites always face the camera (also the player), so sides never need to be drawn
-- Third-person perspective 2.5D camera and no player orbit.
 - Slight mouse lean adds depth without breaking the 2.5D look.
-- This is the player-facing feel; fits with "sprites always face the camera."
+- camera rules: see Camera in [FDD](<./FDD.md>)
 - Celtic-style elements are liked
-- environment, player style and art style: not decided, see [GDD](<#Open Questions>). Owner: Erin.
+- environment, player style and art style: not decided, see [Open Questions](#Open Questions). Owner: Erin.
 
 ## Audio
 
@@ -296,7 +294,7 @@ rough timeline from [cool canvas](<./cool canvas.canvas>): pre-release after 1 y
 
 ## Decisions
 
-these block other stuff. smaller open stuff is in [GDD](<#Open Questions>).
+these block other stuff. smaller open stuff is in [Open Questions](#Open Questions).
 
 | decision                      | options                                         | owner       | due                     | result                            |
 | ----------------------------- | ----------------------------------------------- | ----------- | ----------------------- | --------------------------------- |
@@ -314,28 +312,13 @@ these block other stuff. smaller open stuff is in [GDD](<#Open Questions>).
 
 - Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
 - ARCHIVE folder for old reusable assets (sorted with TagStudio)
-- Friends can join temporarily, or permanently as extra teammates, does need discusion
 - Funding
 	- Simple donation [donations](<../donation.md>)
 - [x] switch code licence GPLv2+ to EUPLv1.2+
 
-## Glossary
-
-words used interchangeably.
-
-- **sanity**: 0 to 100 number, 4 stages
-- **sanctuary**: area that pauses sanity drain
-- **safe space**: same as sanctuary? first entry regains sanity
-- **hub**: safe area in tutorial / central place, depends on hub decision
-- **favor**: trade between you and NPC, the economy
-- **fairy meter**: hidden number, NPC opinion of you
-- **fake ending**: good/bad side ending
-- **true ending**: hidden one
-- **fake enemy**: low sanity only, not real?
-
 ## Open Questions
 
-everything not decided yet. when one is decided, move the answer up into its section and delete it here. big ones are also in [GDD](<#Decisions>).
+everything not decided yet. when one is decided, move the answer up into its section and delete it here. big ones are also in [Decisions](<#Decisions>).
 
 ### General / Pitch
 
@@ -349,8 +332,8 @@ everything not decided yet. when one is decided, move the answer up into its sec
 
 ### Story
 
-- [ ] Fairies stole your name, trade favors to get it back (and maybe steal theirs)
-- [ ] Set it in the Celtic world directly instead of isekai-ing the main character
+- [ ] Fairies stole your name, trade favors to get it back (and maybe steal theirs). core loop "whole game" line depends on this
+- [ ] Set it in the Celtic world directly instead of isekai-ing the main character (current draft: Celtic world does exist, but main character is not from it)
 - [ ] **protagonist**: who, why here, wants what. what "slowly goes insane" looks like across game
 	- Erin ideas ([Erin's visual ideas](<./Erin's visual ideas.canvas>)):
 		- name parallel to celtic myth: Setante (cu chulainn, iron weapon vs fairies), Nechtan (sword of light), or modern name with celtic origin
@@ -447,16 +430,13 @@ flowchart TD
 
 ### Workflow
 
+- [ ] Friends can join temporarily, or permanently as extra teammates, does need discusion
 - [ ] Devlog/blogpost: weekly or other?
 - [ ] Discord community server (when?)
 - [ ] Shared gmail address?
 - [ ] update github organisation page
 - [ ] image for game dev group
 - [ ] exclusive updates for donators or not?
-
-### Glossary
-
-- [ ] fairy meter: maybe rename
 
 ## Refinement of Each Requirement
 

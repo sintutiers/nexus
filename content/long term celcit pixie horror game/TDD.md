@@ -267,7 +267,7 @@ context; (what player actually does, see [FDD](<./FDD.md>))
 - Animation: names are constants in `Animations`, and its all driven by movement + facing signals.
 - Interaction: `InteractionComponent` runs the closest `InteractableThing` player is standing in zone of. 
 	- if that thing locks player it emits `interact_started` / `interact_ended`, -> movement ignores input + sanity stops draining while its busy.
-- Sanity: `SanityComponent` keeps value + zone. 
+- Sanity: `SanityComponent` keeps value + zone. (code `zone` = sanity **stage** in GDD/FDD, not world zone) 
 	- `SanityVisualsComponent` listens to `zone_changed`, so the meter itself knows nothing about visuals.
 
 ### Component Wiring
