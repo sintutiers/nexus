@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 10:09 pm
+modified: Sunday, November 15th 2026, 10:21 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -116,7 +116,7 @@ flowchart TD
 - [ ] sanctuary objects, how much extra sanity
 - [ ] stage 1: sound ?
 - [ ] numbers: how many fake enemies in stage 2+3, how many real threats in stage 3
-- [ ] sanity 0: this = big open one. things:
+- [ ] sanity 0: this = big open one. pick: fail forward / reload / ending (owner: Dean, due: before first playable). things:
 	- fail forward: teleport to last sanctuary, lose progress (how much, not save), world remembers. no game over screen. fits hopeless vibe
 	- checkpoint reload at reduced sanity (how much). standard, boring
 	- sanity 0 = one of endings. aggressive, needs fake-ending system first
@@ -142,7 +142,7 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 - [ ] (hidden fairy meter? like FUN value) opinion. keep as fairy meter or rename, same thing
 - [ ] everything = consequence, nothing = fake choice
 	- minimum consequence per choice: every player-facing choice writes at least 1 of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, its fake choice, cut it or make it write something
-- [ ] endings + true ending gating: see ending structure + Decisions in [GDD](<./GDD.md>)
+- [ ] endings + true ending gating: see ending structure + true ending gating in [GDD](<./GDD.md>)
 - [ ] hallucination AI + just dialogue conditions ?
 
 ---
@@ -164,44 +164,24 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 ---
 ### Quests + Favors
 
-# RAW Brainstorming Systems, Im Brainstorming This Part Heavily
+> status: designed (rules decided, tracking open)
+> priority: must
 
-what is a favor?
-- its a point you get from a quest
-- a social depts for mythical entities
-- a transaction point.
-	- they are a confusing and contradicting mess. ass that is how those creatures operate.
-
-fairies for example, are cheaters and lyers. if they own you a favor, they will do everything in their power to pay it back minimally. if you by example saved their life, and you own them a favor, then them just giving you a coockie or some shit is considered a favor paid, but the other example is that a favor can also be used to get them to join you in a quest in destroying the world.
-
-Debt Ledger
-
-- Debts have size and direction. A small debt is not a big debt.
-- A dialogue choice can use debt.
-- Unpaid debt gets called in at a bad time.
-- This makes the world remember you.
-
-Favor Terms
-
-- A favor's rules are stored as facts.
-- "Done" means the rules are met, not just the task.
-- A fairy can twist it: task done, rules not met, debt stays.
-- The player can twist it too: bluff, argue, or lie.
-
-failure states? :
-	- forfeit, betrayal, bankruptcy. Debt bankruptcy = NPCs refuse to deal = soft fail-forward into a different zone path, not a game over.
-
-FACTS THAT ARE DECIDED FOR THE FDD
-- economy: is the favors and deps. favors = economy. favor = currency
-- 4-5 important NPCs
-- player can own and be owned by same NPC
-- each has 1 relationship value (= fairy meter)
-- each gives 1-2 favors, depending on the NPC
-- NPC dialogue changes with relationship
-- player can hold multiple deps and favors
-- a favor is spent when used
+- favors = economy/currency.
+- 4-5 important NPCs.
+- player can own and be owned by same NPC.
+- each important NPC has 1 relationship value (fairy meter/opinion).
+- each gives 1-2 favors, depending on the NPC.
+- NPC dialogue changes with relationship.
+- player can hold multiple debts and favors.
+- a favor is spent when used.
 - some quests give favors, some dont.
-- fairy meter/opinion changes by way of dialogue, dialogue is also how you can trick fairies and how fairies trick you
+- relationship/opinion changes by dialogue; dialogue is also how player and fairies trick each other.
+- low sanity: some NPCs give higher-risk question for extra favor or extra sanity.
+- quests have stages; game remembers current stage.
+- rewards: item/info/sanity/new location access
+- done when: 
+	- favor can be granted, tracked, spent, and changes NPC dialogue/relationship; quest stage persists after reload.
 
 #### Quest + Favor Questions
 
@@ -213,9 +193,11 @@ FACTS THAT ARE DECIDED FOR THE FDD
 ### Combat
 
 > [!failure] Blocker
-> Decisions in [GDD](<./GDD.md>), options in [Open Questions](<#Combat#Open Questions>). (create moodboard for that, combatboard?)
+> Decision open: no combat / turn-based / real-time (owner: Dean, due: before zone 1 design), options below. (create moodboard for that, combatboard?)
 
 #### Combat Questions
+
+- [ ] pick: no combat / turn-based / real-time (owner: Dean, due: before zone 1 design)
 
 options:
 - A) no combat. threats = dialogue/choice encounters. fighting back = dialogue option, costs sanity. fake vs real enemies resolved by interacting, not hitting. fits input surface + horror tone. buildable on what exists
@@ -341,6 +323,8 @@ both are stubs. see [Open Questions](<#Open Questions>).
 - [ ] if yes, lies at low sanity?
 - [ ] journal UI, exists at all? helps, but fits badly with lost/hopeless vibe. maybe diary unreliable at low sanity
 - [ ] next objective shown or nothing
+
+---
 
 ### Save + Menus
 

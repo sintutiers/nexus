@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 9:59 pm
+modified: Sunday, November 15th 2026, 10:23 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -34,6 +34,7 @@ author:
 		- [Zone Table](<#Zone Table>)
 		- [Tutorial](<#Tutorial>)
 - [Core Loop + Progression](<#Core Loop + Progression>)
+	- [Favors + Debt Ledger](<#Favors + Debt Ledger>)
 - [Presentation](<#Presentation>)
 	- [Visuals](<#Visuals>)
 	- [Audio & UI](<#Audio & UI>)
@@ -44,7 +45,6 @@ author:
 	- [Risks](<#Risks>)
 	- [Accessibility](<#Accessibility>)
 	- [Workflow + Production Thingies](<#Workflow + Production Thingies>)
-- [Decisions](<#Decisions>)
 
 > [!NOTE]- who does what?
 > Erin:
@@ -67,8 +67,8 @@ author:
 ### Doc Rules
 
 - GDD = what game is + vibe. [FDD](<./FDD.md>) = rules + numbers. [TDD](<./TDD.md>) = code
-- sections = decided only. open stuff in [Open Questions](<#Open Questions>), big blocking ones in [Decisions](<#Decisions>)
-- decision made? update its section + Open Questions + Decisions
+- sections = decided only. open stuff in [Open Questions](<#Open Questions>), big blocking ones marked in their sections
+- decision made? update its section + Open Questions
 - status: done = works in game / designed = decided, not built / open = needs decision
 - priority: must / should / could
 
@@ -94,6 +94,7 @@ see inspirations in: [deans moodboard for huge breakthough project](<./deans moo
 
 - [ ] RPG? (core pillar or not)
 - [ ] what will exact genre name be? idk tf to call it, name later if we are further in development? kinda important as then we can reference + compare our game to others + such.
+- [ ] game name + genre: TBD (owner: all, due: before devlog / discord)
 - [ ] target player: story game people who tolerate discomfort (omori, undertale, lisa). not grinders
 - [ ] no upgrade system?(godamnit) (perhaps later add small upgrades?)
 - [ ] not "kill X monsters" quest game?
@@ -199,7 +200,7 @@ really minimal, but lore should not be focus now bc im mainly 1 guy
 #### Story Questions
 
 - [ ] Fairies stole your name, trade favors to get it back (maybe steal theirs). core loop "whole game" line depends on this
-- [ ] Set it in the Celtic world directly instead of isekai-ing the main character (current draft: Celtic world does exist, but main character is not from it)
+- [ ] isekai vs celtic: set it in the Celtic world directly instead of isekai-ing the main character (current draft: Celtic world does exist, but main character is not from it) (owner: Dean + Erin, due: before story bible)
 - [ ] **protagonist**: who, why here, wants what. what "slowly goes insane" looks like across game
 	- Erin ideas ([Erin's visual ideas](<./Erin's visual ideas.canvas>)):
 		- name parallel to celtic myth: Setante (cu chulainn, iron weapon vs fairies), Nechtan (sword of light), or modern name with celtic origin
@@ -216,6 +217,7 @@ really minimal, but lore should not be focus now bc im mainly 1 guy
 - [ ] **ending structure**:
 	- fake ending (good/bad side)
 	- true ending (hidden)
+		- true ending gating: hidden NPC / other (owner: Dean + Erin, due: before dialogue writing)
 	- sanity 0 ending? (see sanity 0 in the [FDD](<./FDD.md>))
 - [ ] **tone rules**: what whimsical horror allows. gore? body horror? child characters? write down so Erin + Dean dont guess differently
 - [ ] content warnings for store page / game start
@@ -244,7 +246,7 @@ really minimal, but lore should not be focus now bc im mainly 1 guy
 #### Questions world/hub
 
 - [ ] Eventually find someone for map design + level structuring
-- [ ] hub structure, pick one (see Decisions):
+- [ ] hub structure, pick one (owner: Dean, due: before zone 1 design):
 	- A) Central hub where you dive deeper into fairy realm, each zone with own requirements (one where you dodge, one where you fight, etc)
 		- from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>) (Hollow Knight): 1 central forest, 3 areas branch off, each area has 1 access requirement
 	- B) instead of hub world, multiple small safe points.
@@ -296,6 +298,46 @@ player gains only:
 
 difficulty rises by world getting stranger, not bigger numbers.
 
+### Favors + Debt Ledger
+
+what is a favor?
+- its a point you get from a quest
+- a social depts for mythical entities
+- a transaction point.
+	- they are a confusing and contradicting mess. ass that is how those creatures operate.
+
+fairies for example, are cheaters and lyers. if they own you a favor, they will do everything in their power to pay it back minimally. if you by example saved their life, and you own them a favor, then them just giving you a coockie or some shit is considered a favor paid, but the other example is that a favor can also be used to get them to join you in a quest in destroying the world.
+
+Debt Ledger
+
+- Debts have size and direction. A small debt is not a big debt.
+- A dialogue choice can use debt.
+- Unpaid debt gets called in at a bad time.
+- This makes the world remember you.
+
+Favor Terms
+
+- A favor's rules are stored as facts.
+- "Done" means the rules are met, not just the task.
+- A fairy can twist it: task done, rules not met, debt stays.
+- The player can twist it too: bluff, argue, or lie.
+
+failure states? :
+	- forfeit, betrayal, bankruptcy. Debt bankruptcy = NPCs refuse to deal = soft fail-forward into a different zone path, not a game over.
+
+**FACTS THAT ARE DECIDED
+- economy: is the favors and deps. favors = economy. favor = currency
+- 4-5 important NPCs
+- player can own and be owned by same NPC
+- each has 1 relationship value (= fairy meter)
+- each gives 1-2 favors, depending on the NPC
+- NPC dialogue changes with relationship
+- player can hold multiple deps and favors
+- a favor is spent when used
+- some quests give favors, some dont.
+- fairy meter/opinion changes by way of dialogue, dialogue is also how you can trick fairies and how fairies trick you
+- when low on sanity, some NPC will give you higher risk question for extra favor or just extra sanity
+
 ### loop/progresion Questions
 
 - [ ] "skill" part? movement = all in code (dash, wall jump), where is it used. dodge zones? platforming between NPCs? decide with zone table
@@ -323,7 +365,7 @@ difficulty rises by world getting stranger, not bigger numbers.
 ### Presentation Questions
 
 - [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
-	- Owner: Erin. 
+	- Owner: Erin. Due: before level art.
 - [ ] Player style:
 	- [ ] low-res/pixel player against high-res surroundings
 	- [ ] unique non-pixel style
@@ -331,7 +373,7 @@ difficulty rises by world getting stranger, not bigger numbers.
 - [ ] Art style: see for exact drawing + inspirations [Erin's visual ideas](<./Erin's visual ideas.canvas>) 
 	- Erin vote: 2D painterly watercolor, maybe 3D if time allows
 	- Dean vote: painterly blitch/arcyllic + painterly watercolor style
-	- Owner: Erin.
+	- Owner: Erin. Due: before level art. Options: watercolor / acrylic / pixel player
 - [ ] Separate moodboards/example canvases for gameplay + artstyle
 	- Owner: Dean.
 - [ ] sanity changes audio too (muffled, wrong sounds, detuned music).
@@ -412,18 +454,3 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 - [ ] update github organisation page
 - [ ] image for game dev group
 - [ ] exclusive updates for donators or not?
-
-## Decisions
-
-these block other stuff. smaller open stuff in [Open Questions](<#Open Questions>).
-
-| decision           | options                                         | owner       | due                     | result |
-| ------------------ | ----------------------------------------------- | ----------- | ----------------------- | ------ |
-| combat             | no combat / turn-based / real-time              | Dean        | before zone 1 design    |        |
-| sanity 0           | fail forward / reload / ending                  | Dean        | before first playable   |        |
-| true ending gating | hidden NPC / other                              | Dean + Erin | before dialogue writing |        |
-| art style          | watercolor / acrylic / pixel player             | Erin        | before level art        |        |
-| environment        | 3D / 2D layers                                  | Erin        | before level art        |        |
-| hub structure      | central hub / small safe points / shrinking hub | Dean        | before zone 1 design    |        |
-| isekai vs celtic   | isekai / set in celtic world directly           | Dean + Erin | before story bible      |        |
-| game name + genre  | TBD                                             | all         | before devlog / discord |        |
