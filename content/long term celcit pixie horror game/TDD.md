@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Tuesday, November 17th 2026, 1:02 am
+modified: Tuesday, November 17th 2026, 1:08 am
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -23,6 +23,7 @@ easy to read, safe to rewrite, honest about what it does.)
 - [Technical Stack](<#Technical Stack>)
 	- [Addons](<#Addons>)
 - [Project Layout](<#Project Layout>)
+- [Adding New Stuff](<#Adding New Stuff>)
 - [CORE Programming Rules](<#CORE Programming Rules>)
 	- [FUNCTION NAMING](<#FUNCTION NAMING>)
 - [Rules for Documentation and Comments](<#Rules for Documentation and Comments>)
@@ -90,6 +91,24 @@ mindmap
     📁 server/
     📁 The Amazing Art and Sound Folder/
 ```
+
+## Adding New Stuff
+
+start here. most new stuff = file in `content/` or small scene, not new code.
+
+- **item / quest** = `.tres` in `content/items/` / `content/quests/`, id = file name. renaming breaks saves. -> [Game State and Level Management](<#Game State and Level Management>)
+- **thing you can touch** (pickup, door, sign) = `interactable_thing_prefab.tscn`, or `Node3D` scene with `InteractableThing` on root. reach = its `Area3D` child, none = sphere built in `_ready` (physics layer 5).
+	- `persistent_id` = stays gone after reload, `requires_item` / `requires_flag` + `blocked_cue` = locked.
+- **npc / dialogue** = `InteractableThing` + `dialogue` + `dialogue_cue`. 1 `.dialogue` per character, objects in `world.dialogue`. only calls `PlayerApi`. -> [Other](<#Other>), [Player API](<#Player API>)
+- **remembering a choice** = no code: `$> set_fact("choice.<what>")` / `set_level_flag("<level>.<what>")`. key starts with who wrote it. -> [Game State and Level Management](<#Game State and Level Management>)
+- **something dialogue cant do yet** = 1 narrow method on `PlayerApi`, no new global (rule 9).
+- **place that heals or eats sanity** = `SanityArea`. -> [Game State and Level Management](<#Game State and Level Management>)
+- **player ability** = component extending `Component` in body scene, wired by body, talks through signals. -> [Components](<#Components (Extend `Component`, Wired by Body, Not Looked up Themselves)>)
+- **HUD widget** = small scene in `scenes/game/hud/`, finds player itself, add to `hud.tscn`. -> [Other](<#Other>)
+- **level** = scene in `scenes/game/levels/` + path in `SceneLister` `files` (`game.tscn`), also what console `level` lists.
+- **saved field** -> "new saved field" in [Game State and Level Management](<#Game State and Level Management>).
+- **console command** = `LimboConsole.register_command` in `DebugCommands._ready`, through `PlayerApi`. -> [Debug](<#Debug>)
+- **log channel** -> "new channel" in [Debug](<#Debug>).
 
 ## CORE Programming Rules
 GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
@@ -504,12 +523,6 @@ stateDiagram-v2
     Crouch --> Ground: crouch_end
     Crouch --> Air: fall
 ```
-
-adding new stuff?:
-
-- New component extend `Component`, goes in body scene + gets wired in body.
-- New item / quest = `.tres` in `content/items/` / `content/quests/`, id = file name.
-- New interactablething is `Node3D` scene with `InteractableThing` script on root, or just use `interactable_thing_prefab.tscn`. how far you can reach it is its `Area3D` child, if it has none a sphere zone gets built in `_ready`. player sensor finds that zone; physics layer 5.
 
 **Performance**
 
