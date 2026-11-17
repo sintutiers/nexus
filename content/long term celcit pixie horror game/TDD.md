@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Sunday, November 15th 2026, 7:35 pm
+modified: Tuesday, November 17th 2026, 1:02 am
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -13,8 +13,11 @@ author:
 > see also: [FDD](<./FDD.md>)
 
 > [!NOTE] foreword
-> this is for a 1 person programmer, maybe in the future more, but for now that is the constraint
+> this is for a 1 person programmer, maybe in the future more, but for now that is the constraint.
+> this doc describes one way that works; it is not the only way. When deviating, update this doc
 
+(codebase in a few lines:
+easy to read, safe to rewrite, honest about what it does.)
 ## Content in Doc
 
 - [Technical Stack](<#Technical Stack>)
@@ -44,13 +47,14 @@ Godot 4.8, GDScript. Godot compatibility renderer, if need more advanced feature
 ### Addons
 - [Dialogue Manager 4.2.0](https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v4.2.0) - dialogue + choices : `DialogueManager` (autoload)
 - [Antzs Debug Menu 1.3.0](https://github.com/antzGames/Antz-Debug-Menu/releases/tag/v1.3.0) - debug : `DebugMenu` (autoload)
-- [Maaacks Game Template Addon 1.7.1](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.7.1) - level loading, saving (`GlobalState`, `LevelManager`)
+- [Maaacks Game Template Addon 1.7.1](https://github.com/Maaack/Godot-Game-Template/releases/tag/v1.7.1) - level loading (`LevelManager`)
 	- [Godot-UI-Sound-Controller 1.7.1](https://github.com/Maaack/Godot-UI-Sound-Controller/releases/tag/v1.7.1) : `ProjectUISoundController` (autoload)
 	- [Godot-Scene-Loader 1.7.1](https://github.com/Maaack/Godot-Scene-Loader/releases/tag/v1.7.1) : `SceneLoader` (autoload)
 	- [Godot-Music-Controller 1.7.1](https://github.com/Maaack/Godot-Music-Controller/releases/tag/v1.7.1) : `ProjectMusicController` (autoload)
 - [phantom camera 0.11.0.4](https://github.com/ramokz/phantom-camera/releases/tag/v0.11.0.4) - camera : `PhantomCameraManager` (autoload)
 - [sound manager 2.6.2](https://github.com/nathanhoad/godot_sound_manager/releases/tag/v2.6.2) - sound : `SoundManager` (autoload)
 - [LimboConsole 0.8.0](https://github.com/limbonaut/limbo_console/releases/tag/v0.8.0) - debug : `LimboConsole` (autoload), `DebugCommands` (autoload)
+- [Log.gd 0.2.2](https://github.com/russmatney/log.gd) - logging : `Log` (static class, no autoload), `GameLog` (autoload)
 - [SpacetimeDB Client SDK 0.3.3](https://github.com/flametime/Godot-SpacetimeDB-SDK/releases/tag/v0.3.3) - multiplayer `SpacetimeDB` 
 - [GDScript Formatter 0.27.0](https://github.com/GDQuest/GDScript-formatter/releases/tag/0.27.0) - tool (no autoload)
 - [health, hitboxes and hitscans 5.0.4](https://github.com/cluttered-code/godot-health-hitbox-hurtbox/releases/tag/v5.0.4) - future health? (no autoload)
@@ -59,12 +63,12 @@ Godot 4.8, GDScript. Godot compatibility renderer, if need more advanced feature
 - [Plugin Updater 0.5.1](https://github.com/Maaack/Godot-Plugin-Updater/releases/tag/v0.5.1) - tool (no autoload)
 - [Project Time Tracker 3.0.1](https://github.com/Fifut/project-time-tracker/releases/tag/v3.0.1) - tool (no autoload)
 
-only `DebugCommands` + `Net` autoloads are ours.
+only `GameLog`, `DebugCommands` + `Net` autoloads are ours.
 
 > Server: [see Multiplayer.](<#multiplayer>)
 
-- `GlobalState` is static class, not autoload -> `GlobalState.save()` can be called from anywhere, order doesnt matter.
-- `LimboConsole` should stay above `DebugCommands`, bc that one adds its commands in `_ready`.
+- `GameState` is static class, not autoload -> `GameState.save()` can be called from anywhere, order doesnt matter.
+- `LimboConsole` should stay above `GameLog` + `DebugCommands`, bc those add their commands in `_ready`.
 
 ## Project Layout
 
@@ -100,30 +104,28 @@ GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
 	- First of all trying to keep it simple, but secondly when adding complexity how much benefit is coming from that complexity?
 	- is this abstraction earning its keep?
 3. Fail loudly.
-	- A bad item ID should call `push_error`.
+	- A bad item ID should call `Log.error` (prints file + line, then calls `push_error`). warnings use `Log.warn`.
 	- Never continue silently.
 4. Clear, descriptive names over shortened or abbreviated names.
 	- [mostly relevant for functions, but not only.](<#function naming>)
 5. Signals up, methods down.
 6. Event driven.
 	- react to signals, dont poll every frame when signal exists.
-7. Never nester.
-	- no giant nested ifs.
-8. small, composable scenes, not a framework layered on top.
-9. Separate machine-independent and machine-dependent code.
+7. small, composable scenes, not a framework layered on top.
+8. Separate machine-independent and machine-dependent code.
 	- Thats what makes the code hackable, not cleverness.
 	- `PlatformerMovementBase`, with its abstract 2D and 3D functions, is example.
-10. Use narrow interfaces where change is expected.
+9. Use narrow interfaces where change is expected.
 	- `PlayerApi` (`give_item`, `has_item`, `set_level_flag`, `set_fact`, etc.) hides components, so you can rewrite them without touching dialogue files.
-11. Make code easy to grep.
+10. Make code easy to grep.
 	- Use one class per file, name file after class, and use stable IDs (item ID is the file name).
-12. Write the minimum, Less code is a feature.
+11. Write the minimum, Less code is a feature.
 	- Add a narrow interface only where you already expect change.
-13. if not necessary, make sure not to handroll our own logic, use godots inbuilt logic and functions and methods instead.
-14. AUDIT, REVIEW, REPEAT:
+12. if not necessary, make sure not to handroll our own logic, use godots inbuilt logic and functions and methods instead.
+13. AUDIT, REVIEW, REPEAT:
 	- make sure old code is up to date with current codebase/code conventions, design patterns could have changed, things evolve and change.
 	- make sure stuff doesnt get left behind
-15. GENERAL, keep code like:
+14. GENERAL, keep code like:
 	- netbsd; easy to inspect, modify, and extend. and like
 	- openbsd; simple, clear, and consistent.
 	- suckless; Simpel, Clarity, frugality and small enough for one person to read and rewrite.
@@ -264,6 +266,7 @@ context; (what player actually does, see [FDD](<./FDD.md>))
 	- if that thing locks player it emits `interact_started` / `interact_ended`, -> movement ignores input + sanity stops draining while its busy.
 - Sanity: `SanityComponent` keeps value + zone. (code `zone` = sanity **stage** in GDD/FDD, not world zone) 
 	- `SanityVisualsComponent` listens to `zone_changed`, so the meter itself knows nothing about visuals.
+	- per zone it greys, darkens + warps the screen (shader) and shakes the 3D camera. shake goes through `Camera3D.h_offset` / `v_offset`, bc phantom camera owns the transform. at full sanity it stops processing, zone change wakes it.
 
 ### Component Wiring
 
@@ -313,9 +316,9 @@ graph LR
     D["Dialogue files"]
     I["InteractableThing"]
     DBG["DebugCommands"]
-    S["Sanctuary"]
+    S["SanityArea"]
 
-    PA["PlayerApi<br/>items / sanity / level flags /<br/>facts / opinions / quests"]
+    PA["PlayerApi<br/>items / sanity / level flags /<br/>facts / opinions / quests /<br/>favors + debts"]
     PB["PlayerBody"]
     C["InventoryComponent<br/>SanityComponent"]
 
@@ -328,7 +331,7 @@ graph LR
 
     click I href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/interactable_thing.gd" _blank
     click DBG href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/autoload/debug_commands.gd" _blank
-    click S href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/sanctuary.gd" _blank
+    click S href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/sanity_area.gd" _blank
     click PA href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/player_api.gd" _blank
     click PB href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/player_body.gd" _blank
 ```
@@ -337,27 +340,33 @@ Not autoload. Body creates it in `_enter_tree`, keeps it as `api` + joins group 
 
 `InteractionComponent` gives it to `InteractableThing` as actor, and that one gives it to dialogue as extra game state (never as global). 
 Dialogue files and `InteractableThing` should only call its methods, that way components can be rewritten without touching any dialogue file. 
-other code (`DebugCommands`, `Sanctuary`, HUD) is allowed to read `api.inventory` + `api.sanity` directly.
+other code (`DebugCommands`, `SanityArea`, HUD) is allowed to read `api.inventory` + `api.sanity` directly.
 
-Quest stage and NPC opinion are "just": 
-	`quest.<id>` + `opinion.<npc>`.
+Quest stage, NPC opinion, favors and debts are "just": 
+	`quest.<id>` + `opinion.<npc>` + `favor.<npc>` (they owe you) + `debt.<npc>` (you owe them).
 
 ### Other
 
-- Dialogue: talk to NPCs with Dialogue Manager.
+- Dialogue: talk to NPCs with Dialogue Manager. 1 file per character + 1 `world.dialogue` for objects, per level: `content/dialogue/<level>/`.
+	- mutations use `$>` (`do` + `set` are deprecated in 4.x).
+	- design notes = `##` doc comments above line or option they are about. Dialogue Manager keeps them on the compiled line, shown only by `explain`.
+	- `scenes/game/dialogue_balloon.tscn` = example balloon + `[#sanity_glitch]` tag right after character name: text trembles + flickers, text itself stays same. use it rarely.
 - Items and Quests: `ItemData` + `QuestData` resources. quest itself holds no progress, that is fact `quest.<id>`.
+- HUD: `scenes/game/hud/hud.tscn`, made of small widget scenes (`SanityMeter`, `InventoryList`, `ControlsLabel`, `PickupToast`, `DebugStateLabel`, `ExplainFeed`). each finds the player itself + listens to its signals, so a level can use only some of them.
+	- `ControlsLabel` reads keys from the input map -> remapped keys show (after level reload).
+	- `DebugStateLabel` shows every fact, off by default (`show_debug_state` on the HUD), polls bc facts have no signal.
 
 ### Game State and Level Management
 
 ```mermaid
 graph LR
-    GS["GlobalState<br/>(static class, not autoload)"]
-    GSR["GameState resource<br/>facts, inventory, sanity,<br/>level paths, save_version"]
-    LSR["LevelState resource<br/>flags of 1 level"]
+    GS["user://save.json"]
+    GSR["GameState<br/>(static class, not autoload)<br/>facts, inventory, sanity,<br/>level paths"]
+    LSR["LevelState<br/>flags of 1 level"]
     LM["our LevelManager"]
-    USERS["everything else<br/>(PlayerApi, InteractableThing,<br/>Sanctuary, components)"]
+    USERS["everything else<br/>(PlayerApi, InteractableThing,<br/>SanityArea, components)"]
 
-    GS -->|"loads + saves"| GSR
+    GSR -->|"loads + saves"| GS
     GSR -->|"1 per level,<br/>by scene uid"| LSR
     LM -->|"writes current level<br/>+ checkpoint"| GSR
     USERS -->|"only through GameState<br/>static functions"| GSR
@@ -370,11 +379,20 @@ graph LR
 - everything reads + writes through static functions in `GameState`, setting something = saved immediately.
 	- except sanity; changes every physics frame -> only copied into `GameState` + file gets written when `SanityComponent` leaves tree.
 - when running scene straight from editor theres no game state -> default values + nothing saved.
-- facts are global and their keys start with what wrote them: `choice.`, `opinion.`, `quest.`. level flags are per level: `thing.<persistent_id>`, `sanctuary.<persistent_id>`.
-- if changing what saved data is (renamed fact key, reordered quest stages), bump `SAVE_VERSION` + add step in `_migrate_save_to_current_version`. not; old saves break.
+- facts are global and their keys start with what wrote them: `choice.`, `opinion.`, `quest.`, `favor.`, `debt.`. level flags are per level: `thing.<persistent_id>`, `sanctuary.<persistent_id>`.
+- save is JSON in `user://save.json`, written by `GameState.save()`. not `.tres`: loading a `.tres` from someone else can run code + it stores script paths. templates `GlobalState` is not used anymore.
+	- written to `save.json.tmp` first, then moved over the real file -> crash mid write keeps old save.
+	- file that is not valid JSON gets renamed to `save.json.broken` + game starts fresh.
+	- JSON has only 1 number type -> whole numbers in facts are turned back into int on load.
+	- only `_to_dictionary`, `_apply_dictionary`, `save` + `_read_save_file` know the format. other format later = change those.
+- options menu, Game tab: Export copies the save to a file you pick, Import replaces the save with a picked file (`GameState.export_save` / `import_save`). import keeps old save as `save.json.backup`, migrates older versions + reloads the scene.
+- new saved field: default in `GameState` + line in `_to_dictionary` + `_apply_dictionary`. missing key keeps default, so no migration needed.
+- if changing what saved data is (renamed fact key, reordered quest stages), bump `SAVE_VERSION` + add step in `_migrate_save_to_current_version`. not; old saves break. steps change the plain data from the file, before it becomes `GameState`.
 - items + quests are saved by id -> renaming `.tres` breaks every save that has that.
 - `InteractableThing`: optional `persistent_id` keeps `free_after` pickups gone after reload.
-- `Sanctuary` pauses sanity drain while player inside. with optional `persistent_id` entry; bonus stays used after reload.
+- `SanityArea` changes sanity drain while player inside. default = sanctuary: pauses drain + gives entry bonus. with optional `persistent_id` entry; bonus stays used after reload.
+	- `pauses_drain` off + `extra_drain_per_second` = thing that eats sanity when you stand close.
+	- flag key is still `sanctuary.<persistent_id>`, renaming it breaks saves.
 
 ### Camera
 
@@ -427,15 +445,33 @@ graph LR
     LC["LimboConsole<br/>(autoload)"]
     PA["PlayerApi"]
     DLG[".dialogue files"]
+    GL["GameLog<br/>(autoload)"]
+    LOG["Log<br/>(Log.gd addon)"]
+    SYS["movement / sanity / inventory /<br/>InteractableThing / PlayerApi"]
 
-    DC -->|"give / use / sanity"| LC
+    DC -->|"give / use / sanity / explain<br/>drain / fact / level / timescale / savefile"| LC
+    GL -->|"log"| LC
+    SYS -->|"GameLog.write"| GL
+    GL -->|"formats lines"| LOG
+    GL -->|"listens for cues, lines, picked option"| DLG
     DC -->|"commands go through"| PA
-    DC -->|"checks ids that dont exist"| DLG
+    DC -->|"checks ids + option conditions"| DLG
 
     click DC href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/autoload/debug_commands.gd" _blank
 ```
 
 - every time you run from the editor, `DebugCommands` checks all `.dialogue` files and gives error for item + quest ids that dont exist (rule 3, fail loudly). it only sees ids that are typed out, flags + facts cant be checked bc there is no list of them.
+	- `InteractableThing` checks on load that its `dialogue_cue` + `blocked_cue` exist in its `.dialogue` file.
+	- same check gives error for option conditions that dont end in ` /]`: with plain `]` the condition is shown as option text + never checked.
+- `GameLog.write(&"channel", ...)` logs what the player does: one line at the place where it happens. channels: `movement`, `sanity`, `inventory`, `interact`, `dialogue`, `ledger`. value in `GameLog.channels` = on or off at every start. console `log <channel>` flips one until you quit, `log` lists them.
+	- lines go to godot output, the console + `user://game.log` (overwritten every start).
+	- log changes, not frames: sanity drain + held direction are not logged every tick.
+	- new channel = new key in `GameLog.channels`, unknown channel is an error.
+	- `dialogue` channel needs no calls: `GameLog` listens to `DialogueManager` signals + the balloons response menu.
+	- errors + warnings dont go through `GameLog`, they use `Log.error` / `Log.warn` (rule 3).
+- console `explain` turns on `ExplainFeed` (HUD). it shows every `sanity`, `inventory` + `ledger` line from `GameLog.wrote`, `##` notes of current line, + condition of every locked option. -> `.dialogue` files never say what a line did, game already knows.
+	- `GameLog.wrote` fires for channels that are off too, only formats when something listens.
+- cheats: `drain` stops sanity drain of current player, `fact <key> <value>` sets a fact (no arguments = list), `level <number>` loads a level (no number = list), `timescale <value>` for slow motion, `savefile` shows the save in the file manager.
 
 ## Technical Specifications
 
