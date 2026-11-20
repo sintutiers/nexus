@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Friday, November 20th 2026, 10:15 pm
+modified: Friday, November 20th 2026, 10:18 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -45,7 +45,7 @@ easy to read, safe to rewrite, honest about what it does.)
 
 ## Technical Stack
 
-Godot 4.8, GDScript. Godot compatibility renderer, if need more advanced features we use that then, not sooner.
+Godot 4.8, GDScript. Godot compatibility renderer(openGL), if more advanced features we use that then, not sooner.
 ### Addons
 - [Dialogue Manager 4.2.0](https://github.com/nathanhoad/godot_dialogue_manager/releases/tag/v4.2.0) - dialogue + choices : `DialogueManager` (autoload)
 - [Antzs Debug Menu 1.3.0](https://github.com/antzGames/Antz-Debug-Menu/releases/tag/v1.3.0) - debug : `DebugMenu` (autoload)
@@ -229,7 +229,7 @@ _capsule = _capsule.duplicate()
 	- class names + identifiers keep their case (`DirAccess`, `JSON`, `_ready`).
 
 ### SYMBOLS
-Used in both `#` and `##`. Not inside `[code]`, `[codeblock]` or quoted strings, those are code.
+Used in both `#` and `##`. Not inside `[code]`, `[codeblock]` or quoted strings.
 
 | symbol | word | example |
 | --- | --- | --- |
@@ -524,7 +524,7 @@ graph LR
 
 Game makes use of Godots API (`CharacterBody3D`, `Resource`, signals) plus addons listed above.
 
-- Movement values are tweaked in a `MovementProfile` resource, not in code.
+- Movement values tweaked in `MovementProfile` resource, not in code.
 - State charts state nodes must have unique names `%Ground`, `%Air`, `%WallSlide`, `%Dash`, `%Crouch` + be in same scene as movement component. Chart is injected.
 - transition events in player scene must be same as `StateEvents` constants. carefull!; 1 typo / rename on either side gives no error, event just gets ignored.
 
@@ -554,6 +554,6 @@ stateDiagram-v2
 
 **Performance**
 
-- Web should be 45 FPS minimum (see Performance [FDD](<./FDD.md>)). if its followed; other platforms are automatically optimised as well
+- Web should be 45 FPS minimum (see Performance [FDD](<./FDD.md>)). if followed; other platforms are automatically optimised as well
 
 > see [FDD](<./FDD.md>) for User acceptance tests

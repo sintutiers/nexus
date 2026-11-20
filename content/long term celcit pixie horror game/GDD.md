@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 10:26 pm
+modified: Friday, November 20th 2026, 10:58 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:
@@ -65,16 +65,16 @@ author:
 ## General Info
 
 ### Doc Rules
-
-- GDD = what game is + vibe. [FDD](<./FDD.md>) = rules + numbers. [TDD](<./TDD.md>) = code
-- sections = decided only. open stuff in [Open Questions](<#Open Questions>), big blocking ones marked in their sections
-- decision made? update its section + Open Questions
+- GDD = what game is + vibe. 
+- [FDD](<./FDD.md>) = rules + numbers. 
+- [TDD](<./TDD.md>) = code
+- decision made? update its section
 - status: done = works in game / designed = decided, not built / open = needs decision
 - priority: must / should / could
 
 ### Game Description
-
-Psychological horror adventure driven by story + narrative, set in a closed world with multiple choice. Plays in a fantasy Celtic mythological faeric world. Main character slowly goes mentally insane.
+Psychological horror adventure driven by story + narrative, set in a closed world with multiple choice. 
+Plays in a fantasy Celtic mythological faeric world. Main character slowly goes mentally insane.
 
 Core pillars:
 - 2.5D
@@ -91,7 +91,6 @@ Mood: surreal/dreamlike, "whimsical horror", heavy atmosphere.
 see inspirations in: [deans moodboard for huge breakthough project](<./deans moodboard for huge breakthough project.canvas>), (mood/vibe only, not gameplay, narrative, 3d/2d, UI or artstyle).
 
 ### Game Description Questions
-
 - [ ] RPG? (core pillar or not)
 - [ ] what will exact genre name be? idk tf to call it, name later if we are further in development? kinda important as then we can reference + compare our game to others + such.
 - [ ] game name + genre: TBD (owner: all, due: before devlog / discord)
@@ -103,13 +102,11 @@ see inspirations in: [deans moodboard for huge breakthough project](<./deans moo
 
 ---
 ## Pitch Thing (Most Other GDD Stuff Have)
-
-one sentence, so anyone (in 6 months) knows tf is:
+1 sentence, so anyone (in 6 months) knows tf is:
 
 - human stuck in faerie world that slowly eats your mind. only way out: trade favors with things that lie for a living.
 
 ### What Player Should Feel
-
 - early: curious, bit lost, tree feels safe
 - middle: paranoid. cant tell whats real, cant tell who lies
 - late: traded away something unrecoverable
@@ -117,7 +114,6 @@ one sentence, so anyone (in 6 months) knows tf is:
 	- schoice have consequence, but that should not be explained, it should be felt
 
 ### What Game = NOT
-
 deciding what its not collapses future choices + makes thing in the future be less work + more efficient:
 
 - not combat focused game. combat = blocker, see [FDD](<./FDD.md>)
@@ -179,6 +175,7 @@ references:
 - Omori
 - Undertale
 - rayman 3
+	- mood/vibe
 - celeste
 - ENA dream bbq
 - citizen sleeper
@@ -190,15 +187,13 @@ references:
 - earthbound
 
 ## Story & World
-
 ### Story
 
-![file-20261021094624951](<../static_files/file-20261021094624951.png>)
+![file-20261021094624951|313](<../static_files/file-20261021094624951.png>)
 
 really minimal, but lore should not be focus now bc im mainly 1 guy
 
 #### Story Questions
-
 - [ ] Fairies stole your name, trade favors to get it back (maybe steal theirs). core loop "whole game" line depends on this
 - [ ] isekai vs celtic: set it in the Celtic world directly instead of isekai-ing the main character (current draft: Celtic world does exist, but main character is not from it) (owner: Dean + Erin, due: before story bible)
 - [ ] **protagonist**: who, why here, wants what. what "slowly goes insane" looks like across game
@@ -213,7 +208,7 @@ really minimal, but lore should not be focus now bc im mainly 1 guy
 - [ ] **dying tree**: why dying, killed by what, returns later?
 - [ ] **world rules** (fae cant lie? iron? food? usual celtic stuff, which to keep, which to drop)
 	- weakness fairies?: iron? big in story, way to "defeat" fairies (Setante idea)
-- [ ] **themes**: what it is about under the horror
+- [ ] **themes**: what it is about under the horror/psychological
 - [ ] **ending structure**:
 	- fake ending (good/bad side)
 	- true ending (hidden)
@@ -223,11 +218,10 @@ really minimal, but lore should not be focus now bc im mainly 1 guy
 - [ ] content warnings for store page / game start
 
 ### World
-
 - Closed world, split into zones (idk, like some interconnected weave like yume 2kki ? <https://explorer.yume.wiki/>)
 - handcrafted only, no procedural generation
 - shortcuts unlock while exploring
-- hub structure: not picked yet, options in [Open Questions](<#Open Questions>)
+- hub structure: not picked yet.
 
 #### Zone Table
 
@@ -237,14 +231,12 @@ really minimal, but lore should not be focus now bc im mainly 1 guy
 | 1                              |           |                           |                |                  |        |
 
 #### Tutorial
-
 - You spawn in a forest with a large dying tree in the middle.(yggdrasil? deku tree? last of the great trees)
 - You must interact with tree to progress, he will tell you he is dying + he will explain a little bit about the world youre in + how to survive.
 - Area around tree = temporary safe hub
 - You help the tree complete tasks + then he dies, the place he is in is no longer safe + you have to move on + survive with what youve learned
 
 #### Questions world/hub
-
 - [ ] Eventually find someone for map design + level structuring
 - [ ] hub structure, pick one (owner: Dean, due: before zone 1 design):
 	- A) Central hub where you dive deeper into fairy realm, each zone with own requirements (one where you dodge, one where you fight, etc)
@@ -270,7 +262,6 @@ flowchart TD
 
 ---
 ## Core Loop + Progression
-
 FDD has sanity loop. this "tf player does" loop:
 
 - every minute: walk, find something/someone, interact, choose
@@ -296,11 +287,10 @@ player gains only:
 - favors (who owes you, who you owe)
 - items (mostly consumables, shit equipment)
 
-difficulty rises by world getting stranger, not bigger numbers.
+difficulty rises by world getting stranger, not NGU.
 
-### Favors + Debt Ledger
-
-what is a favor?
+### Favors + Debt (Ledger)
+what is favor?
 - its a point you get from a quest
 - a social depts for mythical entities
 - a transaction point.
@@ -309,21 +299,20 @@ what is a favor?
 fairies for example, are cheaters and lyers. if they own you a favor, they will do everything in their power to pay it back minimally. if you by example saved their life, and you own them a favor, then them just giving you a coockie or some shit is considered a favor paid, but the other example is that a favor can also be used to get them to join you in a quest in destroying the world.
 
 Debt Ledger
-
-- Debts have size and direction. A small debt is not a big debt.
+- Debts have size and direction. Small debt is not a big debt.
 - A dialogue choice can use debt.
 - Unpaid debt gets called in at a bad time.
 - This makes the world remember you.
 
 Favor Terms
-
 - A favor's rules are stored as facts.
 - "Done" means the rules are met, not just the task.
 - A fairy can twist it: task done, rules not met, debt stays.
 - The player can twist it too: bluff, argue, or lie.
 
 failure states? :
-	- forfeit, betrayal, bankruptcy. Debt bankruptcy = NPCs refuse to deal = soft fail-forward into a different zone path, not a game over.
+- forfeit, betrayal, bankruptcy. 
+- Debt bankruptcy = NPCs refuse to deal = soft fail-forward into a different zone path, not a game over.
 
 **FACTS THAT ARE DECIDED
 - economy: is the favors and deps. favors = economy. favor = currency
@@ -339,15 +328,13 @@ failure states? :
 - when low on sanity, some NPC will give you higher risk question for extra favor or just extra sanity
 
 ### loop/progresion Questions
-
 - [ ] "skill" part? movement = all in code (dash, wall jump), where is it used. dodge zones? platforming between NPCs? decide with zone table
 - [ ] zone length
-- [ ] abilities / movement unlocks (zone table decides)
-- [ ] easy mode / lower sanity drain? probably, see accessibility
+- [ ] easy mode / lower sanity drain? probb, see accessibility
 - [ ] pacing: first real scare, first "oh no" moment
 
 ---
-## Presentation
+## Presentation / Visuals
 
 > Visuals + Audio & UI
 
@@ -363,7 +350,6 @@ failure states? :
 - menus, journal, controls: see [FDD](<./FDD.md>)
 
 ### Presentation Questions
-
 - [ ] Environment built in Blender (3D props/environments) or as 2D layers rendered on top of each other like Illusion Carnival?
 	- Owner: Erin. Due: before level art.
 - [ ] Player style:
@@ -385,7 +371,9 @@ failure states? :
 ---
 ## Scope
 
-### MRP (Minimal Game to Deliver)
+> rough timeline: pre-release after 1 year, full game (maybe) after 1.5-2 years
+
+### MRP(Minimal Game to Deliver)
 
 smallest version of game. if this is not fun, more zones wont fix it. + then we need to rethink stuff
 
@@ -397,30 +385,25 @@ smallest version of game. if this is not fun, more zones wont fix it. + then we 
 - final art style for player + 1 area
 
 ### Milestones
-
 - [ ] 1: MRP playable start to finish
 - [ ] 2: 3 zones, true ending reachable
 - [ ] 3: polish, audio, web build tested
 - [ ] 4: release
 
-rough timeline: pre-release after 1 year, full game (maybe) after 1.5-2 years
-
 ### Cut List (First Things to Skip)
-
 1. hub upgrading
 2. second fake ending
 3. fun value
 
 ### Risks
-
 - open decisions block stuff, see Decisions
 - only Dean codes,
 - Erin only artist, art takes longest + different timezone
 - scope creep, i love adding ideas (see this whole doc)
 - dean (de deanste dean/th3 seeker) = main driving force bc everyone else is busy
 
+---
 ### Accessibility
-
 horror + screen distortion can make people sick. color blind people + such.
 this stuff comes later tho, should absolutly not be focus now
 can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
@@ -428,7 +411,6 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 - [x] remappable keys
 
 #### Accessibility Questions
-
 - [ ] photosensitivity: carefull with fast flashing. test sanity distortion
 - [ ] toggle for screen distortion / camera shake strength
 - [ ] subtitles for important sounds
@@ -436,7 +418,6 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 
 ---
 ### Workflow + Production Thingies
-
 - Minimum 1 small progress step per week per person (draw 1 line, 1 bugfix, check in)
 - ARCHIVE folder for old reusable assets (sorted with TagStudio)
 - Funding
@@ -444,7 +425,6 @@ can use: <https://github.com/Nokorpo/gato-godot-accessibility-toolkit>
 - [x] switch code licence GPLv2+ to EUPLv1.2+
 
 #### Workflow + Production Thingies Questions
-
 - [ ] MRP: favors with real consequences, how many
 - [ ] milestone 1 date
 - [ ] Friends can join temporarily or permanently as extra teammates, does need discussion

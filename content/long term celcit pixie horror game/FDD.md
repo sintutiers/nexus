@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Friday, November 20th 2026, 9:21 pm
+modified: Friday, November 20th 2026, 11:19 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -42,24 +42,22 @@ author:
 - [User Acceptance Test](<#User Acceptance Test>)
 
 ## General Info
-
-- FDD = what game does: rules + numbers. why/vibe in [GDD](<./GDD.md>), code in [TDD](<./TDD.md>)
-- sections = decided only. 
+- GDD = what game is + vibe. 
+- [FDD](<./FDD.md>) = rules + numbers. 
+- [TDD](<./TDD.md>) = code
 - open stuff in [Open Questions](<#Open Questions>)
 - status: done = works in game / designed = decided, not built / open = needs decision
 - priority: must / should / could
 
 ## How to Write Requirement
-
 1. what player does
 2. numbers
 3. done when: how to check it
 4. short + simple, prefered for now
 
+---
 ## Functional Requirements
-
 ### Sanity
-
 core pillar, so concrete, not just "you lose sanity" with no consequenses.
 
 - 0 to 100, 4 stages at 25/50/75 
@@ -76,11 +74,14 @@ core pillar, so concrete, not just "you lose sanity" with no consequenses.
 - encounters, random + set: gain or lose sanity depending on choices
 - lower stage = more world change:
 	- stage 0 (75-100): baseline
-	- stage 1 (50-75): minor unease. visuals in
+	- stage 1 (50-75): minor unease. visuals
 	- stage 2 (25-50): stronger distortion, some NPC lines change, fake enemies may show up
 	- stage 3 (0-25): heavy distortion, more fake enemies, some real threats
 	- fake enemies: you dont know which are fake
-- sanity 0: not decided, see [Open Questions](<#Sanity#Open Questions>)
+- sanity 0: not decided
+
+drain: flat per second, how much
+drain: wrong dialogue choices/story events, variable per event/choice
 
 must not be minor annoyance, must not make game unplayable
 
@@ -107,9 +108,6 @@ flowchart TD
 ```
 
 #### Sanity Questions
-
-- [ ] drain: flat per second, how much
-- [ ] drain: wrong dialogue choices/story events, how much per event
 - [ ] drain: interacting with enemies? (running, fighting back etc)
 - [ ] restore: quest steps/objectives, how much
 - [ ] restore: NPC favors, which, how much
@@ -125,8 +123,8 @@ flowchart TD
 
 ---
 ### Dialogue + Choices
-
 - nonlinear story/dialogue
+- multiple choice
 - [x] choices change NPC opinion + story
 
 sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Disco Elysium):
@@ -137,11 +135,12 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 	- low sanity: "You know where. You sent me here."
 
 #### Dialogue + Choices Questions
-
 - [ ] (hidden fairy meter? like FUN value) opinion. keep as fairy meter or rename, same thing
+- [ ] sanity goes in minus? if thats to be added then extra / reverse options??
 - [ ] everything = consequence, nothing = fake choice
 	- minimum consequence per choice: every player-facing choice writes at least 1 of fact, opinion delta, quest stage, item grant/removal, level flag, sanity delta. if it writes nothing, its fake choice, cut it or make it write something
-- [ ] endings + true ending gating: see ending structure + true ending gating in [GDD](<./GDD.md>)
+		- decicded not to, there must be some flavor text, most choices will have consequenses
+- [ ] endings + true ending gating: see ending structure + true ending gating
 - [ ] hallucination AI + just dialogue conditions ?
 
 ---
@@ -154,8 +153,7 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 - NPCs remember player actions ("world remembers")
 
 #### NPC Questions
-
-- [ ] NPCs move/schedule, or stand still?
+- [ ] NPCs move, or stand still?
 - [ ] NPCs remember player actions: which ones, how long?
 - [ ] how NPCs show opinion
 - [ ] low sanity changes some lines (stage 2+). alt lines for every NPC or some?
@@ -173,7 +171,7 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 - each gives 1-2 favors, depending on the NPC.
 - NPC dialogue changes with relationship.
 - player can hold multiple debts and favors.
-- a favor is spent when used.
+- favor is spent when used.
 - some quests give favors, some dont.
 - relationship/opinion changes by dialogue; dialogue is also how player and fairies trick each other.
 - low sanity: some NPCs give higher-risk question for extra favor or extra sanity.
@@ -183,10 +181,10 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 	- favor can be granted, tracked, spent, and changes NPC dialogue/relationship; quest stage persists after reload.
 
 #### Quest + Favor Questions
-
 - [ ] NPCs give favors/quests
 	- define structure + tracking (quests have stages, game remembers current stage. journal UI ?)
 - [ ] rewards: item/info/sanity/new location access
+- [ ] how to show the favors? should we even
 
 ---
 ### Combat
@@ -195,11 +193,14 @@ sanity in dialogue (from [Gameplay moodboard thingie](<./Gameplay moodboard thin
 > Decision open: no combat / turn-based / real-time (owner: Dean, due: before zone 1 design), options below. (create moodboard for that, combatboard?)
 
 #### Combat Questions
-
 - [ ] pick: no combat / turn-based / real-time (owner: Dean, due: before zone 1 design)
 
 options:
-- A) no combat. threats = dialogue/choice encounters. fighting back = dialogue option, costs sanity. fake vs real enemies resolved by interacting, not hitting. fits input surface + horror tone. buildable on what exists
+- A) no combat. 
+- threats = dialogue/choice encounters. 
+- fighting back = dialogue option, costs sanity. 
+- fake vs real enemies resolved by interacting, not hitting. 
+- fits input surface + horror tone. buildable on what exists
 	- encounters (from [Gameplay moodboard thingie](<./Gameplay moodboard thingie.canvas>), Little Nightmares):
 		- 5-8 handcrafted encounters
 		- 2-3 choices each: decide, escape, or interact with dangerous thing
@@ -213,12 +214,11 @@ options:
 	- [ ] real time combat, you have button to swing weapon to deal damage
 	- [ ] enemy touch/hit = lose sanity
 	- [ ] enemy dies after few hits
-- combat/interaction FDD:
-	- you have like a branch + when fighting, almost always moving
+- combat/interaction:
+	- you have like a branch, almost always moving
 
 ---
 ### Movement + Controls
-
 walk, run, jump (double, variable height on release), wall slide, wall jump, dash (cooldown, limited airtime), crouch. all in.
 
 > status: done (keyboard movement + controls)
@@ -227,11 +227,10 @@ walk, run, jump (double, variable height on release), wall slide, wall jump, das
 keyboard for now, gamepad + touchscreen later
 
 #### Movement + Control Questions
-
 - [ ] which abilities stay per zone 
 	- [ ] tie to level design?
 - [ ] web: keyboard only ok?
-- [ ] list all actions (move, run, jump, dash, crouch, interact, pause, journal?)
+- [ ] list all actions (move, run, jump, crouch, interact, pause, journal?)
 
 ---
 ### Camera
@@ -246,7 +245,6 @@ keyboard for now, gamepad + touchscreen later
 - slight mouse lean, see [GDD](<./GDD.md>)
 
 #### Camera Questions
-
 - [ ] camera changes per zone or low sanity (tilt, zoom)?
 
 ---
@@ -262,10 +260,9 @@ keyboard for now, gamepad + touchscreen later
 - done when: gate opens with right item, stays open after reload
 
 #### Interaction Questions
-
 - [ ] interact prompt: look, shown at low sanity or lies?
-- [ ] two things equally close?
-- [ ] interact while dashing/in air?
+- [x] two things equally close?
+- [x] interact while dashing/in air?
 
 ---
 ### Inventory + Items
@@ -285,7 +282,6 @@ keyboard for now, gamepad + touchscreen later
 - done when: pick up book, see it, use it, sanity up
 
 #### Inventory + Items Questions
-
 - [ ] inventory size limit?
 - [ ] inventory UI. see [inventory ideas](<./inventory ideas.canvas>). like minecraft hotbar or point n click HUD
 - [ ] pick up by interact or walking over it, which one, or both per item
@@ -305,7 +301,6 @@ keyboard for now, gamepad + touchscreen later
 - done when: new player leaves forest w/o asking us
 
 #### Tutorial + Onboarding Questions
-
 - [ ] list what = taught where
 
 ---
@@ -314,10 +309,7 @@ keyboard for now, gamepad + touchscreen later
 > status: open
 > priority: could (map) / should (journal)
 
-both are stubs. see [Open Questions](<#Open Questions>).
-
 #### Map + Journal Questions
-
 - [ ] map? no map = more lost, but people get stuck
 - [ ] if yes, lies at low sanity?
 - [ ] journal UI, exists at all? helps, but fits badly with lost/hopeless vibe. maybe diary unreliable at low sanity
@@ -340,7 +332,6 @@ both are stubs. see [Open Questions](<#Open Questions>).
 - main menu, pause, options
 
 #### Save + Menus Questions
-
 - [ ] old saves after updates add/change items/quests
 - [ ] web saves: browser storage, can get wiped. warn player? print warning that player should clear cache? perhaps player can export json file with save?
 - [ ] settings: volume, fullscreen + accessibility toggles (list in [GDD](<./GDD.md>))
@@ -351,7 +342,6 @@ both are stubs. see [Open Questions](<#Open Questions>).
 ## Non-functional Requirements
 
 ### Platform & Performance
-
 - dev/test on small formfactor laptop for now
 - ship to desktop + web. web = perf target
 - Compatibility renderer, heavier only if needed
@@ -359,22 +349,23 @@ both are stubs. see [Open Questions](<#Open Questions>).
 - languages + save compat: see [Open Questions](<#Open Questions>)
 
 #### Platform & Performance Questions
-
-- [ ] load time target, esp web (max first download size?)
+- [ ] load time target, web (max first download size?)
 - [ ] sanity visuals must hold 45 fps
-- [ ] languages: english only
+- [ ] languages: english
 - [ ] save compatibility between versions
 
 ### Accessibility
-
-- see accessibility list in [GDD](<./GDD.md>). every toggle gets a line here once decided
+see accessibility list in [GDD](<./GDD.md>). every thing gets line
+- key rebind
+- export / import save
+- vsync
+- console
+- performance meter
 
 ### Multiplayer
-
 - other players show in same level, works offline (done)
 
 ## User Acceptance Test
-
 Check if game meets all functional, design + game requirements in perspective of player.
 
 - [ ] Player can walk + run
