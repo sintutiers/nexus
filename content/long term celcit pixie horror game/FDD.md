@@ -1,7 +1,7 @@
 ---
 uid: o1pk0ngezrjc2a372yc9w
 title: Functional Design Document
-modified: Sunday, November 15th 2026, 10:21 pm
+modified: Friday, November 20th 2026, 9:21 pm
 created: Monday, October 19th 2026, 7:34 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -114,7 +114,6 @@ flowchart TD
 - [ ] restore: quest steps/objectives, how much
 - [ ] restore: NPC favors, which, how much
 - [ ] sanctuary objects, how much extra sanity
-- [ ] stage 1: sound ?
 - [ ] numbers: how many fake enemies in stage 2+3, how many real threats in stage 3
 - [ ] sanity 0: this = big open one. pick: fail forward / reload / ending (owner: Dean, due: before first playable). things:
 	- fail forward: teleport to last sanctuary, lose progress (how much, not save), world remembers. no game over screen. fits hopeless vibe
@@ -346,6 +345,8 @@ both are stubs. see [Open Questions](<#Open Questions>).
 - [ ] web saves: browser storage, can get wiped. warn player? print warning that player should clear cache? perhaps player can export json file with save?
 - [ ] settings: volume, fullscreen + accessibility toggles (list in [GDD](<./GDD.md>))
 - [ ] art style, wait for Erin
+
+---
 
 ## Non-functional Requirements
 

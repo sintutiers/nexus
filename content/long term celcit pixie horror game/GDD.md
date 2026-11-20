@@ -1,7 +1,7 @@
 ---
 uid: 134b9c00zq0trvkm851xf
 title: Game Design Document
-modified: Sunday, November 15th 2026, 10:23 pm
+modified: Sunday, November 15th 2026, 10:26 pm
 description: vision/function design document
 created: Monday, October 19th 2026, 7:34 pm
 author:

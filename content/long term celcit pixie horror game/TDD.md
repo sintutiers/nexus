@@ -1,7 +1,7 @@
 ---
 uid: 4um2r409vhplswwy95ul8
 title: Technical Design Document
-modified: Tuesday, November 17th 2026, 1:08 am
+modified: Friday, November 20th 2026, 10:00 pm
 created: Thursday, October 8th 2026, 2:31 pm
 author:
   - "[Dean](https://deanlemans.github.io/)"
@@ -31,7 +31,7 @@ easy to read, safe to rewrite, honest about what it does.)
 	- [INLINE COMMENTS](<#INLINE COMMENTS>)
 		- [HYGIENE](<#HYGIENE>)
 - [Game System Architecture](<#Game System Architecture>)
-	- [Components (Extend `Component`, Wired by Body, Not Looked up Themselves)](<#Components (Extend `Component`, Wired by Body, Not Looked up Themselves)>)
+	- [Components (Extend Component, Wired by Body, Not Looked up Themselves)](<#Components (Extend Component, Wired by Body, Not Looked up Themselves)>)
 	- [Component Wiring](<#Component Wiring>)
 	- [Bodies and Spawner](<#Bodies and Spawner>)
 	- [Player API](<#Player API>)
@@ -103,7 +103,7 @@ start here. most new stuff = file in `content/` or small scene, not new code.
 - **remembering a choice** = no code: `$> set_fact("choice.<what>")` / `set_level_flag("<level>.<what>")`. key starts with who wrote it. -> [Game State and Level Management](<#Game State and Level Management>)
 - **something dialogue cant do yet** = 1 narrow method on `PlayerApi`, no new global (rule 9).
 - **place that heals or eats sanity** = `SanityArea`. -> [Game State and Level Management](<#Game State and Level Management>)
-- **player ability** = component extending `Component` in body scene, wired by body, talks through signals. -> [Components](<#Components (Extend `Component`, Wired by Body, Not Looked up Themselves)>)
+- **player ability** = component extending `Component` in body scene, wired by body, talks through signals. -> [Components](<#Components (Extend Component, Wired by Body, Not Looked up Themselves)>)
 - **HUD widget** = small scene in `scenes/game/hud/`, finds player itself, add to `hud.tscn`. -> [Other](<#Other>)
 - **level** = scene in `scenes/game/levels/` + path in `SceneLister` `files` (`game.tscn`), also what console `level` lists.
 - **saved field** -> "new saved field" in [Game State and Level Management](<#Game State and Level Management>).
@@ -149,7 +149,7 @@ GAME DEV CORE PROGRAMMING AND CODING PRINCIPLES
 	- openbsd; simple, clear, and consistent.
 	- suckless; Simpel, Clarity, frugality and small enough for one person to read and rewrite.
 
-##### FUNCTION NAMING
+### FUNCTION NAMING
 - Descriptive names. Longer is good when clearer.
 	- `add()` -> `add_inventory_item()`
 - Full words.
@@ -205,7 +205,7 @@ Use single-hash comments inside function bodies.
 - Write for future fixer and extender.
 	- Explain invariants, pitfalls, and non-obvious choices.
 - Keep them short.
-	- Long explanations belong in API docs or this [TDD](<./TDD.md>).
+	- Long explanations belong in API docs or this doc.
 
 Example:
 ```gdscript
@@ -223,7 +223,7 @@ _capsule = _capsule.duplicate()
 
 ## Game System Architecture
 (architecture inspired by <https://gameprogrammingpatterns.com> and others i need to link)
-### Components (Extend `Component`, Wired by Body, Not Looked up Themselves)
+### Components (Extend Component, Wired by Body, Not Looked up Themselves)
 
 ```mermaid
 graph TB
@@ -322,7 +322,6 @@ Hooks dont call their parent on their own. if component extends `Component` dire
 Components communicate through signals (`jumped`, `landed`, `dashed`, `flipped`, etc.). 
 Input is read once per physics frame into an `InputFrame`, so movement never reads `Input` directly. 
 
-
 ### Bodies and Spawner
 
 - `PlayerBody` is god and wires all components.
@@ -361,8 +360,7 @@ Not autoload. Body creates it in `_enter_tree`, keeps it as `api` + joins group 
 Dialogue files and `InteractableThing` should only call its methods, that way components can be rewritten without touching any dialogue file. 
 other code (`DebugCommands`, `SanityArea`, HUD) is allowed to read `api.inventory` + `api.sanity` directly.
 
-Quest stage, NPC opinion, favors and debts are "just": 
-	`quest.<id>` + `opinion.<npc>` + `favor.<npc>` (they owe you) + `debt.<npc>` (you owe them).
+Quest stage, NPC opinion, favors and debts are "just": `quest.<id>` + `opinion.<npc>` + `favor.<npc>` (they owe you) + `debt.<npc>` (you owe them).
 
 ### Other
 
@@ -421,7 +419,7 @@ graph LR
     PC3["PhantomCamera3D<br/>third-person follow"]
     CML["CameraMouseLean<br/>(child of PhantomCamera3D)"]
 
-    PS -->|"follow this player<br/>"| PC3
+    PS -->|"follow this player"| PC3
     CML -->|"leans toward mouse"| PC3
 
     click PS href "https://github.com/sintutiers/celter-fairy-pixie-gameproject/blob/master/scripts/entities/player_spawner.gd" _blank
