@@ -10,5 +10,6 @@
   "userIgnoreFilters": [
     "Plugin data/",
     "@Plugin sync data (DO NOT REMOVE)/"
-  ]
+  ],
+  "readableLineLength": false
 }
